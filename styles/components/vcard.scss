@@ -1,0 +1,14 @@
+form {
+  
+  .input-group {
+  }
+  :focus {
+    z-index:0;
+    outline: 0;
+    border-style:solid $primary;
+    opacity:100%;
+  }
+  legend {
+    color:$primary;
+  }
+}

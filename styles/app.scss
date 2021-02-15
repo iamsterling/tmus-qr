@@ -1,0 +1,58 @@
+@import 'https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,600;0,700;0,800;1,300;1,400;1,600;1,700;1,800&display=swap';
+
+
+$tmobile-pink:               #e20074;
+$bg:                         white;
+
+@import 'override.scss';
+@import 'vcard.scss';
+@import '../node_modules/bootstrap/scss/bootstrap.scss';
+
+
+body {
+  font-family: 'Open Sans';
+  background: $bg;
+  color: black;
+  height:100%;
+}
+
+header {
+  // colors
+  background: linear-gradient(rgba($bg, 1) 50%, rgba($bg, 0.1)70%, rgba($bg, 0.0)0%);
+  color: rgba(0,0,0, 0.8);
+  backdrop-filter: blur(0.1em);
+
+  // positioning
+  position: sticky;
+  top:0;
+  left:0;
+  z-index:2;
+
+  // extras
+  padding:1em;
+
+  b {
+    color:$primary;
+    font-weight: 200;
+  }
+}
+
+
+main {
+}
+
+
+
+
+//input:focus {
+//  background-color:$primary;
+//}
+
+// footer
+//----------------
+footer {
+  @include make-container();
+  position:sticky;
+  bottom:0;
+  right:0;
+}
