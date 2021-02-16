@@ -1,5 +1,5 @@
 // js
-import QrLayout from './structure/qr_layout.js';
+import QrLayout from '/structure/layout.js';
 
 // css
 import '../styles/app.scss'

@@ -5,7 +5,7 @@ import Form from 'react-bootstrap/Form';
 import InputGroup from 'react-bootstrap/InputGroup';
 
 
-import GenerateQR from '../functions/generate-qr.js';
+import GenerateQR from '/fragments/functions/generate-qr.js';
 
 
 

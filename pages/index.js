@@ -1,6 +1,6 @@
-import QrInput from './components/qr-input.js';
-import QrOutput from './components/qr-output.js'
-import QRTabs from './components/tabs';
+import QRInput from '/fragments/vcard.js';
+//import QROutput from '/fragments/qr-output';
+import QRTabs from '/fragments/tabs.js';
 
 import Link from 'next/link';
 export default function Home({children}) {

@@ -20,7 +20,10 @@ export default function QrLayout({children}) {
 
       <Header />
 
-      <nav>Test</nav>
+      <nav>
+      Test
+      </nav>
+      
       <main>{children}</main>
 
 
