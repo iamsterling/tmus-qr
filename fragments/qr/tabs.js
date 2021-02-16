@@ -10,6 +10,8 @@ import VCardInput from './vcard';
 import WifiInput from './wifi';
 import UrlInput from './url';
 
+import QRForm from './qr-form';
+
 export default function QRTabs() {
 
   return(
@@ -36,29 +38,33 @@ export default function QRTabs() {
           </Col>
 
         </Nav>
-      </Row>
 
+        <Tab.Content>
 
+          <Tab.Pane eventKey="vCard">
 
-
-      <Row>
-        <Col>
-          <Tab.Content>
-
-            <Tab.Pane eventKey="vCard">
+            <QRForm>
               <VCardInput />
-            </Tab.Pane>
+            </QRForm>
 
-            <Tab.Pane eventKey="WiFi">
-              <p>Wifi Input</p>
-            </Tab.Pane>
-          </Tab.Content>
 
-          <Tab.Pane eventKey="URL">
-            <p>URL Input</p>
           </Tab.Pane>
 
-        </Col>
+          <Tab.Pane eventKey="WiFi">
+
+            <QRForm>
+              <WifiInput />
+            </QRForm>
+
+          </Tab.Pane>
+
+          <Tab.Pane eventKey="URL">
+            <QRForm>
+              <UrlInput />
+            </QRForm>
+          </Tab.Pane>
+
+        </Tab.Content>
       </Row>
     </Tab.Container>
   );

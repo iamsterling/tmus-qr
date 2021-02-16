@@ -1,61 +1,46 @@
+
+
 import { Formik } from "formik";
+import { Form } from 'formik';
+
 //import { Form } from "formik";
+import Container from 'react-bootstrap/Container';
+import Row from 'react-bootstrap/Row';
+import Col from 'react-bootstrap/Col';
 import Button from 'react-bootstrap/Button';
-import Form from 'react-bootstrap/Form';
-
-export default function QRForm({}) {
 
 
-	{/* Check for Brand selection
-	var CheckBrand({Brand}) {
-		if (Brand) = 'T-Mobile' {
-			// Options
-		}
-	}
-
-
-	// New instance with options
-	var qrcode = new QRCode(options);
-
-	// Save QRCode image
-	qrcode.saveImage({
-		path: 'q.png' // save path
-	});*/}
+export default function QRForm({children}) {
 
 
 	return(
-		<>
-			<Formik
+		<Formik
 			initialValues={{
-				vCard: {
-					// VALUES
-					name: "",
-					title: "",
-					phone: "",
-					brand: "",
-					address: "",
-				},
-
-				wifi: {
-					encryption: "",
-					ssid: "",
-					pass: "",
-				},
-
-				url: "",
+				values: {},
+				errors: {},
+				touched: {},
+				handleChange: {},
+				handleBlur: {},
+				handleSubmit: {},
+				isSubmitting: {},
 			}}
+		>
 
-			onSubmit={async values => {
-				await new Promise(resolve => setTimeout(resolve, 500));
-				alert(JSON.stringify(values, null, 2));
-			}}>
+			<Form>
+				<>
+					{children}
+				</>
 
-				<Form>
-				</Form>
-
-				<Button>Get QR</Button>
-
-			</Formik>
-		</>
+				<>
+					<Container>
+						<Row>
+							<Col xs={3}>
+								<Button>Get QR</Button>
+							</Col>
+						</Row>
+					</Container>
+				</>
+			</Form>
+		</Formik>
 	)
 }

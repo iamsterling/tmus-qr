@@ -5,6 +5,18 @@ export default function QROutput() {
     <>
       <p>Result:</p>
       <canvas id="qr-canvas"></canvas>
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
     </>
   )
 };
