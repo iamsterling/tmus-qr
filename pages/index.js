@@ -3,6 +3,7 @@ import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import QRTabs from '../fragments/qr/tabs';
+import QROutput from '../fragments/qr/output';
 
 
 
@@ -15,8 +16,9 @@ export default function Home({children}) {
         <Col sm={12} lg={6}>
           <QRTabs />
         </Col>
+
         <Col sm={12} lg={6}>
-          <p>Result</p>
+          <QROutput />
         </Col>
       </Row>
     </Container>

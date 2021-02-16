@@ -9,43 +9,44 @@ import InputGroup from 'react-bootstrap/InputGroup';
 export default function VCardInput({}) {
   return (
     <Container>
-      <Row>
-        <InputGroup>
+      <Form>
+        <Row>
+          <InputGroup>
 
-          <Col>
-            <Form.Control></Form.Control>
-          </Col>
+            <Col>
+              <Form.Control></Form.Control>
+            </Col>
 
-          <Col>
-            <Form.Control></Form.Control>
-          </Col>
+            <Col>
+              <Form.Control></Form.Control>
+            </Col>
 
-        </InputGroup>
-      </Row>
+          </InputGroup>
+        </Row>
 
-      <Row>
-        <InputGroup>
+        <Row>
+          <InputGroup>
 
-          <Col>
-            <Form.Control as="select">
-              <option value="test">test</option>
-              <option value="test">test</option>
-              <option value="test">test</option>
-              <option value="test">test</option>
-            </Form.Control>
-          </Col>
+            <Col>
+              <Form.Control as="select">
+                <option value="test">test</option>
+                <option value="test">test</option>
+                <option value="test">test</option>
+                <option value="test">test</option>
+              </Form.Control>
+            </Col>
 
-          <Col>
-            <Form.Control as="select">
-              <option value="test">test</option>
-              <option value="test">test</option>
-              <option value="test">test</option>
-              <option value="test">test</option>
-            </Form.Control>
-          </Col>
-        </InputGroup>
-      </Row>
-
+            <Col>
+              <Form.Control as="select">
+                <option value="test">test</option>
+                <option value="test">test</option>
+                <option value="test">test</option>
+                <option value="test">test</option>
+              </Form.Control>
+            </Col>
+          </InputGroup>
+        </Row>
+      </Form>
     </Container>
   )
 }

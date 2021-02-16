@@ -1,4 +1,4 @@
-import Button 'react-bootstrap/Button';
+import Button from 'react-bootstrap/Button';
 export default function QROutput() {
 
   return(
