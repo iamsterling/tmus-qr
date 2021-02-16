@@ -1,3 +1,5 @@
+{/* ENABLE HOTRELOAD
+//-------------------*/}
 module.exports = {
   webpackDevMiddleware: config => {
     config.watchOptions = {

@@ -1,16 +1,24 @@
-import QRInput from '/fragments/vcard.js';
-//import QROutput from '/fragments/qr-output';
-import QRTabs from '/fragments/tabs.js';
+//
+import Container from 'react-bootstrap/Container';
+import Row from 'react-bootstrap/Row';
+import Col from 'react-bootstrap/Col';
+import QRTabs from '../fragments/qr/tabs';
+
+
 
 import Link from 'next/link';
 export default function Home({children}) {
 
   return (
-    <>
-      <QRTabs></QRTabs>
-
-      <Link href="/test">Hi</Link>
-
-    </>
+    <Container>
+      <Row>
+        <Col sm={12} lg={6}>
+          <QRTabs />
+        </Col>
+        <Col sm={12} lg={6}>
+          <p>Result</p>
+        </Col>
+      </Row>
+    </Container>
   )
 }

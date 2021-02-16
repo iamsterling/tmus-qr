@@ -1,7 +1,5 @@
 import Head from 'next/head';
-import Header from '../components/header.js';
-import QRInput from '../components/qr-input.js';
-import QROutput from '../components/qr-output.js';
+import Header from '../fragments/global/header.js';
 
 
 
@@ -20,10 +18,6 @@ export default function QrLayout({children}) {
 
       <Header />
 
-      <nav>
-      Test
-      </nav>
-      
       <main>{children}</main>
 
 

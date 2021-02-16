@@ -20,7 +20,7 @@ import Button from 'react-bootstrap/Button';
 export default function GenerateQR({FName, Brand}) {
 
 
-	{/* Check for Brand selection*/}
+	{/* Check for Brand selection
 	var CheckBrand({Brand}) {
 		if (Brand) = 'T-Mobile' {
 			// Options
@@ -34,7 +34,7 @@ export default function GenerateQR({FName, Brand}) {
 	// Save QRCode image
 	qrcode.saveImage({
 		path: 'q.png' // save path
-	});
+	});*/}
 
 
 	return(

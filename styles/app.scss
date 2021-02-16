@@ -6,6 +6,7 @@ $bg:                         white;
 
 @import 'override.scss';
 @import './components/vcard.scss';
+@import './components/nav.scss';
 @import '../node_modules/bootstrap/scss/bootstrap.scss';
 
 body {
@@ -14,28 +15,6 @@ body {
   color: black;
   height:100%;
 }
-
-header {
-  // colors
-  background: linear-gradient(rgba($bg, 1) 50%, rgba($bg, 0.1)70%, rgba($bg, 0.0)0%);
-  color: rgba(0,0,0, 0.8);
-  backdrop-filter: blur(0.1em);
-
-  // positioning
-  position: sticky;
-  top:0;
-  left:0;
-  z-index:2;
-
-  // extras
-  padding:1em;
-
-  b {
-    color:$primary;
-    font-weight: 200;
-  }
-}
-
 
 main {
 }
