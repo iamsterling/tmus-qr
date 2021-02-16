@@ -17,9 +17,14 @@ export default function QRForm({children}) {
 		<Formik
 			initialValues={{
 				vCard: {
-
+					fname:"",
+					lname:"",
+					phone:"",
+					email:"",
+					twitter:"",
+					address:"",
 				},
-				
+
 				errors: {},
 				touched: {},
 				handleChange: {},
