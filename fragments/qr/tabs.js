@@ -16,7 +16,7 @@ export default function QRTabs() {
 
   return(
     <Tab.Container defaultActiveKey="vCard">
-      <Row>
+      <Row className="mb-4">
         <Nav variant="pills">
 
           <Col>
