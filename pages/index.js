@@ -12,15 +12,17 @@ export default function Home({children}) {
 
   return (
     <Container>
+
       <Row>
-        <Col sm={12} lg={6}>
+        <Col sm={12} md={8} lg={6}>
           <QRTabs />
         </Col>
 
-        <Col sm={12} lg={6}>
+        <Col sm={12} md={8} lg={6}>
           <QROutput />
         </Col>
       </Row>
+
     </Container>
   )
 }

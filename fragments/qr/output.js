@@ -5,7 +5,6 @@ export default function QROutput() {
     <>
       <p>Result:</p>
       <canvas id="qr-canvas"></canvas>
-      <Button>Text</Button>
     </>
   )
 };

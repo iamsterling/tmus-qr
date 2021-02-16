@@ -1,3 +1,5 @@
+// BOOTSTRAP
+//
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
@@ -5,28 +7,30 @@ import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 import InputGroup from 'react-bootstrap/InputGroup';
 
-import GenerateQR from '../functions/generate-qr';
+// LOCAL
+import QRForm from './qr-form';
 
+// FORMIK
+import { Field } from "formik";
 
-export default function UrlInput({}) {
+export default function UrlInput({qrinput}) {
   return (
     <Container>
-      <Row>
-        <InputGroup>
-
+      <QRForm>
+        <Row>
           <Col>
+            <label for="url">URL</label>
 
-
-
-            <Form.Control></Form.Control>
+            <Form.Control name="url"></Form.Control>
           </Col>
+        </Row>
 
-        </InputGroup>
-      </Row>
-
-      <Row>
-        <GenerateQR>Test</GenerateQR>
-      </Row>
+        <Row>
+          <Col sm={2}>
+            <Button>Test</Button>
+          </Col>
+        </Row>
+      </QRForm>
     </Container>
   )
 }

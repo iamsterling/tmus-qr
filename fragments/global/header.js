@@ -16,7 +16,9 @@ export default function Layout({appTitle}) {
           <Row>
             <Col>
               <TMUSLOGO />
+              <p>QR Generator</p>
             </Col>
+
           </Row>
         </Container>
 
