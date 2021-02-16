@@ -1,4 +1,4 @@
-import EasyQRCodeJS from 'easyqrcodejs-nodejs';
+//import EasyQRCodeJS from 'easyqrcodejs-nodejs';
 import Button from 'react-bootstrap/Button';
 
 {/*
@@ -17,7 +17,7 @@ import Button from 'react-bootstrap/Button';
 
 
 
-export default function GenerateQR({FName, Brand}) {
+export default function GenerateQR() {
 
 
 	{/* Check for Brand selection
@@ -38,6 +38,6 @@ export default function GenerateQR({FName, Brand}) {
 
 
 	return(
-		<Button></Button>
+		<Button>Get QR</Button>
 	)
 }

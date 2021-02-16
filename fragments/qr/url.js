@@ -5,6 +5,7 @@ import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 import InputGroup from 'react-bootstrap/InputGroup';
 
+import GenerateQR from '../functions/generate-qr';
 
 
 export default function UrlInput({}) {
@@ -24,7 +25,7 @@ export default function UrlInput({}) {
       </Row>
 
       <Row>
-        <Button>Test</Button>
+        <GenerateQR>Test</GenerateQR>
       </Row>
     </Container>
   )

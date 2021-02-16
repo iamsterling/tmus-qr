@@ -9,7 +9,7 @@ export default function QRTabs() {
 
   return(
     <>
-      <Tabs defaultActiveKey="profile" id="uncontrolled-tab-example">
+      <Tabs defaultActiveKey="vCard" id="uncontrolled-tab-example">
 
         <Tab eventKey="vCard" title="vCard">
           <VCardInput />
@@ -22,7 +22,7 @@ export default function QRTabs() {
         <Tab eventKey="Google/URL" title="Google/URL">
           <UrlInput />
         </Tab>
-        
+
       </Tabs>
     </>
   );
