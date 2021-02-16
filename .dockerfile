@@ -10,12 +10,8 @@ WORKDIR /usr/src
 
 # copy package.json and install node modules
 # ------------------
-COPY package.json /usr/src
-RUN npm install --quiet
-
-# copy source code
-# ------------------
-COPY . .
+#COPY package.json /usr/src
+COPY . /usr/src
 
 # start app
 # ------------------

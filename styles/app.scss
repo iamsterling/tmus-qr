@@ -5,9 +5,8 @@ $tmobile-pink:               #e20074;
 $bg:                         white;
 
 @import 'override.scss';
-@import 'vcard.scss';
+@import './components/vcard.scss';
 @import '../node_modules/bootstrap/scss/bootstrap.scss';
-
 
 body {
   font-family: 'Open Sans';
