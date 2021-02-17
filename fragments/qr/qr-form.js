@@ -82,8 +82,8 @@ export default function QRForm({children}) {
 							</Col>
 						</Row>
 					</Container>
-
 				</>
+
 			</Form>
 		</Formik>
 	)
