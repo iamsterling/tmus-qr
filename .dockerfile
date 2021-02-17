@@ -1,16 +1,15 @@
 # establish base image & update node
 # ------------------
 FROM arm64v8/node:alpine
-RUN npm install -g npm@latest
+RUN npm install -g npm@stable
 
 # create & set working directory
 # ------------------
 RUN mkdir -p /usr/src
 WORKDIR /usr/src
 
-# copy package.json and install node modules
+# copy host src directory
 # ------------------
-#COPY package.json /usr/src
 COPY . /usr/src
 
 # start app

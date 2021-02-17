@@ -12,10 +12,12 @@ export default function QRNav() {
   return (
     <>
       <Navbar sticky="top">
-        <Navbar.Brand href="/">
-          <TMUSLOGO />
+        <Navbar.Brand>
+          <Link href="/">
+            <TMUSLOGO />
+          </Link>
         </Navbar.Brand>
-        
+
           <b>QR</b> Generator
       </Navbar>
     </>

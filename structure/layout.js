@@ -1,6 +1,6 @@
 import Head from 'next/head';
 import QRNav from '../fragments/global/nav.js';
-
+import Footer from '../fragments/global/footer.js';
 
 
 
@@ -20,6 +20,7 @@ export default function QrLayout({children}) {
 
       <main>{children}</main>
 
+      <Footer />
 
     </>
   )
