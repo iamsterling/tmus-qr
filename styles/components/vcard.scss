@@ -1,5 +1,5 @@
 form {
-  
+
   .input-group {
   }
   :focus {
@@ -9,6 +9,8 @@ form {
     opacity:100%;
   }
   legend {
+    font-size: 1em;
     color:$primary;
+    font-weight:100;
   }
 }

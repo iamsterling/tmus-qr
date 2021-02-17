@@ -1,20 +1,26 @@
-header {
+.navbar {
   // colors
-  background: rgba($bg, 1) 10%;
+  background: linear-gradient(rgba($bg, 1), rgba($bg, 0.1));
   color: rgba(0,0,0, 0.8);
-  backdrop-filter: blur(0.1em);
+  backdrop-filter: blur(0.2em);
+  box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.02);
 
   // positioning
-  position: sticky;
-  top:0;
   left:0;
   z-index:2;
 
   // extras
   padding:1em;
+  margin-bottom:0.5em;
+
+
+  .navPills{
+    background-color:black;
+  }
+
 
   b {
     color:$primary;
-    font-weight: 200;
+    font-weight: 600;
   }
 }

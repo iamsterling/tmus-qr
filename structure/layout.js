@@ -1,5 +1,5 @@
 import Head from 'next/head';
-import Header from '../fragments/global/header.js';
+import QRNav from '../fragments/global/nav.js';
 
 
 
@@ -16,7 +16,7 @@ export default function QrLayout({children}) {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <Header />
+      <QRNav />
 
       <main>{children}</main>
 

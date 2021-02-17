@@ -16,22 +16,22 @@ export default function QRTabs() {
 
   return(
     <Tab.Container defaultActiveKey="vCard">
-      <Row className="ml-2 mb-4">
-        <Nav variant="pills">
+      <Row className="mb-4">
+        <Nav variant="pills" className="navPills">
 
-          <Col>
+          <Col className="m-4">
             <Nav.Item>
               <Nav.Link eventKey="vCard">vCard</Nav.Link>
             </Nav.Item>
           </Col>
 
-          <Col>
+          <Col className="m-4">
             <Nav.Item>
               <Nav.Link eventKey="WiFi">WiFi</Nav.Link>
             </Nav.Item>
           </Col>
 
-          <Col>
+          <Col className="m-4">
             <Nav.Item>
               <Nav.Link eventKey="URL">URL</Nav.Link>
             </Nav.Item>

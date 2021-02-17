@@ -3,20 +3,21 @@ import Link from 'next/link';
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
-import Nav from 'react-bootstrap/Nav';
+import Navbar from 'react-bootstrap/Navbar';
 
 import TMUSLOGO from './tmo-logo';
 
-export default function Layout({appTitle}) {
+export default function QRNav() {
 
   return (
     <>
-      <header>
-        <span>
+      <Navbar sticky="top">
+        <Navbar.Brand href="/">
           <TMUSLOGO />
-          QR Generator
-        </span>
-      </header>
+        </Navbar.Brand>
+        
+          <b>QR</b> Generator
+      </Navbar>
     </>
   )
 }
