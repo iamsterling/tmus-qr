@@ -14,7 +14,10 @@ export default function VCardInput() {
             <legend>Name & Title</legend>
 
             <Col>
-              <Form.Control placeholder="First Name" />
+              <Form.Control
+                type="text"
+                value=""
+                placeholder="First Name" />
             </Col>
 
             <Col>
@@ -54,7 +57,7 @@ export default function VCardInput() {
 
         <Row className="mb-2 g-1">
           <Col xs={6}>
-            <Form.Control />
+            <Form.Control placeholder="@FirstLast"/>
           </Col>
         </Row>
 

@@ -5,8 +5,9 @@ $tmobile-pink:               #e20074;
 $bg:                         white;
 
 @import 'override.scss';
-@import './components/vcard.scss';
 @import './components/nav.scss';
+@import './components/vcard.scss';
+
 @import '../node_modules/bootstrap/scss/bootstrap.scss';
 
 body {
