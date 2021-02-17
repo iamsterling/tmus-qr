@@ -5,14 +5,14 @@ import Header from '../fragments/global/header.js';
 
 
 export default function QrLayout({children}) {
-  var {appTitle} = `Test`
+  var appTitle = `TMUS QR`
 
   return (
     <>
       {/* BEGIN QR_LAYOUT
       // ---------------- */}
       <Head>
-        <title appTitle={appTitle}></title>
+        <title>{appTitle}</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
 

@@ -12,16 +12,10 @@ export default function Layout({appTitle}) {
   return (
     <>
       <header>
-        <Container>
-          <Row>
-            <Col>
-              <TMUSLOGO />
-              <p>QR Generator</p>
-            </Col>
-
-          </Row>
-        </Container>
-
+        <span>
+          <TMUSLOGO />
+          QR Generator
+        </span>
       </header>
     </>
   )
