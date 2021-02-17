@@ -15,8 +15,6 @@ export default function VCardInput() {
 
             <Col>
               <Form.Control
-                type="text"
-                value=""
                 placeholder="First Name" />
             </Col>
 
