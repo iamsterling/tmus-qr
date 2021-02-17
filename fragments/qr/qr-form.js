@@ -41,7 +41,7 @@ export default function QRForm({children}) {
 
 				<>
 					<Container>
-						<Row>
+						<Row className="mt-2">
 							<Col xs={6} md={4} lg={3}>
 								<Button>Get QR</Button>
 							</Col>
