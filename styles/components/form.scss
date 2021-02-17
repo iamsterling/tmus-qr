@@ -1,7 +1,9 @@
 form {
-
+  background: blue;
+  
   input {
     background-color:green;
+
     :focus{
     background:black;
     border: solid 2px $primary-color;
