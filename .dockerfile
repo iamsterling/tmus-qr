@@ -1,7 +1,7 @@
 # establish base image & update node
 # ------------------
 FROM arm64v8/node:alpine
-RUN npm install -g npm@stable
+RUN npm install -g npm@latest
 
 # create & set working directory
 # ------------------

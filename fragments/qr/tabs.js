@@ -12,26 +12,26 @@ import UrlInput from './url';
 
 import QRForm from './qr-form';
 
-export default function QRTabs() {
+export default function QRTabs({tabContent}) {
 
   return(
     <Tab.Container defaultActiveKey="vCard">
-      <Row className="mb-4">
+      <Row>
         <Nav justify variant="pills">
 
-          <Col className="m-4">
+          <Col>
             <Nav.Item>
               <Nav.Link eventKey="vCard">vCard</Nav.Link>
             </Nav.Item>
           </Col>
 
-          <Col className="m-4">
+          <Col>
             <Nav.Item>
               <Nav.Link eventKey="WiFi">WiFi</Nav.Link>
             </Nav.Item>
           </Col>
 
-          <Col className="m-4">
+          <Col>
             <Nav.Item>
               <Nav.Link eventKey="URL">URL</Nav.Link>
             </Nav.Item>
@@ -40,30 +40,7 @@ export default function QRTabs() {
         </Nav>
 
         <Tab.Content>
-
-          <Tab.Pane eventKey="vCard">
-
-            <QRForm>
-              <VCardInput />
-            </QRForm>
-
-
-          </Tab.Pane>
-
-          <Tab.Pane eventKey="WiFi">
-
-            <QRForm>
-              <WifiInput />
-            </QRForm>
-
-          </Tab.Pane>
-
-          <Tab.Pane eventKey="URL">
-            <QRForm>
-              <UrlInput />
-            </QRForm>
-          </Tab.Pane>
-
+          {tabContent}
         </Tab.Content>
       </Row>
     </Tab.Container>

@@ -12,7 +12,8 @@ import Col from 'react-bootstrap/Col';
 import Button from 'react-bootstrap/Button';
 
 
-export default function QRForm({children}) {
+export default function QRForm({formContent}) {
+
 
 	return(
 		<Formik
@@ -71,7 +72,7 @@ export default function QRForm({children}) {
 
 			<Form>
 				<>
-					{children}
+					{formContent}
 				</>
 
 				<>

@@ -1,5 +1,4 @@
-.nav-item {
-  text-align: right;
-  border:green;
-  background-color: black;
+.active {
+  background-color: green;
+  border-bottom: 2px solid $primary;
 }
