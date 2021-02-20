@@ -1,8 +1,6 @@
 import Head from 'next/head';
-import QRNav from '../fragments/global/nav.js';
-import Footer from '../fragments/global/footer.js';
-
-
+import QRNav from './nav.js';
+import Footer from './footer.js';
 
 export default function QrLayout({children}) {
   var appTitle = `TMUS QR`
@@ -14,13 +12,13 @@ export default function QrLayout({children}) {
       <Head>
         <title>{appTitle}</title>
         <link rel="icon" href="/favicon.ico" />
+        <script type="text/javascript" src="/public/generate.js"></script>
       </Head>
 
       <QRNav />
 
       <main>{children}</main>
 
-      <Footer />
 
     </>
   )

@@ -5,7 +5,7 @@ import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import Navbar from 'react-bootstrap/Navbar';
 
-import TMUSLOGO from './tmo-logo';
+import TmoLogo from './tmo-logo';
 
 export default function QRNav() {
 
@@ -13,9 +13,7 @@ export default function QRNav() {
     <>
       <Navbar sticky="top">
         <Navbar.Brand>
-          <Link href="/">
-            <TMUSLOGO />
-          </Link>
+          <div><TmoLogo /></div>
         </Navbar.Brand>
 
           <b>QR</b> Generator

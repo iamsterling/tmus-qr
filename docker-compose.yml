@@ -9,12 +9,6 @@ services:
 #    image: arm64v8/node
 #    restart: unless-stopped
 #    env_file: .env
-#    environment:
-#      - MONGO_USERNAME=$MONGO_USERNAME
-#      - MONGO_PASSWORD=$MONGO_PASSWORD
-#      - MONGO_HOSTNAME=db
-#      - MONGO_PORT=$MONGO_PORT
-#      - MONGO_DB=$MONGO_DB
     ports:
       # container : host
       - "3000:3000"

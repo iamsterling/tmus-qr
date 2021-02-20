@@ -1,5 +1,3 @@
-
-
 import { Formik } from "formik";
 import { Form } from 'formik';
 
@@ -12,7 +10,27 @@ import Col from 'react-bootstrap/Col';
 import Button from 'react-bootstrap/Button';
 
 
-export default function QRForm({formContent}) {
+
+
+{/*
+const vcardData = [
+  { fullname: {fname, lname} },
+  { company: {company} },
+  { title: {title} },
+  { phone: {phone} },
+  { address: {address} },
+];
+
+const wifiData = [
+  { encryption: ""},
+  { ssid: ""},
+  { passphrase: ""},
+];
+
+const urlData = "";
+*/}
+
+export function QRForm({children}) {
 
 
 	return(
@@ -68,24 +86,38 @@ export default function QRForm({formContent}) {
 				})
 			}
 
+			// onsubmit=trigger Qr generator{qrdata}
 		>
 
+		<Container>
 			<Form>
-				<>
-					{formContent}
-				</>
-
-				<>
-					<Container>
-						<Row className="mt-2">
-							<Col xs={6} md={4} lg={3}>
-								<Button type="submit">Get QR</Button>
-							</Col>
-						</Row>
-					</Container>
-				</>
-
+				<>{children}</>
 			</Form>
-		</Formik>
+		</Container>
+	</Formik>
 	)
-}
+};
+
+
+export function VCardInput() {
+  return(
+    <>
+      <p>VCardInput</p>
+    </>
+  )
+
+};
+export function WifiInput() {
+  return(
+    <>
+      <p>WifiInput</p>
+    </>
+  )
+};
+export function UrlInput() {
+  return(
+    <>
+      <p>UrlInput</p>
+    </>
+  )
+};
