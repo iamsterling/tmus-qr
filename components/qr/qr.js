@@ -88,7 +88,7 @@ class QROutput extends React.Component {
           this.qrcode.clear();
       }
       var options = {
-          text: "BEGIN:VCARD Lorem Ipsum dolor sit ametLorem Ipsum dolor sit ametLorem Ipsum dolor sit ametLorem Ipsum dolor sit ametLorem Ipsum dolor sit ametLorem Ipsum dolor sit amet END:VCARD",
+          text: "BEGIN:VCARD\r\nVERSION:4.0\r\nN:Sterling Holt;;;\r\nADR;DOM;PARCEL;HOME:;;880 S Preston Rd #40;Prosper;TX;75078;USA.\r\nEMAIL;INTERNET:james.holt28@t-mobile.com\r\nTEL;CELL:972-469-0082\r\nEND:VCARD",
           colorDark : "#e20074",
       		colorLight : "#ffffff",
       		correctLevel : QRCode.CorrectLevel.L, // H, M, Q, H
@@ -96,13 +96,13 @@ class QROutput extends React.Component {
       		// ====== dotScale
       		dotScale: 0.5,
 
-      		// ====== Backgroud Image
+          backgroundImage: 'tmologo.svg', // Background Image
+      		backgroundImageAlpha: 1, // Background image transparency, value between 0 and 1. default is 1.
+      		autoColor: true, // Automatic color adjustment(for data block)
+              autoColorDark: "rgba(0, 0, 0, .6)", // Automatic color: dark CSS color
+              autoColorLight: "rgba(255, 255, 255, .7)", // Automatic color: light CSS color
 
-      		backgroundImage: 'tmologo.svg', // Background Image
-      		backgroundImageAlpha: 1,
-          autoColor: true, // Automatic color adjustment(for data block)
-              autoColorDark: "rgba(0, 0, 0, 0.7)", // Automatic color: dark CSS color
-              autoColorLight: "rgba(255, 255, 255, 1)", // Automatic color: light CSS color
+
 
       };
       this.qrcode=new QRCode(this.qrcodeDOM.current, options);
