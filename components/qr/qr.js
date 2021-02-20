@@ -12,47 +12,54 @@ import QRCode from '../../public/generate';
 
 import Tab from 'react-bootstrap/Tab';
 import Nav from 'react-bootstrap/Nav';
+import Col from 'react-bootstrap/Col';
 import Button from 'react-bootstrap/Button';
 import React from 'react';
 
 export function QRLogic() {
   return(
     <>
+
       <Tab.Container defaultActiveKey="vCard">
-        <Nav variant="pills">
+        <Col sm={12} md={8} lg={4}>
+          <Nav>
 
-          <Nav.Item>
-            <Nav.Link eventKey="vCard">vCard</Nav.Link>
-          </Nav.Item>
+            <Nav.Item>
+              <Nav.Link eventKey="vCard">vCard</Nav.Link>
+            </Nav.Item>
 
-          <Nav.Item>
-            <Nav.Link>
-            </Nav.Link>
-          </Nav.Item>
-        </Nav>
-        <Tab.Content>
-          {/* QR INPUT
-          // ----------- */}
-          <Tab.Pane eventKey="vCard">
-            <QRForm>
-              <VCardInput />
-            </QRForm>
-          </Tab.Pane>
+            <Nav.Item>
+              <Nav.Link>
+              </Nav.Link>
+            </Nav.Item>
+          </Nav>
 
-          <Tab.Pane>
-            <QRForm>
-              <WifiInput />
-            </QRForm>
-          </Tab.Pane>
-          <Tab.Pane>
-            <QRForm>
-              <UrlInput />
-            </QRForm>
-          </Tab.Pane>
-            {/* QR OUTPUT
+
+          <Tab.Content>
+            {/* QR INPUT
             // ----------- */}
-            <QROutput />
-        </Tab.Content>
+            <Tab.Pane eventKey="vCard">
+              <QRForm>
+                <VCardInput />
+              </QRForm>
+            </Tab.Pane>
+
+            <Tab.Pane>
+              <QRForm>
+                <WifiInput />
+              </QRForm>
+            </Tab.Pane>
+            <Tab.Pane>
+              <QRForm>
+                <UrlInput />
+              </QRForm>
+            </Tab.Pane>
+          </Tab.Content>
+        </Col>
+
+        <Col sm={12} md={8} lg={4}>
+          <QROutput/>
+        </Col>
       </Tab.Container>
     </>
 
