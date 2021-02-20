@@ -5,6 +5,8 @@ import {
   QRForm,
 } from './form';
 
+import Image from 'next/image'
+
 import QRCode from '../../public/generate';
 
 
@@ -79,7 +81,7 @@ class QROutput extends React.Component {
           this.qrcode.clear();
       }
       var options = {
-          text: "Lorem Ipsum dolor sit ametLorem Ipsum dolor sit ametLorem Ipsum dolor sit ametLorem Ipsum dolor sit ametLorem Ipsum dolor sit ametLorem Ipsum dolor sit amet",
+          text: "BEGIN:VCARD Lorem Ipsum dolor sit ametLorem Ipsum dolor sit ametLorem Ipsum dolor sit ametLorem Ipsum dolor sit ametLorem Ipsum dolor sit ametLorem Ipsum dolor sit amet END:VCARD",
           colorDark : "#e20074",
       		colorLight : "#ffffff",
       		correctLevel : QRCode.CorrectLevel.L, // H, M, Q, H
@@ -89,8 +91,12 @@ class QROutput extends React.Component {
 
       		// ====== Backgroud Image
 
-      		backgroundImage: '', // Background Image
-      		backgroundImageAlpha: 0.2,
+      		backgroundImage: 'tmologo.svg', // Background Image
+      		backgroundImageAlpha: 1,
+          autoColor: true, // Automatic color adjustment(for data block)
+              autoColorDark: "rgba(0, 0, 0, 0.7)", // Automatic color: dark CSS color
+              autoColorLight: "rgba(255, 255, 255, 1)", // Automatic color: light CSS color
+
       };
       this.qrcode=new QRCode(this.qrcodeDOM.current, options);
   }
