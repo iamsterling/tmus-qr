@@ -7,6 +7,7 @@ import {
 
 import QRCode from '../../public/generate';
 
+
 import Tab from 'react-bootstrap/Tab';
 import Nav from 'react-bootstrap/Nav';
 import Button from 'react-bootstrap/Button';
@@ -30,14 +31,13 @@ export function QRLogic() {
         <Tab.Content>
           {/* QR INPUT
           // ----------- */}
-          <Tab.Pane>
+          <Tab.Pane eventKey="vCard">
             <QRForm>
-
               <VCardInput />
             </QRForm>
           </Tab.Pane>
 
-          <Tab.Pane eventKey="vCard">
+          <Tab.Pane>
             <QRForm>
               <WifiInput />
             </QRForm>
@@ -79,8 +79,18 @@ class QROutput extends React.Component {
           this.qrcode.clear();
       }
       var options = {
-          text: "BEGIN:VCARD N:Sterling Holt END:VCARD",
-          colorDark : color?color:'#000000',
+          text: "Lorem Ipsum dolor sit ametLorem Ipsum dolor sit ametLorem Ipsum dolor sit ametLorem Ipsum dolor sit ametLorem Ipsum dolor sit ametLorem Ipsum dolor sit amet",
+          colorDark : "#e20074",
+      		colorLight : "#ffffff",
+      		correctLevel : QRCode.CorrectLevel.L, // H, M, Q, H
+
+      		// ====== dotScale
+      		dotScale: 0.5,
+
+      		// ====== Backgroud Image
+
+      		backgroundImage: '', // Background Image
+      		backgroundImageAlpha: 0.2,
       };
       this.qrcode=new QRCode(this.qrcodeDOM.current, options);
   }

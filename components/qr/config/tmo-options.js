@@ -1,9 +1,3 @@
-background-image: tmobile-svg, 100%
-
-
-
-
-
 var options = {
 		// ====== Basic
 		text: {qrData},
@@ -27,13 +21,11 @@ var options = {
 
 		// ====== Backgroud Image
 
-		backgroundImage: '', // Background Image
+		backgroundImage: '../../public/tmologo.svg', // Background Image
 		backgroundImageAlpha: 1, // Background image transparency, value between 0 and 1. default is 1.
-		/*
-    autoColor: false, // Automatic color adjustment(for data block)
+		autoColor: true, // Automatic color adjustment(for data block)
         autoColorDark: "rgba(0, 0, 0, .6)", // Automatic color: dark CSS color
         autoColorLight: "rgba(255, 255, 255, .7)", // Automatic color: light CSS color
-    */
 
 		// ====== Colorful
 		// === Posotion Pattern(Eye) Color
