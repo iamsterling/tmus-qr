@@ -12,7 +12,7 @@ export default function QrLayout({children}) {
       <Head>
         <title>{appTitle}</title>
         <link rel="icon" href="/favicon.ico" />
-        <script type="text/javascript" src="public/generate.js"></script>
+        //<script type="text/javascript" src="public/generate.js"></script>
       </Head>
 
       <QRNav />

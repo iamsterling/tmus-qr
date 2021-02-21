@@ -1,5 +1,8 @@
-import { Formik } from "formik";
-import { Form } from 'formik';
+import {
+	Formik,
+	Form,
+	Field,
+} from "formik";
 
 import * as Yup from 'yup';
 
@@ -35,59 +38,12 @@ export function QRForm({children}) {
 
 	return(
 		<Formik
-			initialValues={{
-				vCard: {
-					fullname: {
-						fname: "",
-						lname: "",
-					},
-
-					phone:"",
-					email:"",
-					twitter:"",
-					address:"",
-				},
-
-				errors: {},
-				touched: {},
-				handleChange: {},
-				handleBlur: {},
-				handleSubmit: {},
-				isSubmitting: {},
-			}}
-
-			validationSchema={
-				Yup.object().shape({
-
-					fname: Yup.string()
-						.max(255)
-						.required("First name is required"),
-
-					lname: Yup.string()
-						.max(255)
-						.required("Last name is required"),
-
-					title: Yup.string()
-						.max(255)
-						.required("Title is required"),
-
-					brand: Yup.string()
-						.max(255)
-						.required("brand is required"),
-
-					phone: Yup.string()
-						.max(255)
-						.required("Phone number is required"),
-
-					email: Yup.string()
-						.email("Must be a valid email")
-						.max(255)
-						.required("Email is required"),
-				})
-			}
+			initialValues={{}
 
 			// onsubmit=trigger Qr generator{qrdata}
-		>
+		}>
+
+
 
 		<Container>
 			<Form>
@@ -95,29 +51,41 @@ export function QRForm({children}) {
 			</Form>
 		</Container>
 	</Formik>
+
 	)
 };
+
+
 
 
 export function VCardInput() {
   return(
     <>
-      <p>VCardInput</p>
+			<legend>Name</legend>
+      <Field />
     </>
   )
-
 };
+
+
+
 export function WifiInput() {
   return(
     <>
-      <p>WifiInput</p>
+      <legend>Wifi</legend>
+			<Field />
     </>
   )
 };
+
+
+
+
 export function UrlInput() {
   return(
     <>
-      <p>UrlInput</p>
+      <legend>Url</legend>
+			<Field />
     </>
   )
 };
