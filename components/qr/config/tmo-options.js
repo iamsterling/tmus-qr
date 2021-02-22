@@ -1,6 +1,6 @@
 var options = {
 		// ====== Basic
-		text: {qrData},
+		text: "BEGIN:VCARD\r\nVERSION:4.0\r\nN:Sterling Holt;;;\r\nORG:T-Mobile\r\nTITLE:Mobile Expert\r\nADR;DOM;PARCEL;HOME:;;880 S Preston Rd #40;Prosper;TX;75078;USA.\r\nEMAIL;INTERNET:james.holt28@t-mobile.com\r\nTEL;CELL:972-469-0082\r\nEND:VCARD",,
 		width: 256,
 		height: 256,
 		colorDark : "#e20074",
@@ -8,24 +8,25 @@ var options = {
 		correctLevel : QRCode.CorrectLevel.L, // H, M, Q, H
 
 		// ====== dotScale
-		dotScale: 0.5, // For body block, must be greater than 0, less than or equal to 1. default is 1
+		dotScale: 0.4, // For body block, must be greater than 0, less than or equal to 1. default is 1
     /*
 		dotScaleTiming: 1, // Dafault for timing block , must be greater than 0, less than or equal to 1. default is 1
 		dotScaleTiming_H: undefined, // For horizontal timing block, must be greater than 0, less than or equal to 1. default is 1
 		dotScaleTiming_V: undefined, // For vertical timing block, must be greater than 0, less than or equal to 1. default is 1
-
-		dotScaleA: 1, // Dafault for alignment block, must be greater than 0, less than or equal to 1. default is 1
-		dotScaleAO: undefined, // For alignment outer block, must be greater than 0, less than or equal to 1. default is 1
-		dotScaleAI: undefined, // For alignment inner block, must be greater than 0, less than or equal to 1. default is 1
 		*/
+
+		dotScaleA: 0.1, // Dafault for alignment block, must be greater than 0, less than or equal to 1. default is 1
+		dotScaleAO: 0.6, // For alignment outer block, must be greater than 0, less than or equal to 1. default is 1
+		dotScaleAI: 1, // For alignment inner block, must be greater than 0, less than or equal to 1. default is 1
+
 
 		// ====== Backgroud Image
 
-		backgroundImage: '../../public/tmologo.svg', // Background Image
+		backgroundImage: 'tmologo.svg', // Background Image
 		backgroundImageAlpha: 1, // Background image transparency, value between 0 and 1. default is 1.
 		autoColor: true, // Automatic color adjustment(for data block)
         autoColorDark: "rgba(0, 0, 0, .6)", // Automatic color: dark CSS color
-        autoColorLight: "rgba(255, 255, 255, .7)", // Automatic color: light CSS color
+        autoColorLight: "rgba(255, 255, 255, .6)", // Automatic color: light CSS color
 
 		// ====== Colorful
 		// === Posotion Pattern(Eye) Color

@@ -12,4 +12,4 @@ x-qq:21588891
 END:VCARD
 
 
-"BEGIN:VCARD\r\nVERSION:4.0\r\nN:Sterling Holt;;;\r\nADR;DOM;PARCEL;HOME:;;880 S Preston Rd #40;Prosper;TX;75078;USA.\r\nEMAIL;INTERNET:james.holt28@t-mobile.com\r\nTEL;CELL:972-469-0082\r\nEND:VCARD"
+<p>"BEGIN:VCARD\r\nVERSION:4.0\r\nN:{fname} {lname};;;\r\nORG:{company}\r\nTITLE:{jtitle}\r\nADR;DOM;PARCEL;HOME:;;{addressStreet};{addressCity};{addressState};{addressZip};USA.\r\nEMAIL;INTERNET:{email}\r\nTEL;CELL:{phone}\r\nEND:VCARD",</p>
