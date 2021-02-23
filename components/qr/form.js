@@ -15,77 +15,83 @@ import Button from 'react-bootstrap/Button';
 
 
 
-{/*
-const vcardData = [
-  { fullname: {fname, lname} },
-  { company: {company} },
-  { title: {title} },
-  { phone: {phone} },
-  { address: {address} },
-];
 
-const wifiData = [
-  { encryption: ""},
-  { ssid: ""},
-  { passphrase: ""},
-];
 
-const urlData = "";
-*/}
 
-export function QRForm({children}) {
+export function VCardInput(props){
+  console.log(props)
+	
+  return(
+    <>
+      <QRForm
+        fname={props.fname}
+				lname={props.lname}
+        >
 
+        <legend>Name & Title</legend>
+        <Field name="fname" placeholder="First Name"/>
+				<Field name="lname" placeholder="Last Name"/>
+
+        <Button>Test</Button>
+      </QRForm>
+    </>
+  )
+};
+
+
+
+
+export function WifiInput(props){
+  return(
+    <>
+      <QRForm
+        encryption={props.encryption}
+        ssid={props.ssid}
+        passphrase={props.passphrase}>
+
+				<legend>WiFi info</legend>
+        <Field as="select" name="encryption">
+					<option>WPA2</option>
+				</Field>
+        <Field name="ssid" />
+        <Field name="passphrase" />
+      </QRForm>
+    </>
+  )
+};
+
+
+
+
+export function UrlInput(props){
+  return(
+    <>
+      <QRForm url={props.url}>
+        <Field name="url"/>
+      </QRForm>
+    </>
+  )
+};
+
+
+
+export default function QRForm(props) {
 
 	return(
 		<Formik
-			initialValues={{}
+			initialValues={{
+				fname:"",
+				lname:"",
+				title:"",
+				company:"",
+				email:"",
+				phone:"",
+				address:"",
+			}}>
 
-			// onsubmit=trigger Qr generator{qrdata}
-		}>
-
-
-
-		<Container>
-			<Form>
-				<>{children}</>
-			</Form>
-		</Container>
+		<Form>
+			{props.children}
+		</Form>
 	</Formik>
-
 	)
-};
-
-
-
-
-export function VCardInput() {
-  return(
-    <>
-			<legend>Name</legend>
-      <Field />
-    </>
-  )
-};
-
-
-
-export function WifiInput() {
-  return(
-    <>
-      <legend>Wifi</legend>
-			<Field />
-    </>
-  )
-};
-
-
-
-
-export function UrlInput() {
-  return(
-    <>
-      <legend>Url</legend>
-			<Field />
-    </>
-  )
 };

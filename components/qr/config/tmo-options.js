@@ -1,55 +1,32 @@
 var options = {
 		// ====== Basic
-		text: {qrData},
-		width: 256,
-		height: 256,
+		text: "BEGIN:VCARD\r\nVERSION:4.0\r\nN:Sterling Holt;;;\r\nORG:T-Mobile\r\nTITLE:Mobile Expert\r\nADR;DOM;PARCEL;HOME:;;880 S Preston Rd #40;Prosper;TX;75078;USA.\r\nEMAIL;INTERNET:james.holt28@t-mobile.com\r\nTEL;CELL:972-469-0082\r\nEND:VCARD",,
+		width: 250,
+		height: 250,
 		colorDark : "#e20074",
 		colorLight : "#ffffff",
 		correctLevel : QRCode.CorrectLevel.L, // H, M, Q, H
 
 		// ====== dotScale
-		dotScale: 0.5, // For body block, must be greater than 0, less than or equal to 1. default is 1
-    /*
-		dotScaleTiming: 1, // Dafault for timing block , must be greater than 0, less than or equal to 1. default is 1
-		dotScaleTiming_H: undefined, // For horizontal timing block, must be greater than 0, less than or equal to 1. default is 1
-		dotScaleTiming_V: undefined, // For vertical timing block, must be greater than 0, less than or equal to 1. default is 1
+		dotScale: 0.4, // For body block, must be greater than 0, less than or equal to 1. default is 1
 
-		dotScaleA: 1, // Dafault for alignment block, must be greater than 0, less than or equal to 1. default is 1
-		dotScaleAO: undefined, // For alignment outer block, must be greater than 0, less than or equal to 1. default is 1
-		dotScaleAI: undefined, // For alignment inner block, must be greater than 0, less than or equal to 1. default is 1
+		dotScaleTiming: 0.1, // Dafault for timing block , must be greater than 0, less than or equal to 1. default is 1
+		/*dotScaleTiming_H: undefined, // For horizontal timing block, must be greater than 0, less than or equal to 1. default is 1
+		dotScaleTiming_V: undefined, // For vertical timing block, must be greater than 0, less than or equal to 1. default is 1
 		*/
+
+		dotScaleA: 0.1, // Dafault for alignment block, must be greater than 0, less than or equal to 1. default is 1
+		dotScaleAO: 0.6, // For alignment outer block, must be greater than 0, less than or equal to 1. default is 1
+		dotScaleAI: 1, // For alignment inner block, must be greater than 0, less than or equal to 1. default is 1
+
 
 		// ====== Backgroud Image
 
-		backgroundImage: '../../public/tmologo.svg', // Background Image
+		backgroundImage: 'tmologo.svg', // Background Image
 		backgroundImageAlpha: 1, // Background image transparency, value between 0 and 1. default is 1.
 		autoColor: true, // Automatic color adjustment(for data block)
         autoColorDark: "rgba(0, 0, 0, .6)", // Automatic color: dark CSS color
-        autoColorLight: "rgba(255, 255, 255, .7)", // Automatic color: light CSS color
-
-		// ====== Colorful
-		// === Posotion Pattern(Eye) Color
-		/*
-		PO: '#e1622f', // Global Posotion Outer color. if not set, the defaut is `colorDark`
-		PI: '#aa5b71', // Global Posotion Inner color. if not set, the defaut is `colorDark`
-		PO_TL:'', // Posotion Outer color - Top Left
-		PI_TL:'', // Posotion Inner color - Top Left
-		PO_TR:'', // Posotion Outer color - Top Right
-		PI_TR:'', // Posotion Inner color - Top Right
-		PO_BL:'', // Posotion Outer color - Bottom Left
-		PI_BL:'', // Posotion Inner color - Bottom Left
-		*/
-		// === Alignment Color
-		/*
-		AO: '', // Alignment Outer. if not set, the defaut is `colorDark`
-		AI: '', // Alignment Inner. if not set, the defaut is `colorDark`
-		*/
-		// === Timing Pattern Color
-		/*
-		timing: '#e1622f', // Global Timing color. if not set, the defaut is `colorDark`
-		timing_H: '', // Horizontal timing color
-		timing_V: '', // Vertical timing color
-		*/
+        autoColorLight: "rgba(255, 255, 255, .6)", // Automatic color: light CSS color
 
 		// ===== Event Handler
 		/*

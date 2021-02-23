@@ -1,13 +1,13 @@
 import Image from 'next/image'
-
-import QRCode from './generate';
-
+import React from 'react';
 
 import Tab from 'react-bootstrap/Tab';
 import Nav from 'react-bootstrap/Nav';
 import Col from 'react-bootstrap/Col';
 import Button from 'react-bootstrap/Button';
-import React from 'react';
+
+import QRCode from './generate';
+
 
 export default function QROutput(props) {
   return(
