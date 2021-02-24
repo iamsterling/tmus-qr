@@ -57,14 +57,14 @@ class Logic extends React.Component {
       		correctLevel : QRCode.CorrectLevel.L, // H, M, Q, H
 
       		// ====== dotScale
-      		dotScale: 0.4, // For body block, must be greater than 0, less than or equal to 1. default is 1
+      		dotScale: 0.5, // For body block, must be greater than 0, less than or equal to 1. default is 1
 
-      		dotScaleTiming: 0.7, // Dafault for timing block , must be greater than 0, less than or equal to 1. default is 1
+      		dotScaleTiming: 0.8, // Dafault for timing block , must be greater than 0, less than or equal to 1. default is 1
       		/*dotScaleTiming_H: undefined, // For horizontal timing block, must be greater than 0, less than or equal to 1. default is 1
       		dotScaleTiming_V: undefined, // For vertical timing block, must be greater than 0, less than or equal to 1. default is 1
       		*/
 
-          dotScaleAO: 0.8, // For alignment outer block, must be greater than 0, less than or equal to 1. default is 1
+          dotScaleAO: 1, // For alignment outer block, must be greater than 0, less than or equal to 1. default is 1
       		dotScaleAI: 0.4, // For alignment inner block, must be greater than 0, less than or equal to 1. default is 1
 
       		// ====== Backgroud Image
@@ -72,8 +72,8 @@ class Logic extends React.Component {
       		backgroundImage: 'tmologo.svg', // Background Image
       		backgroundImageAlpha: 1, // Background image transparency, value between 0 and 1. default is 1.
       		autoColor: true, // Automatic color adjustment(for data block)
-              autoColorDark: "rgba(0, 0, 0, 0.9)", // Automatic color: dark CSS color
-              autoColorLight: "rgba(255, 255, 255, 0.7)", // Automatic color: light CSS color
+              autoColorDark: "rgba(0, 0, 0, 1)", // Automatic color: dark CSS color
+              autoColorLight: "rgba(255, 255, 255, 0.5)", // Automatic color: light CSS color
       };
 
       this.qrcode=new QRCode(this.qrcodeDOM.current, options);
@@ -82,7 +82,7 @@ class Logic extends React.Component {
 
 
 	componentDidMount(qrcodeDOM) {
-		this.generate
+		this.generate()
 	}
 
 
@@ -106,7 +106,7 @@ class Logic extends React.Component {
 								<Container>
 									<Row className="g-1 mb-2">
 
-										<legend>Name & Title</legend>
+										<legend>Contact info:</legend>
 
 										<Col>
 											<Form.Control
@@ -199,8 +199,8 @@ class Logic extends React.Component {
 									</Row>
 
 
-									<Row className="mb-4">
-										<Col xs={3} sm={4} md={5}>
+									<Row>
+										<Col xs={12}>
 								      <Button onClick={this.generate.bind(this, '#ff0000')}>
 												Get QR
 											</Button>
@@ -213,7 +213,7 @@ class Logic extends React.Component {
 					</Row>
 
 					<Row>
-						<Col xs={{offset:3}} sm={{offset:2}} lg={{offset:1}}>
+						<Col className="m-4">
 			        <div ref={this.qrcodeDOM} />
 						</Col>
 					</Row>
