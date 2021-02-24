@@ -2,19 +2,12 @@ import React from 'react';
 import Image from 'next/image'
 import QRCode from './generate';
 
-import {
-	Formik,
-	Form,
-	Field,
-} from "formik";
-
-import * as Yup from 'yup';
-
 //import { Form } from "formik";
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import Button from 'react-bootstrap/Button';
+import Form from 'react-bootstrap/Form';
 
 
 class Logic extends React.Component {
@@ -34,9 +27,13 @@ class Logic extends React.Component {
 			company: "T-Mobile",
 			email: (props.email),
 			phone: (props.phone),
-			location: (props.address),
+			addressStreet: (props.addressStreet),
+			addressCity: (props.addressCity),
+			addressState: (props.addressState),
+			addressZip: (props.addressZip),
+			location: "",
 
-			qrData: `BEGIN:VCARD\r\nVERSION:4.0\r\nN:${props.lname};${props.fname};;;\r\nFN:${props.fname} ${props.lname}\r\nTITLE:${props.title};\r\nORG:${props.company};\r\nEMAIL;type=INTERNET;type=pref:${props.email}\r\nTEL;type=WORK;type=VOICE;type=pref:${props.phone}\r\nADR;type=WORK;type=pref:;;;${props.location};;;\r\nEND:VCARD`,
+			qrData: `BEGIN:VCARD\r\nVERSION:4.0\r\nN:Holt;Sterling;;;\r\nFN:Sterling Holt\r\nTITLE:Mobile Expert;\r\nORG:T-Mobile;\r\nEMAIL;type=INTERNET;type=pref:james.holt28@t-mobile.com\r\nTEL;type=WORK;type=VOICE;type=pref:972-469-0082\r\nADR;type=WORK;type=pref:;;;880 S. Preston Rd. #40, Prosper, TX 75078;;;\r\nEND:VCARD`,
 		}
 
 		this.handleChange = this.handleChange.bind(this)
@@ -94,58 +91,130 @@ class Logic extends React.Component {
 	handleChange(event){
 		const {name, value} = event.target
     this.setState({ [name]: value })
-		this.setState({ qrData: `BEGIN:VCARD\r\nVERSION:4.0\r\nN:${this.state.lname};${this.state.fname};;;\r\nFN:${this.state.fname} ${this.state.lname}\r\nTITLE:${this.state.title};\r\nORG:${this.state.company};\r\nEMAIL;type=INTERNET;type=pref:${this.state.email}\r\nTEL;type=WORK;type=VOICE;type=pref:${this.state.phone}\r\nADR;type=WORK;type=pref:;;;${this.state.location};;;\r\nEND:VCARD`});
+		this.setState({ location: `${this.state.addressStreet}, ${this.state.addressCity}, ${this.state.addressState}, ${this.state.addressZip}`})
+		this.setState({ qrData: `BEGIN:VCARD\r\nVERSION:4.0\r\nN:${this.state.lname};${this.state.fname};;;\r\nFN:${this.state.fname} ${this.state.lname}\r\nTITLE:${this.state.title}\r\nORG:${this.state.company}\r\nEMAIL;type=INTERNET;type=pref:${this.state.email}\r\nTEL;type=WORK;type=VOICE;type=pref:${this.state.phone}\r\nADR;type=WORK;type=pref:;;;${this.state.location};;;\r\nEND:VCARD`})
 	}
 
 
 	render(){
 	  return(
 			<>
-		    <form onSubmit={this.state.onsubmit} ref={this.qrinput}>
-		    	<legend>Name & Title</legend>
+				<Container>
+					<Row>
+						<Col xs={12} sm={8} md={6} lg={4}>
+							<Form onSubmit={this.state.onsubmit} ref={this.qrinput}>
+								<Container>
+									<Row className="g-1 mb-2">
 
-		      <input
-						type="text"
-						name="fname"
-						placeholder="First Name"
-						value={this.state.fname}
-						onChange={this.handleChange}/>
+										<legend>Name & Title</legend>
 
-					<input
-						type="text"
-						name="lname"
-						placeholder="Last Name"
-						value={this.state.lname}
-						onChange={this.handleChange}/>
+										<Col>
+											<Form.Control
+												type="text"
+												autoComplete="off"
+												name="fname"
+												placeholder="First Name"
+												value={this.state.fname}
+												onChange={this.handleChange}/>
+										</Col>
 
-					<input
-						type="text"
-						name="title"
-						placeholder="Title"
-						value={this.state.title}
-						onChange={this.handleChange}/>
+										<Col>
+											<Form.Control
+												type="text"
+												name="lname"
+												placeholder="Last Name"
+												value={this.state.lname}
+												onChange={this.handleChange}/>
+										</Col>
+									</Row>
 
-					<input
-						type="email"
-						name="email"
-						placeholder="Email Address"
-						value={this.state.email}
-						onChange={this.handleChange}/>
+									<Row className="g-1 mb-2">
+										<Col>
+											<Form.Control
+												type="text"
+												name="title"
+												placeholder="Title"
+												value={this.state.title}
+												onChange={this.handleChange}/>
+										</Col>
 
-					<input
-						type="tel"
-						name="phone"
-						placeholder="Phone Number"
-						value={this.state.phone}
-						onChange={this.handleChange}/>
+										<Col>
+											<Form.Control
+												type="email"
+												name="email"
+												placeholder="Email Address"
+												value={this.state.email}
+												onChange={this.handleChange}/>
+										</Col>
 
-		      <Button onClick={this.generate.bind(this, '#ff0000')}>
-						Get QR
-					</Button>
-		    </form>
+										<Col>
+											<Form.Control
+												type="tel"
+												name="phone"
+												placeholder="Phone Number"
+												value={this.state.phone}
+												onChange={this.handleChange}/>
+										</Col>
+									</Row>
 
-				<p>Result:</p>
-        <div ref={this.qrcodeDOM}></div>
+									<Row className="g-1 mb-2">
+										<Col xs={6}>
+											<Form.Control
+												type="text"
+												name="addressStreet"
+												placeholder="Street"
+												value={this.state.addressStreet}
+												onChange={this.handleChange}/>
+										</Col>
+									</Row>
+
+
+									<Row className="g-1 mb-2">
+										<Col>
+											<Form.Control
+												type="text"
+												name="addressCity"
+												placeholder="City"
+												value={this.state.addressCity}
+												onChange={this.handleChange}/>
+										</Col>
+
+										<Col>
+											<Form.Control
+												type="text"
+												name="addressState"
+												placeholder="State"
+												value={this.state.addressState}
+												onChange={this.handleChange}/>
+										</Col>
+
+										<Col>
+											<Form.Control
+												type="text"
+												name="addressZip"
+												placeholder="Zip"
+												value={this.state.addressZip}
+												onChange={this.handleChange}/>
+										</Col>
+									</Row>
+
+
+
+						      <Button onClick={this.generate.bind(this, '#ff0000')}>
+										Get QR
+									</Button>
+								</Container>
+
+				    	</Form>
+						</Col>
+					</Row>
+
+					<Row>
+						<Col xs={12} sm={4} md={6}>
+			        <div ref={this.qrcodeDOM} />
+						</Col>
+					</Row>
+				</Container>
 			</>
   	)
 	}
