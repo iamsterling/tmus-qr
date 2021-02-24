@@ -31,7 +31,7 @@ class Logic extends React.Component {
 			addressCity: (props.addressCity),
 			addressState: (props.addressState),
 			addressZip: (props.addressZip),
-			location: "",
+			location: `${props.addressStreet}, ${props.addressCity}, ${props.addressState}, ${props.addressZip}`,
 
 			qrData: `BEGIN:VCARD\r\nVERSION:4.0\r\nN:Holt;Sterling;;;\r\nFN:Sterling Holt\r\nTITLE:Mobile Expert;\r\nORG:T-Mobile;\r\nEMAIL;type=INTERNET;type=pref:james.holt28@t-mobile.com\r\nTEL;type=WORK;type=VOICE;type=pref:972-469-0082\r\nADR;type=WORK;type=pref:;;;880 S. Preston Rd. #40, Prosper, TX 75078;;;\r\nEND:VCARD`,
 		}
@@ -101,7 +101,7 @@ class Logic extends React.Component {
 			<>
 				<Container>
 					<Row>
-						<Col xs={12} sm={8} md={6} lg={4}>
+						<Col xs={12} sm={10} md={8} lg={6} xl={4}>
 							<Form onSubmit={this.state.onsubmit} ref={this.qrinput}>
 								<Container>
 									<Row className="g-1 mb-2">
@@ -199,10 +199,13 @@ class Logic extends React.Component {
 									</Row>
 
 
-
-						      <Button onClick={this.generate.bind(this, '#ff0000')}>
-										Get QR
-									</Button>
+									<Row className="mb-4">
+										<Col xs={3} sm={4} md={5}>
+								      <Button onClick={this.generate.bind(this, '#ff0000')}>
+												Get QR
+											</Button>
+										</Col>
+									</Row>
 								</Container>
 
 				    	</Form>
@@ -210,7 +213,7 @@ class Logic extends React.Component {
 					</Row>
 
 					<Row>
-						<Col xs={12} sm={4} md={6}>
+						<Col xs={{offset:3}} sm={{offset:2}} lg={{offset:1}}>
 			        <div ref={this.qrcodeDOM} />
 						</Col>
 					</Row>
