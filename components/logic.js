@@ -72,10 +72,10 @@ class Logic extends React.Component {
       		dotScaleAI: 1, // For alignment inner block, must be greater than 0, less than or equal to 1. default is 1
 
 					logo:"tmologo-sm.svg", // Relative address, relative to `easy.qrcode.min.js`
-			    //logoWidth:190, // width. default is automatic width
-			    //logoHeight:280, // height. default is automatic height
+			    logoWidth:400, // width. default is automatic width
+			    logoHeight:400, // height. default is automatic height
 			    //logoBackgroundColor:'#fffff', // Logo backgroud color, Invalid when `logBgTransparent` is true; default is '#ffffff'
-			    logoBackgroundTransparent:false, // Whether use transparent image, default is false
+			    logoBackgroundTransparent:true, // Whether use transparent image, default is false
 
 
 
