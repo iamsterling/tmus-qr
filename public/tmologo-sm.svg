@@ -6,7 +6,7 @@
             <stop stop-color="#E20074" offset="0%"></stop>
             <stop stop-color="#E20074" offset="100%"></stop>
         </linearGradient>
-        <rect id="path-2" x="167" y="167" width="532" height="532" rx="150"></rect>
+        <rect id="path-2" x="-5.68434189e-14" y="0" width="532" height="532" rx="150"></rect>
         <filter x="-23.5%" y="-14.1%" width="141.4%" height="143.2%" filterUnits="objectBoundingBox" id="filter-3">
             <feMorphology radius="35" operator="dilate" in="SourceAlpha" result="shadowSpreadOuter1"></feMorphology>
             <feOffset dx="-15" dy="45" in="shadowSpreadOuter1" result="shadowOffsetOuter1"></feOffset>
@@ -16,10 +16,12 @@
         </filter>
     </defs>
     <g id="Artboard" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-        <g id="Rectangle-Copy-2" transform="translate(433.000000, 433.000000) rotate(-360.000000) translate(-433.000000, -433.000000) ">
-            <use fill="black" fill-opacity="1" filter="url(#filter-3)" xlink:href="#path-2"></use>
-            <rect stroke="url(#linearGradient-1)" stroke-width="35" fill="#FFFFFF" fill-rule="evenodd" x="149.5" y="149.5" width="567" height="567" rx="150"></rect>
+        <g id="Group" transform="translate(167.000000, 167.000000)">
+            <g id="Rectangle-Copy-2" transform="translate(266.000000, 266.000000) rotate(-360.000000) translate(-266.000000, -266.000000) ">
+                <use fill="black" fill-opacity="1" filter="url(#filter-3)" xlink:href="#path-2"></use>
+                <rect stroke="url(#linearGradient-1)" stroke-width="35" fill="#FFFFFF" fill-rule="evenodd" x="-17.5" y="-17.5" width="567" height="567" rx="150"></rect>
+            </g>
+            <path d="M402.555499,98 L406,216.756929 L387.711692,219.677248 C382.754666,152.033939 349.608914,115.042703 292.713835,114.064434 L292.713835,362.757821 C292.713835,408.014705 300.639186,415.3316 350.099271,415.81349 L350.099271,434.783217 L181.915455,434.783217 L181.915455,415.81349 C231.37445,415.3316 239.31071,408.014705 239.31071,362.757821 L239.31071,114.064434 C182.895079,115.042703 149.268788,152.033939 144.311217,219.677248 L126,216.756929 L129.496318,98 L402.555499,98 Z M406,262.475524 L406,331.986014 L336.48951,331.986014 L336.48951,262.475524 L406,262.475524 Z M198.447552,262.475524 L198.447552,331.986014 L128.937063,331.986014 L128.937063,262.475524 L198.447552,262.475524 Z" id="Combined-Shape" fill="#E20074" fill-rule="nonzero"></path>
         </g>
-        <path d="M537.367417,304 L540,394.97629 L526.022507,397.213463 C522.233923,345.393857 496.901099,317.055928 453.417002,316.306504 L453.417002,506.823402 C453.417002,541.493408 459.474235,547.098672 497.275872,547.467834 L497.275872,562 L368.735384,562 L368.735384,547.467834 C406.536187,547.098672 412.601757,541.493408 412.601757,506.823402 L412.601757,316.306504 C369.484096,317.055928 343.784003,345.393857 339.995001,397.213463 L326,394.97629 L328.672186,304 L537.367417,304 Z M540,430 L540,483 L487,483 L487,430 L540,430 Z M381,430 L381,483 L328,483 L328,430 L381,430 Z" id="Combined-Shape" fill="#E20074" fill-rule="nonzero"></path>
     </g>
 </svg>

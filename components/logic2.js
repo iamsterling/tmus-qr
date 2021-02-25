@@ -21,10 +21,9 @@ class Logic extends React.Component {
 		this.qrinput = React.createRef();
 
 		this.state = {
-			url: "",
-
-			qrData: `https://t-mobile.com`,
+				url: "https://www.t-mobile.com/brand/why-t-mobile"
 		}
+
 
 		this.handleChange = this.handleChange.bind(this)
 	}
@@ -39,31 +38,40 @@ class Logic extends React.Component {
 
       var options = {
       		// ====== Basic
-      		text:(this.state.qrData),
-      		width: 250,
-      		height: 250,
-      		colorDark : "#e20074",
+      		text:(this.state.url),
+      		width: 500,
+      		height: 500,
+      		colorDark : "#E20074",
       		colorLight : "#ffffff",
-      		correctLevel : QRCode.CorrectLevel.L, // H, M, Q, H
+      		correctLevel : QRCode.CorrectLevel.Q, // H, M, Q, H
 
       		// ====== dotScale
-      		dotScale: 0.6, // For body block, must be greater than 0, less than or equal to 1. default is 1
+      		dotScale: 0.7, // For body block, must be greater than 0, less than or equal to 1. default is 1
 
-      		dotScaleTiming: 0.9, // Dafault for timing block , must be greater than 0, less than or equal to 1. default is 1
+      		dotScaleTiming: 1, // Dafault for timing block , must be greater than 0, less than or equal to 1. default is 1
       		/*dotScaleTiming_H: undefined, // For horizontal timing block, must be greater than 0, less than or equal to 1. default is 1
       		dotScaleTiming_V: undefined, // For vertical timing block, must be greater than 0, less than or equal to 1. default is 1
       		*/
 
           dotScaleAO: 1, // For alignment outer block, must be greater than 0, less than or equal to 1. default is 1
-      		dotScaleAI: 0.4, // For alignment inner block, must be greater than 0, less than or equal to 1. default is 1
+      		dotScaleAI: 1, // For alignment inner block, must be greater than 0, less than or equal to 1. default is 1
 
-      		// ====== Backgroud Image
+					logo:"tmologo-sm.svg", // Relative address, relative to `easy.qrcode.min.js`
+			    logoWidth:200, // width. default is automatic width
+			    logoHeight:200, // height. default is automatic height
+			    logoBackgroundColor:'#E20074', // Logo backgroud color, Invalid when `logBgTransparent` is true; default is '#ffffff'
+			    logoBackgroundTransparent:true, // Whether use transparent image, default is false
+
+
+
+
+					// ====== Backgroud Image
 
       		backgroundImage: 'tmologo.svg', // Background Image
-      		backgroundImageAlpha: 1, // Background image transparency, value between 0 and 1. default is 1.
+      		backgroundImageAlpha: 0, // Background image transparency, value between 0 and 1. default is 1.
       		autoColor: true, // Automatic color adjustment(for data block)
-              autoColorDark: "rgba(0, 0, 0, 1)", // Automatic color: dark CSS color
-              autoColorLight: "rgba(255, 255, 255, 0.5)", // Automatic color: light CSS color
+              autoColorDark: "rgba(226, 0, 116, 1)", // Automatic color: dark CSS color
+              autoColorLight: "rgba(255, 255, 255, 0.1)", // Automatic color: light CSS color
       };
 
       this.qrcode=new QRCode(this.qrcodeDOM.current, options);
@@ -81,7 +89,6 @@ class Logic extends React.Component {
 	handleChange(event){
 		const {name, value} = event.target
     this.setState({ [name]: value })
-		this.setState({ qrData: {this.state.url}})
 	}
 
 
@@ -90,7 +97,7 @@ class Logic extends React.Component {
 			<>
 				<Container>
 					<Row>
-						<Col xs={12} md={8} lg={6} xl={4}>
+						<Col xs={12} md={7} xl={4}>
 
 							<Form onSubmit={this.state.onsubmit} ref={this.qrinput}>
 								<Container>
@@ -102,91 +109,9 @@ class Logic extends React.Component {
 											<Form.Control
 												type="text"
 												autoComplete="off"
-												name="fname"
-												placeholder="First Name"
+												name="url"
+												placeholder="URL"
 												value={this.state.fname}
-												onChange={this.handleChange}/>
-										</Col>
-
-										<Col>
-											<Form.Control
-												type="text"
-												name="lname"
-												placeholder="Last Name"
-												value={this.state.lname}
-												onChange={this.handleChange}/>
-										</Col>
-									</Row>
-
-									<Row className="g-1 mb-2">
-										<Col xs={6}>
-											<Form.Control
-												type="text"
-												name="title"
-												placeholder="Title"
-												value={this.state.title}
-												onChange={this.handleChange}/>
-										</Col>
-
-										<Col>
-											<Form.Control
-												type="email"
-												name="email"
-												placeholder="Email Address"
-												value={this.state.email}
-												onChange={this.handleChange}/>
-										</Col>
-									</Row>
-
-									<Row className="g-1 mb-2">
-										<Col xs={6}>
-											<Form.Control
-												type="tel"
-												name="phone"
-												placeholder="Phone Number"
-												value={this.state.phone}
-												onChange={this.handleChange}/>
-										</Col>
-									</Row>
-
-									<legend>Address:</legend>
-									<Row className="g-1 mb-2">
-										<Col xs={6}>
-											<Form.Control
-												type="text"
-												name="addressStreet"
-												placeholder="Street"
-												value={this.state.addressStreet}
-												onChange={this.handleChange}/>
-										</Col>
-									</Row>
-
-
-									<Row className="g-1 mb-2">
-										<Col>
-											<Form.Control
-												type="text"
-												name="addressCity"
-												placeholder="City"
-												value={this.state.addressCity}
-												onChange={this.handleChange}/>
-										</Col>
-
-										<Col>
-											<Form.Control
-												type="text"
-												name="addressState"
-												placeholder="State"
-												value={this.state.addressState}
-												onChange={this.handleChange}/>
-										</Col>
-
-										<Col>
-											<Form.Control
-												type="text"
-												name="addressZip"
-												placeholder="Zip"
-												value={this.state.addressZip}
 												onChange={this.handleChange}/>
 										</Col>
 									</Row>
@@ -204,7 +129,7 @@ class Logic extends React.Component {
 				    	</Form>
 						</Col>
 
-						<Col xs={4} className="m-4">
+						<Col xs={5} className="mb-4">
 							<legend>Result</legend>
 				    	<div id="qrResult" ref={this.qrcodeDOM} />
 						</Col>

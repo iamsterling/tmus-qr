@@ -1,13 +1,14 @@
-import React from 'react';
+import React from 'react'
 import Image from 'next/image'
-import QRCode from './generate';
+import Link from 'next/link'
+import QRCode from './generate'
 
 //import { Form } from "formik";
-import Container from 'react-bootstrap/Container';
-import Row from 'react-bootstrap/Row';
-import Col from 'react-bootstrap/Col';
-import Button from 'react-bootstrap/Button';
-import Form from 'react-bootstrap/Form';
+import Container from 'react-bootstrap/Container'
+import Row from 'react-bootstrap/Row'
+import Col from 'react-bootstrap/Col'
+import Button from 'react-bootstrap/Button'
+import Form from 'react-bootstrap/Form'
 
 
 class Logic extends React.Component {

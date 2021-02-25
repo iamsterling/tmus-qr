@@ -16,9 +16,10 @@ export default function QRNav() {
 
           <TmoLogo />
           <b>QR</b> Generator
-
         </Navbar.Brand>
 
+
+          <Link href="/url"><a>URL</a></Link>
       </Navbar>
     </>
   )
