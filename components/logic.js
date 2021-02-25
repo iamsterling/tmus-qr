@@ -54,14 +54,14 @@ class Logic extends React.Component {
       var options = {
       		// ====== Basic
       		text:(this.state.qrData),
-      		width: 1000,
-      		height: 1000,
+      		width: 300,
+      		height: 300,
       		colorDark : "#e20074",
       		colorLight : "#ffffff",
       		correctLevel : QRCode.CorrectLevel.Q, // H, M, Q, H
 
       		// ====== dotScale
-      		dotScale: 0.7, // For body block, must be greater than 0, less than or equal to 1. default is 1
+      		dotScale: 0.6, // For body block, must be greater than 0, less than or equal to 1. default is 1
 
       		dotScaleTiming: 1, // Dafault for timing block , must be greater than 0, less than or equal to 1. default is 1
       		/*dotScaleTiming_H: undefined, // For horizontal timing block, must be greater than 0, less than or equal to 1. default is 1
@@ -72,9 +72,9 @@ class Logic extends React.Component {
       		dotScaleAI: 1, // For alignment inner block, must be greater than 0, less than or equal to 1. default is 1
 
 					logo:"tmologo-sm.svg", // Relative address, relative to `easy.qrcode.min.js`
-			    logoWidth:400, // width. default is automatic width
-			    logoHeight:400, // height. default is automatic height
-			    //logoBackgroundColor:'#fffff', // Logo backgroud color, Invalid when `logBgTransparent` is true; default is '#ffffff'
+			    logoWidth:100, // width. default is automatic width
+			    logoHeight:100, // height. default is automatic height
+			    logoBackgroundColor:'#fffff', // Logo backgroud color, Invalid when `logBgTransparent` is true; default is '#ffffff'
 			    logoBackgroundTransparent:true, // Whether use transparent image, default is false
 
 
@@ -82,11 +82,11 @@ class Logic extends React.Component {
 
 					// ====== Backgroud Image
 
-      		//backgroundImage: 'tmologo.svg', // Background Image
-      		//backgroundImageAlpha: 1, // Background image transparency, value between 0 and 1. default is 1.
+      		backgroundImage: 'tmologo.svg', // Background Image
+      		backgroundImageAlpha: 0, // Background image transparency, value between 0 and 1. default is 1.
       		autoColor: true, // Automatic color adjustment(for data block)
-              autoColorDark: "rgba(0, 0, 0, 1)", // Automatic color: dark CSS color
-              autoColorLight: "rgba(255, 255, 255, 0.5)", // Automatic color: light CSS color
+              autoColorDark: "rgba(226, 0, 116, 1)", // Automatic color: dark CSS color
+              autoColorLight: "rgba(255, 255, 255, 0.1)", // Automatic color: light CSS color
       };
 
       this.qrcode=new QRCode(this.qrcodeDOM.current, options);
