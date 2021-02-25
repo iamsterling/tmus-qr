@@ -31,14 +31,14 @@ class Logic extends React.Component {
 			addressCity: (props.addressCity),
 			addressState: (props.addressState),
 			addressZip: (props.addressZip),
-			location: `
-				${props.addressStreet}
-				${props.addressCity}
-				${props.addressState}
-				${props.addressZip}`,
+			addressStreet: (props.addressStreet),
+			addressCity: (props.addressCity),
+			addressState: (props.addressState),
+			addressZip: (props.addressZip),
 
-			qrData: `BEGIN:VCARD\r\nVERSION:4.0\r\nN:Holt;Sterling;;;\r\nFN:Sterling Holt\r\nTITLE:Mobile Expert\r\nORG:T-Mobile\r\nEMAIL;type=INTERNET;type=pref:james.holt28@t-mobile.com\r\nTEL;type=WORK;type=VOICE;type=pref:972-469-0082\r\nADR;type=WORK;type=pref:;;;880 S. Preston Rd. #40, Prosper, TX 75078;;;\r\nEND:VCARD`,
+			qrData:`BEGIN:VCARD\nVERSION:4.0\nN:Holt;Sterling;;;\nFN:Sterling Holt\nTITLE:Mobile Expert\nORG:T-Mobile\nEMAIL;type=INTERNET;type=pref:james.holt28@t-mobile.com\nTEL:972-469-0082\nADR:;;880 S Preston Rd #40;Prosper\,;TX\,;75078\nEND:VCARD`,
 		}
+
 
 		this.handleChange = this.handleChange.bind(this)
 	}
@@ -54,27 +54,36 @@ class Logic extends React.Component {
       var options = {
       		// ====== Basic
       		text:(this.state.qrData),
-      		width: 250,
-      		height: 250,
+      		width: 1000,
+      		height: 1000,
       		colorDark : "#e20074",
       		colorLight : "#ffffff",
-      		correctLevel : QRCode.CorrectLevel.L, // H, M, Q, H
+      		correctLevel : QRCode.CorrectLevel.Q, // H, M, Q, H
 
       		// ====== dotScale
-      		dotScale: 0.5, // For body block, must be greater than 0, less than or equal to 1. default is 1
+      		dotScale: 0.7, // For body block, must be greater than 0, less than or equal to 1. default is 1
 
-      		dotScaleTiming: 0.8, // Dafault for timing block , must be greater than 0, less than or equal to 1. default is 1
+      		dotScaleTiming: 1, // Dafault for timing block , must be greater than 0, less than or equal to 1. default is 1
       		/*dotScaleTiming_H: undefined, // For horizontal timing block, must be greater than 0, less than or equal to 1. default is 1
       		dotScaleTiming_V: undefined, // For vertical timing block, must be greater than 0, less than or equal to 1. default is 1
       		*/
 
           dotScaleAO: 1, // For alignment outer block, must be greater than 0, less than or equal to 1. default is 1
-      		dotScaleAI: 0.4, // For alignment inner block, must be greater than 0, less than or equal to 1. default is 1
+      		dotScaleAI: 1, // For alignment inner block, must be greater than 0, less than or equal to 1. default is 1
 
-      		// ====== Backgroud Image
+					logo:"tmologo-sm.svg", // Relative address, relative to `easy.qrcode.min.js`
+			    //logoWidth:190, // width. default is automatic width
+			    //logoHeight:280, // height. default is automatic height
+			    //logoBackgroundColor:'#fffff', // Logo backgroud color, Invalid when `logBgTransparent` is true; default is '#ffffff'
+			    logoBackgroundTransparent:false, // Whether use transparent image, default is false
 
-      		backgroundImage: 'tmologo.svg', // Background Image
-      		backgroundImageAlpha: 1, // Background image transparency, value between 0 and 1. default is 1.
+
+
+
+					// ====== Backgroud Image
+
+      		//backgroundImage: 'tmologo.svg', // Background Image
+      		//backgroundImageAlpha: 1, // Background image transparency, value between 0 and 1. default is 1.
       		autoColor: true, // Automatic color adjustment(for data block)
               autoColorDark: "rgba(0, 0, 0, 1)", // Automatic color: dark CSS color
               autoColorLight: "rgba(255, 255, 255, 0.5)", // Automatic color: light CSS color
@@ -95,8 +104,7 @@ class Logic extends React.Component {
 	handleChange(event){
 		const {name, value} = event.target
     this.setState({ [name]: value })
-		this.setState({ location: `${this.state.addressStreet}, ${this.state.addressCity}, ${this.state.addressState}, ${this.state.addressZip}`})
-		this.setState({ qrData: `BEGIN:VCARD\r\nVERSION:4.0\r\nN:${this.state.lname};${this.state.fname};;;\r\nFN:${this.state.fname} ${this.state.lname}\r\nTITLE:${this.state.title}\r\nORG:${this.state.company}\r\nEMAIL;type=INTERNET;type=pref:${this.state.email}\r\nTEL;type=WORK;type=pref:${this.state.phone}\r\nADR;type=pref:;;;${this.state.location};;;\r\nEND:VCARD`})
+		this.setState({ qrData: `BEGIN:VCARD\nVERSION:4.0\nN:${this.state.lname};${this.state.fname};;;\nFN:${this.state.fname} ${this.state.lname}\nTITLE:${this.state.title}\nORG:T-Mobile\nEMAIL;type=INTERNET;type=pref:${this.state.email}\nTEL:${this.state.phone}\nADR:;;${this.state.addressStreet};${this.state.addressCity}\,;${this.state.addressState}\,;${this.state.addressZip}\nEND:VCARD`})
 	}
 
 
@@ -105,7 +113,7 @@ class Logic extends React.Component {
 			<>
 				<Container>
 					<Row>
-						<Col xs={12} md={8} lg={6} xl={4}>
+						<Col xs={12} md={7} xl={4}>
 
 							<Form onSubmit={this.state.onsubmit} ref={this.qrinput}>
 								<Container>
@@ -219,7 +227,7 @@ class Logic extends React.Component {
 				    	</Form>
 						</Col>
 
-						<Col xs={4} className="m-4">
+						<Col xs={5} className="mb-4">
 							<legend>Result</legend>
 				    	<div id="qrResult" ref={this.qrcodeDOM} />
 						</Col>
@@ -234,7 +242,7 @@ class Logic extends React.Component {
 				<br />
 				<br />
 				<br />
-				
+
 			</>
   	)
 	}

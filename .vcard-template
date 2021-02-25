@@ -12,4 +12,7 @@ x-qq:21588891
 END:VCARD
 
 
-<p>"BEGIN:VCARD\r\nVERSION:4.0\r\nN:{fname} {lname};;;\r\nORG:{company}\r\nTITLE:{jtitle}\r\nADR;DOM;PARCEL;HOME:;;{addressStreet};{addressCity};{addressState};{addressZip};USA.\r\nEMAIL;INTERNET:{email}\r\nTEL;CELL:{phone}\r\nEND:VCARD",</p>
+
+
+
+BEGIN:VCARD\r\nVERSION:4.0\r\nFN:Sterling Holt\r\nTITLE;:Mobile Expert\r\nORG:T-Mobile\r\nEMAIL:james.holt28@t-mobile.com\r\nTEL:972-469-0082\r\nADR;type=WORK;type=pref:;;;880 S. Preston Rd. #40\nProsper\nTX\n75078;;;\r\nEND:VCARD

@@ -12,8 +12,13 @@ export default function QRNav() {
   return (
     <>
       <Navbar sticky="top">
-        <TmoLogo />
-        <b>QR</b> Generator
+        <Navbar.Brand>
+
+          <TmoLogo />
+          <b>QR</b> Generator
+
+        </Navbar.Brand>
+
       </Navbar>
     </>
   )
