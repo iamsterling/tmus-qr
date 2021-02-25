@@ -6,9 +6,9 @@
             <stop stop-color="#E20074" offset="0%"></stop>
             <stop stop-color="#E20074" offset="100%"></stop>
         </linearGradient>
-        <circle id="path-2" cx="433" cy="433" r="317"></circle>
-        <filter x="-18.9%" y="-11.0%" width="133.1%" height="134.7%" filterUnits="objectBoundingBox" id="filter-3">
-            <feMorphology radius="30" operator="dilate" in="SourceAlpha" result="shadowSpreadOuter1"></feMorphology>
+        <rect id="path-2" x="167" y="167" width="532" height="532" rx="150"></rect>
+        <filter x="-23.5%" y="-14.1%" width="141.4%" height="143.2%" filterUnits="objectBoundingBox" id="filter-3">
+            <feMorphology radius="35" operator="dilate" in="SourceAlpha" result="shadowSpreadOuter1"></feMorphology>
             <feOffset dx="-15" dy="45" in="shadowSpreadOuter1" result="shadowOffsetOuter1"></feOffset>
             <feGaussianBlur stdDeviation="17.5" in="shadowOffsetOuter1" result="shadowBlurOuter1"></feGaussianBlur>
             <feComposite in="shadowBlurOuter1" in2="SourceAlpha" operator="out" result="shadowBlurOuter1"></feComposite>
@@ -16,10 +16,10 @@
         </filter>
     </defs>
     <g id="Artboard" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-        <g id="Oval">
+        <g id="Rectangle-Copy-2" transform="translate(433.000000, 433.000000) rotate(-360.000000) translate(-433.000000, -433.000000) ">
             <use fill="black" fill-opacity="1" filter="url(#filter-3)" xlink:href="#path-2"></use>
-            <circle stroke="url(#linearGradient-1)" stroke-width="30" fill-opacity="0.85" fill="#FFFFFF" fill-rule="evenodd" cx="433" cy="433" r="332"></circle>
+            <rect stroke="url(#linearGradient-1)" stroke-width="35" fill="#FFFFFF" fill-rule="evenodd" x="149.5" y="149.5" width="567" height="567" rx="150"></rect>
         </g>
-        <path d="M564.678517,271 L568,385.249295 L550.364846,388.058767 C545.584856,322.982983 513.622882,287.395816 458.759769,286.454679 L458.759769,525.708458 C458.759769,569.247536 466.402072,576.286704 514.095726,576.750304 L514.095726,595 L351.918475,595 L351.918475,576.750304 C399.611077,576.286704 407.263899,569.247536 407.263899,525.708458 L407.263899,286.454679 C352.863112,287.395816 320.43776,322.982983 315.657245,388.058767 L298,385.249295 L301.37145,271 L564.678517,271 Z M568,429 L568,495 L501,495 L501,429 L568,429 Z M367,429 L367,495 L300,495 L300,429 L367,429 Z" id="Combined-Shape" fill="#E20074" fill-rule="nonzero"></path>
+        <path d="M537.367417,304 L540,394.97629 L526.022507,397.213463 C522.233923,345.393857 496.901099,317.055928 453.417002,316.306504 L453.417002,506.823402 C453.417002,541.493408 459.474235,547.098672 497.275872,547.467834 L497.275872,562 L368.735384,562 L368.735384,547.467834 C406.536187,547.098672 412.601757,541.493408 412.601757,506.823402 L412.601757,316.306504 C369.484096,317.055928 343.784003,345.393857 339.995001,397.213463 L326,394.97629 L328.672186,304 L537.367417,304 Z M540,430 L540,483 L487,483 L487,430 L540,430 Z M381,430 L381,483 L328,483 L328,430 L381,430 Z" id="Combined-Shape" fill="#E20074" fill-rule="nonzero"></path>
     </g>
 </svg>
