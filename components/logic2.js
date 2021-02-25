@@ -61,9 +61,9 @@ class Logic extends React.Component {
       		correctLevel : QRCode.CorrectLevel.L, // H, M, Q, H
 
       		// ====== dotScale
-      		dotScale: 0.5, // For body block, must be greater than 0, less than or equal to 1. default is 1
+      		dotScale: 0.7, // For body block, must be greater than 0, less than or equal to 1. default is 1
 
-      		dotScaleTiming: 0.8, // Dafault for timing block , must be greater than 0, less than or equal to 1. default is 1
+      		dotScaleTiming: 0.9, // Dafault for timing block , must be greater than 0, less than or equal to 1. default is 1
       		/*dotScaleTiming_H: undefined, // For horizontal timing block, must be greater than 0, less than or equal to 1. default is 1
       		dotScaleTiming_V: undefined, // For vertical timing block, must be greater than 0, less than or equal to 1. default is 1
       		*/
@@ -234,7 +234,7 @@ class Logic extends React.Component {
 				<br />
 				<br />
 				<br />
-				
+
 			</>
   	)
 	}

@@ -19,17 +19,9 @@ body {
   height:100%;
 }
 
-.fab {
-  background-color:$primary;
-  position:fixed;
-  bottom: 0;
-}
 
-// footer
-//----------------
-footer {
-  @include make-container();
-  position:sticky;
-  bottom:0;
-  right:0;
+#qrResult {
+  canvas {
+    width:15em;
+  }
 }
