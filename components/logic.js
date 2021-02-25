@@ -3,6 +3,7 @@ import Image from 'next/image'
 import Link from 'next/link'
 import QRCode from './generate'
 
+
 //import { Form } from "formik";
 import Container from 'react-bootstrap/Container'
 import Row from 'react-bootstrap/Row'
