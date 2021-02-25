@@ -21,23 +21,9 @@ class Logic extends React.Component {
 		this.qrinput = React.createRef();
 
 		this.state = {
-			fname: (props.fname),
-			lname: (props.lname),
-			title: (props.title),
-			company: "T-Mobile",
-			email: (props.email),
-			phone: (props.phone),
-			addressStreet: (props.addressStreet),
-			addressCity: (props.addressCity),
-			addressState: (props.addressState),
-			addressZip: (props.addressZip),
-			location: `
-				${props.addressStreet}
-				${props.addressCity}
-				${props.addressState}
-				${props.addressZip}`,
+			url: "",
 
-			qrData: `BEGIN:VCARD\r\nVERSION:4.0\r\nN:Holt;Sterling;;;\r\nFN:Sterling Holt\r\nTITLE:Mobile Expert\r\nORG:T-Mobile\r\nEMAIL;type=INTERNET;type=pref:james.holt28@t-mobile.com\r\nTEL;type=WORK;type=VOICE;type=pref:972-469-0082\r\nADR;type=WORK;type=pref:;;;880 S. Preston Rd. #40, Prosper, TX 75078;;;\r\nEND:VCARD`,
+			qrData: `https://t-mobile.com`,
 		}
 
 		this.handleChange = this.handleChange.bind(this)
@@ -95,8 +81,7 @@ class Logic extends React.Component {
 	handleChange(event){
 		const {name, value} = event.target
     this.setState({ [name]: value })
-		this.setState({ location: `${this.state.addressStreet}, ${this.state.addressCity}, ${this.state.addressState}, ${this.state.addressZip}`})
-		this.setState({ qrData: `BEGIN:VCARD\r\nVERSION:4.0\r\nN:${this.state.lname};${this.state.fname};;;\r\nFN:${this.state.fname} ${this.state.lname}\r\nTITLE:${this.state.title}\r\nORG:${this.state.company}\r\nEMAIL;type=INTERNET;type=pref:${this.state.email}\r\nTEL;type=WORK;type=pref:${this.state.phone}\r\nADR;type=pref:;;;${this.state.location};;;\r\nEND:VCARD`})
+		this.setState({ qrData: {this.state.url}})
 	}
 
 
