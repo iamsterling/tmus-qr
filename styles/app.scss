@@ -7,8 +7,7 @@
 @import './components/form.scss';
 @import './components/tabs.scss';
 
-// bootstrap scss
-@import '../node_modules/bootstrap/scss/bootstrap.scss';
+
 
 
 
@@ -19,9 +18,15 @@ body {
   height:100%;
 }
 
+a{
+  color:white;
+}
 
 #qrResult {
   canvas {
     width:250px;
   }
 }
+
+// bootstrap scss
+@import '../node_modules/bootstrap/scss/bootstrap.scss';

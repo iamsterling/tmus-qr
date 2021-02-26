@@ -218,7 +218,7 @@ class Logic extends React.Component {
 
 
 									<Row>
-										<Col xs={12}>
+										<Col xs={12} className="mt-2 mb-3">
 								      <Button onClick={this.generate.bind(this, '#ff0000')}>
 												Get QR
 											</Button>
@@ -229,7 +229,9 @@ class Logic extends React.Component {
 				    	</Form>
 						</Col>
 
-						<Col xs={5} className="mb-4">
+
+
+						<Col xs={12} md={7} xl={4} className="ms-4 mb-4">
 							<legend>Result</legend>
 				    	<div id="qrResult" ref={this.qrcodeDOM} />
 						</Col>
