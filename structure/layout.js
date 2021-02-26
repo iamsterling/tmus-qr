@@ -16,9 +16,7 @@ export default function QrLayout({children}) {
 
       <QRNav />
 
-      <main>{children}</main>
-
-
+      <main className="qrcontent">{children}</main>
     </>
   )
 }

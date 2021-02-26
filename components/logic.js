@@ -237,16 +237,6 @@ class Logic extends React.Component {
 						</Col>
 					</Row>
 				</Container>
-
-				<br />
-				<br />
-				<br />
-				<br />
-				<br />
-				<br />
-				<br />
-				<br />
-
 			</>
   	)
 	}

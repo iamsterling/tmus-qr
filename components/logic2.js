@@ -103,7 +103,7 @@ class Logic extends React.Component {
 								<Container>
 									<Row className="g-1 mb-2">
 
-										<legend>Contact info:</legend>
+										<legend>Website Link:</legend>
 
 										<Col>
 											<Form.Control

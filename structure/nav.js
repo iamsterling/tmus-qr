@@ -11,7 +11,7 @@ import TmoLogo from './tmo-logo'
 export default function QRNav() {
 
   return (
-    <Navbar sticky="top">
+    <Navbar fill sticky="top">
       <Container className="mt-2">
         <Row>
           <Col xs={3} className="ms-2 mt-2">
@@ -23,22 +23,18 @@ export default function QRNav() {
           </Col>
 
           <Col xs={8} className="mt-1">
-            <Nav fill variant="pills" defaultActiveKey="vcard">
-              <Nav.Item className="">
-                <Nav.Link eventKey="vcard">
-                  <Link href="/"><a>vCard</a></Link>
-                </Nav.Link>
-              </Nav.Item>
+            <Nav>
+              <Nav.Link eventKey="vcard">
+                <Link href="/"><a>vCard</a></Link>
+              </Nav.Link>
 
-              <Nav.Item>
-                <Nav.Link eventKey="link-1">
-                  <Link href="/url"><a>URL</a></Link>
-                </Nav.Link>
-              </Nav.Item>
+              <Nav.Link eventKey="link-1">
+                <Link href="/url"><a>URL</a></Link>
+              </Nav.Link>
 
               <Nav.Item>
                 <Nav.Link eventKey="disabled" disabled>
-                  Wifi
+                Wifi
                 </Nav.Link>
               </Nav.Item>
             </Nav>

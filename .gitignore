@@ -4,6 +4,10 @@
 ._.DS_Store
 .DS_Store
 
+# docker files
+.dockerfile
+docker-compose.yml
+
 # dependencies
 /node_modules
 /.pnp
