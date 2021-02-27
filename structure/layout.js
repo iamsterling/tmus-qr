@@ -14,9 +14,9 @@ export default function QrLayout({children}) {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <QRNav />
+      <QRNav/>
 
-      <main className="qrcontent">{children}</main>
+      {children}
     </>
   )
 }

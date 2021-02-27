@@ -1,6 +1,6 @@
 import React from 'react';
 import Image from 'next/image'
-import QRCode from './qr/generate';
+import QRCode from './generate';
 
 //import { Form } from "formik";
 import Container from 'react-bootstrap/Container';
@@ -10,25 +10,22 @@ import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 
 
-class Logic extends React.Component {
+export class QROutput extends React.Component {
 	constructor(props){
 		super(props);
 		// QRCode DOM
     this.qrcodeDOM = React.createRef();
     this.qrcode=null;
 
-		// input
-		this.qrinput = React.createRef();
-
 		this.state = {
-				url: "https://www.t-mobile.com/brand/why-t-mobile"
+				qrData: "https://www.t-mobile.com/brand/why-t-mobile"
 		}
 
 
+		// Event Handlers
 		this.handleChange = this.handleChange.bind(this)
+
 	}
-
-
 
 	//QRCode generator
   generate(color){
@@ -38,9 +35,9 @@ class Logic extends React.Component {
 
       var options = {
       		// ====== Basic
-      		text:(this.state.url),
-      		width: 500,
-      		height: 500,
+      		text:(this.state.qrData),
+      		width: 1000,
+      		height: 1000,
       		colorDark : "#E20074",
       		colorLight : "#ffffff",
       		correctLevel : QRCode.CorrectLevel.Q, // H, M, Q, H
@@ -57,8 +54,8 @@ class Logic extends React.Component {
       		dotScaleAI: 1, // For alignment inner block, must be greater than 0, less than or equal to 1. default is 1
 
 					logo:"tmologo-sm.svg", // Relative address, relative to `easy.qrcode.min.js`
-			    logoWidth:200, // width. default is automatic width
-			    logoHeight:200, // height. default is automatic height
+			    logoWidth:400, // width. default is automatic width
+			    logoHeight:400, // height. default is automatic height
 			    logoBackgroundColor:'#E20074', // Logo backgroud color, Invalid when `logBgTransparent` is true; default is '#ffffff'
 			    logoBackgroundTransparent:true, // Whether use transparent image, default is false
 
@@ -95,59 +92,9 @@ class Logic extends React.Component {
 	render(){
 	  return(
 			<>
-				<Container>
-					<Row>
-						<Col xs={12} md={7} xl={4}>
-
-							<Form onSubmit={this.state.onsubmit} ref={this.qrinput}>
-								<Container>
-									<Row className="g-1 mb-2">
-
-										<legend>Website Link:</legend>
-
-										<Col>
-											<Form.Control
-												type="text"
-												autoComplete="off"
-												name="url"
-												placeholder="URL"
-												value={this.state.fname}
-												onChange={this.handleChange}/>
-										</Col>
-									</Row>
-
-
-									<Row>
-										<Col xs={12}>
-								      <Button onClick={this.generate.bind(this, '#ff0000')}>
-												Get QR
-											</Button>
-										</Col>
-									</Row>
-								</Container>
-
-				    	</Form>
-						</Col>
-
-						<Col xs={12} md={7} xl={4} className="ms-4 mb-4">
-							<legend>Result</legend>
-				    	<div id="qrResult" ref={this.qrcodeDOM} />
-						</Col>
-					</Row>
-				</Container>
-
-				<br />
-				<br />
-				<br />
-				<br />
-				<br />
-				<br />
-				<br />
-				<br />
-
+				<legend>Result</legend>
+				<div id="qrResult" ref={this.qrcodeDOM} />
 			</>
-  	)
+		)
 	}
 };
-
-export default Logic;

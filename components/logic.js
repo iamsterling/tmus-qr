@@ -1,7 +1,7 @@
 import React from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
-import QRCode from './generate'
+import QRCode from './qr/generate'
 
 
 //import { Form } from "formik";
@@ -174,7 +174,6 @@ class Logic extends React.Component {
 										</Col>
 									</Row>
 
-									<legend>Address:</legend>
 									<Row className="g-1 mb-2">
 										<Col xs={6}>
 											<Form.Control
