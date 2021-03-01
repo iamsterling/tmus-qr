@@ -23,20 +23,16 @@ class Logic extends React.Component {
 		this.qrinput = React.createRef();
 
 		this.state = {
-			fname: (props.fname),
-			lname: (props.lname),
-			title: (props.title),
+			fname: "",
+			lname: "",
+			title: "",
 			company: "T-Mobile",
-			email: (props.email),
-			phone: (props.phone),
-			addressStreet: (props.addressStreet),
-			addressCity: (props.addressCity),
-			addressState: (props.addressState),
-			addressZip: (props.addressZip),
-			addressStreet: (props.addressStreet),
-			addressCity: (props.addressCity),
-			addressState: (props.addressState),
-			addressZip: (props.addressZip),
+			email: "",
+			phone: "",
+			addressStreet: "",
+			addressCity: "",
+			addressState: "",
+			addressZip: "",
 
 			qrData:`BEGIN:VCARD\nVERSION:4.0\nN:Holt;Sterling;;;\nFN:Sterling Holt\nTITLE:Mobile Expert\nORG:T-Mobile\nEMAIL;type=INTERNET;type=pref:james.holt28@t-mobile.com\nTEL:972-469-0082\nADR:;;880 S Preston Rd #40;Prosper\,;TX\,;75078\nEND:VCARD`,
 		}
@@ -56,8 +52,8 @@ class Logic extends React.Component {
       var options = {
       		// ====== Basic
       		text:(this.state.qrData),
-      		width: 500,
-      		height: 500,
+      		width: 300,
+      		height: 300,
       		colorDark : "#E20074",
       		colorLight : "#ffffff",
       		correctLevel : QRCode.CorrectLevel.Q, // H, M, Q, H
@@ -74,8 +70,8 @@ class Logic extends React.Component {
       		dotScaleAI: 1, // For alignment inner block, must be greater than 0, less than or equal to 1. default is 1
 
 					logo:"tmologo-sm.svg", // Relative address, relative to `easy.qrcode.min.js`
-			    logoWidth:200, // width. default is automatic width
-			    logoHeight:200, // height. default is automatic height
+			    logoWidth:100, // width. default is automatic width
+			    logoHeight:100, // height. default is automatic height
 			    logoBackgroundColor:'#E20074', // Logo backgroud color, Invalid when `logBgTransparent` is true; default is '#ffffff'
 			    logoBackgroundTransparent:true, // Whether use transparent image, default is false
 
@@ -94,7 +90,9 @@ class Logic extends React.Component {
       this.qrcode=new QRCode(this.qrcodeDOM.current, options);
   }
 
+	download(){
 
+	}
 
 	componentDidMount(qrcodeDOM) {
 		this.generate()
@@ -115,7 +113,7 @@ class Logic extends React.Component {
 			<>
 				<Container>
 					<Row>
-						<Col xs={12} md={7} xl={4}>
+						<Col xs={12} md={6} xl={8}>
 
 							<Form onSubmit={this.state.onsubmit} ref={this.qrinput}>
 								<Container>
@@ -230,9 +228,12 @@ class Logic extends React.Component {
 
 
 
-						<Col xs={12} md={7} xl={4} className="ms-4 mb-4">
+						<Col xs={3} className="ms-4 mb-4">
 							<legend>Result</legend>
 				    	<div id="qrResult" ref={this.qrcodeDOM} />
+							<Button variant="outline-dark" onClick={this.download.bind(this)}>
+								Download
+							</Button>
 						</Col>
 					</Row>
 				</Container>

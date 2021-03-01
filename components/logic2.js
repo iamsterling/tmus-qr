@@ -119,7 +119,7 @@ class Logic extends React.Component {
 
 									<Row>
 										<Col xs={12}>
-								      <Button onClick={this.generate.bind(this, '#ff0000')}>
+								      <Button variant="outline-primary" onClick={this.generate.bind(this, '#ff0000')}>
 												Get QR
 											</Button>
 										</Col>
@@ -133,6 +133,8 @@ class Logic extends React.Component {
 							<legend>Result</legend>
 				    	<div id="qrResult" ref={this.qrcodeDOM} />
 						</Col>
+
+						<p>Aside: this can also be used for various URI calls, such as TEL: to initiate a phone call, or mailto: to prompt an email.</p>
 					</Row>
 				</Container>
 
@@ -144,6 +146,7 @@ class Logic extends React.Component {
 				<br />
 				<br />
 				<br />
+
 
 			</>
   	)

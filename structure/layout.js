@@ -1,5 +1,5 @@
 import Head from 'next/head';
-import QRNav from './nav.js';
+import QRNav from './nav/nav.js';
 import Footer from './footer.js';
 
 export default function QrLayout({children}) {

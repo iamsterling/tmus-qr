@@ -2,7 +2,7 @@
 
 
 @import 'override.scss';
-@import './components/nav.scss';
+@import '../structure/nav/nav.scss';
 @import './components/footer.scss';
 @import './components/form.scss';
 @import './components/tabs.scss';
@@ -32,8 +32,9 @@ a{
 
 
 #qrResult {
+  width:300px;
   canvas {
-    width:250px;
+    width:inherit;
   }
 }
 
