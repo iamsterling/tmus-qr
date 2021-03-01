@@ -231,9 +231,6 @@ class Logic extends React.Component {
 						<Col xs={3} className="ms-4 mb-4">
 							<legend>Result</legend>
 				    	<div id="qrResult" ref={this.qrcodeDOM} />
-							<Button variant="outline-dark" onClick={this.download.bind(this)}>
-								Download
-							</Button>
 						</Col>
 					</Row>
 				</Container>
