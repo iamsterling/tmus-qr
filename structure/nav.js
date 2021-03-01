@@ -40,7 +40,7 @@ export default function QRNav() {
                 </Nav.Link>
               </Nav.Item>
 
-              <Nav.Item className="justify-content-end">
+              <Nav.Item className="ms-2 mt-2">
                 <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" viewBox="0 0 20 20">
                   <Navbar.Brand href="https://github.com/jsterlingholt/tmus-qr" eventKey="github">
 
