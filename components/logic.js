@@ -218,7 +218,7 @@ class Logic extends React.Component {
 
 									<Row>
 										<Col xs={12} className="mt-2 mb-3">
-								      <Button onClick={this.generate.bind(this, '#ff0000')}>
+								      <Button variant="outline-primary" onClick={this.generate.bind(this, '#ff0000')}>
 												Get QR
 											</Button>
 										</Col>

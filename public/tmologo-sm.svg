@@ -2,26 +2,16 @@
 <svg width="866px" height="866px" viewBox="0 0 866 866" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
     <title>Artboard</title>
     <defs>
-        <linearGradient x1="50%" y1="0%" x2="50%" y2="100%" id="linearGradient-1">
+        <linearGradient x1="0%" y1="0%" x2="100%" y2="100%" id="linearGradient-1">
             <stop stop-color="#E20074" offset="0%"></stop>
             <stop stop-color="#E20074" offset="100%"></stop>
         </linearGradient>
-        <rect id="path-2" x="-5.68434189e-14" y="0" width="532" height="532" rx="150"></rect>
-        <filter x="-23.5%" y="-14.1%" width="141.4%" height="143.2%" filterUnits="objectBoundingBox" id="filter-3">
-            <feMorphology radius="35" operator="dilate" in="SourceAlpha" result="shadowSpreadOuter1"></feMorphology>
-            <feOffset dx="-15" dy="45" in="shadowSpreadOuter1" result="shadowOffsetOuter1"></feOffset>
-            <feGaussianBlur stdDeviation="17.5" in="shadowOffsetOuter1" result="shadowBlurOuter1"></feGaussianBlur>
-            <feComposite in="shadowBlurOuter1" in2="SourceAlpha" operator="out" result="shadowBlurOuter1"></feComposite>
-            <feColorMatrix values="0 0 0 0 0   0 0 0 0 0   0 0 0 0 0  0 0 0 0.0826706253 0" type="matrix" in="shadowBlurOuter1"></feColorMatrix>
-        </filter>
     </defs>
     <g id="Artboard" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-        <g id="Group" transform="translate(167.000000, 167.000000)">
-            <g id="Rectangle-Copy-2" transform="translate(266.000000, 266.000000) rotate(-360.000000) translate(-266.000000, -266.000000) ">
-                <use fill="black" fill-opacity="1" filter="url(#filter-3)" xlink:href="#path-2"></use>
-                <rect stroke="url(#linearGradient-1)" stroke-width="35" fill="#FFFFFF" fill-rule="evenodd" x="-17.5" y="-17.5" width="567" height="567" rx="150"></rect>
-            </g>
-            <path d="M402.555499,98 L406,216.756929 L387.711692,219.677248 C382.754666,152.033939 349.608914,115.042703 292.713835,114.064434 L292.713835,362.757821 C292.713835,408.014705 300.639186,415.3316 350.099271,415.81349 L350.099271,434.783217 L181.915455,434.783217 L181.915455,415.81349 C231.37445,415.3316 239.31071,408.014705 239.31071,362.757821 L239.31071,114.064434 C182.895079,115.042703 149.268788,152.033939 144.311217,219.677248 L126,216.756929 L129.496318,98 L402.555499,98 Z M406,262.475524 L406,331.986014 L336.48951,331.986014 L336.48951,262.475524 L406,262.475524 Z M198.447552,262.475524 L198.447552,331.986014 L128.937063,331.986014 L128.937063,262.475524 L198.447552,262.475524 Z" id="Combined-Shape" fill="#E20074" fill-rule="nonzero"></path>
+        <rect id="Rectangle-Copy-3" fill="#FFFFFF" transform="translate(433.000000, 433.000000) rotate(-360.000000) translate(-433.000000, -433.000000) " x="133" y="133" width="600" height="600" rx="220"></rect>
+        <g id="Group" transform="translate(233.000000, 233.000000)">
+            <rect id="Rectangle-Copy-2" stroke="url(#linearGradient-1)" stroke-width="30" fill="#FFFFFF" transform="translate(200.000000, 200.000000) rotate(-360.000000) translate(-200.000000, -200.000000) " x="-15" y="-15" width="430" height="430" rx="120"></rect>
+            <path d="M303.404323,73 L306,162.213184 L292.218454,164.407 C288.48298,113.59165 263.505289,85.8029059 220.630783,85.0680059 L220.630783,271.892716 C220.630783,305.890823 226.603101,311.387458 263.874808,311.749465 L263.874808,326 L137.13629,326 L137.13629,311.749465 C174.407175,311.387458 180.387714,305.890823 180.387714,271.892716 L180.387714,85.0680059 C137.874506,85.8029059 112.534694,113.59165 108.79881,164.407 L95,162.213184 L97.6347254,73 L303.404323,73 Z M306,196.55814 L306,248.776163 L253.618881,248.776163 L253.618881,196.55814 L306,196.55814 Z M149.594406,196.55814 L149.594406,248.776163 L97.2132867,248.776163 L97.2132867,196.55814 L149.594406,196.55814 Z" id="Combined-Shape" fill="#E20074" fill-rule="nonzero"></path>
         </g>
     </g>
 </svg>
