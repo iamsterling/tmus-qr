@@ -56,12 +56,12 @@ class Logic extends React.Component {
       		height: 300,
       		colorDark : "#E20074",
       		colorLight : "#ffffff",
-      		correctLevel : QRCode.CorrectLevel.Q, // H, M, Q, H
+      		correctLevel : QRCode.CorrectLevel.L, // H, M, Q, H
 
       		// ====== dotScale
-      		dotScale: 0.8, // For body block, must be greater than 0, less than or equal to 1. default is 1
+      		dotScale: 0.7, // For body block, must be greater than 0, less than or equal to 1. default is 1
 
-      		dotScaleTiming: 0.8, // Dafault for timing block , must be greater than 0, less than or equal to 1. default is 1
+      		dotScaleTiming: 0.7, // Dafault for timing block , must be greater than 0, less than or equal to 1. default is 1
       		/*dotScaleTiming_H: undefined, // For horizontal timing block, must be greater than 0, less than or equal to 1. default is 1
       		dotScaleTiming_V: undefined, // For vertical timing block, must be greater than 0, less than or equal to 1. default is 1
       		*/
@@ -104,7 +104,12 @@ class Logic extends React.Component {
 	handleChange(event){
 		const {name, value} = event.target
     this.setState({ [name]: value })
-		this.setState({ qrData: `BEGIN:VCARD\nVERSION:4.0\nN:${this.state.lname};${this.state.fname};;;\nFN:${this.state.fname} ${this.state.lname}\nTITLE:${this.state.title}\nORG:T-Mobile\nEMAIL;type=INTERNET;type=pref:${this.state.email}\nTEL:${this.state.phone}\nADR:;;${this.state.addressStreet};${this.state.addressCity}\,;${this.state.addressState}\,;${this.state.addressZip}\nEND:VCARD`})
+		this.setState({ qrData: `
+		BEGIN:VCARD\n
+		VERSION:4.0\n
+		N:${this.state.lname};${this.state.fname};;;\n
+		FN:${this.state.fname} ${this.state.lname}\n
+		TITLE:${this.state.title}\nORG:T-Mobile\nEMAIL;type=INTERNET;type=pref:${this.state.email}\nTEL:${this.state.phone}\nADR:;;${this.state.addressStreet};${this.state.addressCity}\,;${this.state.addressState}\,;${this.state.addressZip}\nEND:VCARD`})
 	}
 
 
@@ -114,8 +119,7 @@ class Logic extends React.Component {
 				<Container>
 					<Row>
 						<Col xs={12} md={6} xl={8}>
-
-							<Form onSubmit={this.state.onsubmit} ref={this.qrinput}>
+							<Form ref={this.qrinput}>
 								<Container>
 									<Row className="g-1 mb-2">
 
@@ -215,8 +219,8 @@ class Logic extends React.Component {
 
 
 									<Row>
-										<Col xs={12} className="mt-2 mb-3">
-								      <Button variant="outline-primary" onClick={this.generate.bind(this, '#ff0000')}>
+										<Col xs={12} className="mb-3">
+								      		<Button variant="outline-primary" onClick={this.generate.bind(this, '#ff0000')}>
 												Get QR
 											</Button>
 										</Col>
@@ -230,7 +234,7 @@ class Logic extends React.Component {
 
 						<Col xs={3} className="ms-4 mb-4">
 							<legend>Result</legend>
-				    	<div id="qrResult" ref={this.qrcodeDOM} />
+				    		<div id="qrResult" ref={this.qrcodeDOM} />
 						</Col>
 					</Row>
 				</Container>

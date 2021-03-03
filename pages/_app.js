@@ -2,6 +2,7 @@
 import Layout from '../structure/layout.js';
 import Footer from '../structure/footer.js';
 
+
 // css
 import '../styles/app.scss'
 

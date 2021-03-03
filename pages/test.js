@@ -19,11 +19,16 @@ export default function Home() {
   return (
     <Container>
       <p>This page is a complete rewrite of the application. It is currently non-functional.</p>
+      
       <Row>
         <Col xs={12} sm={7}>
-          <QRCode.InputUrl/>
+          <QRCode.Input.VCard />
         </Col>
 
+
+        {/* 
+          Add Output to Layout?
+        */}
         <Col xs={4}>
           <QRCode.Output/>
         </Col>

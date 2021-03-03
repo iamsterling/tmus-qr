@@ -2,9 +2,9 @@ import React from 'react';
 
 // QR Input
 import {
-  InputVCard,
-  InputUrl,
-  InputWifi,
+  Input,
+  VCard,
+  Uri,
 } from './input'
 
 // QR Output
@@ -13,8 +13,8 @@ import {
 } from './output'
 
 export class QRCode extends React.Component {
-  constructor(){
-    super()
+  constructor(props){
+    super(props)
   }
 
   render(){
@@ -25,7 +25,9 @@ export class QRCode extends React.Component {
 }
 
 // Rename Components for easy access
-QRCode.InputVCard = InputVCard;
-QRCode.InputUrl = InputUrl;
-QRCode.InputWifi = InputWifi;
+QRCode.Input = Input;
+QRCode.Input.VCard = VCard;
+QRCode.Input.Uri = Uri;
+
+// QRCode Output
 QRCode.Output = QROutput;

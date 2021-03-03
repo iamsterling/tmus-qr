@@ -1,10 +1,6 @@
-import React from 'react'
-import Image from 'next/image'
-import Link from 'next/link'
-import QRCode from './generate'
+import React, { useState, setState} from 'react'
+import {updateQRData} from './output' 
 
-
-//import { Form } from "formik";
 import Container from 'react-bootstrap/Container'
 import Row from 'react-bootstrap/Row'
 import Col from 'react-bootstrap/Col'
@@ -13,92 +9,68 @@ import Form from 'react-bootstrap/Form'
 
 
 // QRInput
-export class QRInput extends React.Component {
-	constructor(props){
-		super(props);
-		// input
-		this.qrinput = React.createRef();
-	}
-
-	render(){
-	  return(
-			null
-  	)
-	}
-};
-// -------------------------
-// QRCode.Input.VCard
-export class InputVCard extends React.Component {
-	constructor(){
-		super()
-
-		this.state = {
-			qrData: "",
-		}
-	}
-
-	render(){
-		return(
-			<p>does this work?</p>
-		)
-	}
+export function Input() {
 }
-// -------------------------
-// QRInput.Url
-export class InputUrl extends React.Component {
-	constructor(){
-		super()
 
-		this.state = {
-			qrData: "",
-		}
+export function VCard(props) {
+
+	// Declare state variable
+	let vCardData = setState ({
+		fname: "First",
+		lname: "Last",
+		title: "",
+		email: "",
+		phone: "",
+		address: "",
+	})
+
+	const handleChange = (event) => {
+		let {name, value} = event.target 
+		setVCardData([name],value)
 	}
 
-	render(){
-		return(
-			<Form onSubmit={this.state.onsubmit} ref={this.qrinput}>
-				<legend>Contact info:</legend>
-				<Form.Control
-					type="text"
-					autoComplete="off"
-					name="fname"
-					placeholder="First Name"
-					value={this.state.fname}
-					onChange={this.handleChange} />
+	const [ QrData ] = useState(`
+		BEGIN:VCARD\n
+		VERSION:4.0\n
+		N:${vCardData.lname};${vCardData.fname};;;\n
+		FN:${props.fname} ${props.lname}\n
+		TITLE:${props.title}\n
+		ORG:T-Mobile\n
+		EMAIL:${props.email}\n
+		TEL:${props.phone}\n
+		ADR:${props.address}\n
+		END:VCARD
+	`)
 
-				<Button variant="outline-primary">Get QR</Button>
 
-			</Form>
-		)
-	}
+
+
+
+	return(
+		<Container>
+			<Row>
+				<Col xs={12}>
+					<Form onSubmit={handleChange}>
+
+						<Form.Control
+							type="text"
+							name="fname"
+							placeholder="First Name"
+							value={vCardData.fname}
+							onChange={handleChange}/>
+
+						<Button variant="outline-primary" type="submit">Test</Button>
+					</Form>
+				</Col>
+			</Row>
+
+
+			<p>This is the output to be generated in QR Format:</p>
+			<p>{QrData}</p>
+		</Container>
+	)
 }
-// -------------------------
-// QRInput.Wifi
-export class InputWifi extends React.Component {
-	constructor(){
-		super()
 
-		this.state = {
-			qrData: "",
-		}
-	}
+export function Uri() {
 
-	render(){
-		return(
-			<Form onSubmit={this.state.onsubmit} ref={this.qrinput}>
-				<legend>Contact info:</legend>
-				<Form.Control
-					type="text"
-					autoComplete="off"
-					name="fname"
-					placeholder="First Name"
-					value={this.state.fname}
-					onChange={this.handleChange} />
-
-				<Button variant="outline-primary">Get QR</Button>
-
-			</Form>
-		)
-	}
 }
-// -------------------------

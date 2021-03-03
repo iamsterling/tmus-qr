@@ -39,26 +39,26 @@ class Logic extends React.Component {
       var options = {
       		// ====== Basic
       		text:(this.state.url),
-      		width: 500,
-      		height: 500,
+      		width: 300,
+      		height: 300,
       		colorDark : "#E20074",
       		colorLight : "#ffffff",
-      		correctLevel : QRCode.CorrectLevel.Q, // H, M, Q, H
+      		correctLevel : QRCode.CorrectLevel.M, // H, M, Q, H
 
       		// ====== dotScale
-      		dotScale: 0.8, // For body block, must be greater than 0, less than or equal to 1. default is 1
+      		dotScale: 0.7, // For body block, must be greater than 0, less than or equal to 1. default is 1
 
-      		dotScaleTiming: 0.8, // Dafault for timing block , must be greater than 0, less than or equal to 1. default is 1
+      		dotScaleTiming: 0.7, // Dafault for timing block , must be greater than 0, less than or equal to 1. default is 1
       		/*dotScaleTiming_H: undefined, // For horizontal timing block, must be greater than 0, less than or equal to 1. default is 1
       		dotScaleTiming_V: undefined, // For vertical timing block, must be greater than 0, less than or equal to 1. default is 1
       		*/
 
-          dotScaleAO: 1, // For alignment outer block, must be greater than 0, less than or equal to 1. default is 1
+          	dotScaleAO: 1, // For alignment outer block, must be greater than 0, less than or equal to 1. default is 1
       		dotScaleAI: 1, // For alignment inner block, must be greater than 0, less than or equal to 1. default is 1
 
-					logo:"tmologo-sm.svg", // Relative address, relative to `easy.qrcode.min.js`
-			    logoWidth:200, // width. default is automatic width
-			    logoHeight:200, // height. default is automatic height
+				logo:"tmologo-sm.svg", // Relative address, relative to `easy.qrcode.min.js`
+			    logoWidth:120, // width. default is automatic width
+			    logoHeight:120, // height. default is automatic height
 			    logoBackgroundColor:'#E20074', // Logo backgroud color, Invalid when `logBgTransparent` is true; default is '#ffffff'
 			    logoBackgroundTransparent:true, // Whether use transparent image, default is false
 
@@ -133,8 +133,6 @@ class Logic extends React.Component {
 							<legend>Result</legend>
 				    	<div id="qrResult" ref={this.qrcodeDOM} />
 						</Col>
-
-						<p>Aside: this can also be used for various URI calls, such as TEL: to initiate a phone call, or mailto: to prompt an email.</p>
 					</Row>
 				</Container>
 
