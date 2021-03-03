@@ -22,7 +22,6 @@ export default function Home() {
       
       <Row>
         <Col xs={12} sm={7}>
-          <QRCode.Input.VCard />
         </Col>
 
 
