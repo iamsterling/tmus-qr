@@ -11,12 +11,12 @@ import {
   Text } from '@chakra-ui/react'
 
 
-export default function VCardInput(){
+export default function ContactInput(){
 
   return (
     <Container
       height="500px">
-      <QuickResponse.Input.VCard />
+      <QuickResponse.Input.Contact />
 
 
 

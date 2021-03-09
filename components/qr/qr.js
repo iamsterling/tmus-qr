@@ -1,7 +1,7 @@
 import React from 'react'
 
 // QR Input & Output
-import { Input, VCard } from './input'
+import { Input, Contact, } from './input'
 import { QRLogo } from '../nav/logo'
 import { QROutput } from './output'
 
@@ -34,7 +34,7 @@ export function Buttons(props) {
 
 // Rename Components for easy access
 QuickResponse.Input           = Input
-QuickResponse.Input.VCard     = VCard
+QuickResponse.Input.Contact   = Contact
 //QuickResponse.Input.Url       = Url
 QuickResponse.Output          = QROutput
 

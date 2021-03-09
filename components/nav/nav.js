@@ -12,7 +12,7 @@ import {
 
 import { FiGithub } from "react-icons/fi";
 
-import Logo, { Github } from './logo'
+import Logo, { Github } from '../logo'
 
 
 // ------------------
@@ -21,11 +21,12 @@ export default function Nav() {
   return (
     <Nav.Container>
       <Nav.Logo
-        py="4"
+        py="5"
         px="5"
-        width="120"
-        height="120"
+        width="80"
+        height="80"
         color="white"
+        dotColor="#E20074"
       />
 
       <Spacer/>
