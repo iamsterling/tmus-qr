@@ -1,8 +1,8 @@
 import React from 'react'
 
 // QR Input & Output
-import { Input, Contact, } from './input'
-import { QRLogo } from '../nav/logo'
+import { Input, Contact} from './input'
+import { QRLogo } from '../logo'
 import { QROutput } from './output'
 
 import { Button, Stack } from '@chakra-ui/react'

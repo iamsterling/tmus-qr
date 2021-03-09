@@ -13,7 +13,7 @@ import {
 	Flex,
 	Grid, GridItem } from '@chakra-ui/react'
 
-export class VCard extends React.Component {
+export class Contact extends React.Component {
 	constructor(props) {
 		super(props)
 

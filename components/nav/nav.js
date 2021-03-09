@@ -21,17 +21,19 @@ export default function Nav() {
   return (
     <Nav.Container>
       <Nav.Logo
-        py="5"
-        px="5"
-        width="80"
-        height="80"
+        href="/"
+        py="6"
+        px="6"
+        width="60"
+        height="60"
         color="white"
-        dotColor="#E20074"
-      />
+        dotColor="#E20074"/>
 
       <Spacer/>
 
-      <Nav.Links/>
+      <Nav.Links
+        py="6"
+        px="5"/>
     </Nav.Container>
   )
 }
@@ -76,15 +78,15 @@ function Item(props) {
 
 
 
-function Links() {
+function Links(props) {
   return(
     <Flex
-      py={7}
-      px={8}>
+      py={props.py}
+      px={props.px}>
       <Box
         px={3}>
         <Nav.Item
-          href="/vcardtest">
+          href="/contact">
           Contact
         </Nav.Item>
       </Box>
