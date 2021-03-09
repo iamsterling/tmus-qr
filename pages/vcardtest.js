@@ -19,9 +19,6 @@ export default function VCardInput(){
       <QuickResponse.Input.VCard />
 
 
-        <p>poopy mcpooperson</p>
-
-
 
         <Flex
           position="absolute"
