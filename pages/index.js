@@ -1,7 +1,6 @@
 import Link from 'next/link'
 
 // Local Imports
-import Logic from '../components/logic'
 import Container from 'react-bootstrap/Container';
 import { Box, Text } from '@chakra-ui/react'
 
