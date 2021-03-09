@@ -1,6 +1,10 @@
-import React from 'react';
+import React from 'react'
 import Image from 'next/image'
-import QRCode from './generate';
+import QRCode from './generate'
+import { QuickResponse } from './qr'
+
+
+// TO DO: Implement save function
 
 import {
 	// Layout
@@ -10,6 +14,14 @@ import {
 	Button,Form,
  } from 'react-bootstrap'
 
+
+ // Each Input Variant interacts with this upon form submission
+ export function submitQRData(props) {
+	alert({props});
+ }
+
+
+
 export class QROutput extends React.Component {
 	constructor(props){
 		super(props);
@@ -18,7 +30,7 @@ export class QROutput extends React.Component {
     	this.qrcode=null;
 
 		this.state = {
-			qrData: "https://www.t-mobile.com/brand/why-t-mobile"
+			QRData: "poop"
 		}
 	}
 
@@ -30,9 +42,9 @@ export class QROutput extends React.Component {
 	
     	var options = {
       		// ====== Basic
-      		text:(this.state.qrData),
-      		width: 1000,
-      		height: 1000,
+      		text:(this.state.QRData),
+      		width: 320,
+      		height: 320,
       		colorDark : "#E20074",
       		colorLight : "#ffffff",
       		correctLevel : QRCode.CorrectLevel.Q, // H, M, Q, H
@@ -49,8 +61,8 @@ export class QROutput extends React.Component {
       		dotScaleAI: 1, // For alignment inner block, must be greater than 0, less than or equal to 1. default is 1
 
 			logo:"tmologo-sm.svg", // Relative address, relative to `easy.qrcode.min.js`
-			logoWidth:400, // width. default is automatic width
-			logoHeight:400, // height. default is automatic height
+			logoWidth:120, // width. default is automatic width
+			logoHeight:120, // height. default is automatic height
 			logoBackgroundColor:'#E20074', // Logo backgroud color, Invalid when `logBgTransparent` is true; default is '#ffffff'
 			logoBackgroundTransparent:true, // Whether use transparent image, default is false
     	};
@@ -66,12 +78,17 @@ export class QROutput extends React.Component {
 
 
 
+
 	render(){
 		return(
-			<>
-				<legend>Result</legend>
-				<div id="qrResult" ref={this.qrcodeDOM} />
-			</>
+			<Container>
+				<Row>
+					<Col>
+						<legend>Result</legend>
+						<div id="qrResult" ref={this.qrcodeDOM} />
+					</Col>
+				</Row>
+			</Container>
 		)
 	}
 };

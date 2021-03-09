@@ -21,7 +21,7 @@ class Logic extends React.Component {
 		this.qrinput = React.createRef();
 
 		this.state = {
-				url: "https://www.t-mobile.com/brand/why-t-mobile"
+			url: "https://www.t-mobile.com/brand/why-t-mobile"
 		}
 
 
@@ -57,8 +57,8 @@ class Logic extends React.Component {
       		dotScaleAI: 1, // For alignment inner block, must be greater than 0, less than or equal to 1. default is 1
 
 				logo:"tmologo-sm.svg", // Relative address, relative to `easy.qrcode.min.js`
-			    logoWidth:120, // width. default is automatic width
-			    logoHeight:120, // height. default is automatic height
+			    logoWidth:75, // width. default is automatic width
+			    logoHeight:75, // height. default is automatic height
 			    logoBackgroundColor:'#E20074', // Logo backgroud color, Invalid when `logBgTransparent` is true; default is '#ffffff'
 			    logoBackgroundTransparent:true, // Whether use transparent image, default is false
 
@@ -88,7 +88,7 @@ class Logic extends React.Component {
 
 	handleChange(event){
 		const {name, value} = event.target
-    this.setState({ [name]: value })
+    	this.setState({ [name]: value })
 	}
 
 
@@ -97,7 +97,7 @@ class Logic extends React.Component {
 			<>
 				<Container>
 					<Row>
-						<Col xs={12} md={7} xl={4}>
+						<Col xs={12} md={6} xl={8}>
 
 							<Form onSubmit={this.state.onsubmit} ref={this.qrinput}>
 								<Container>
@@ -129,7 +129,7 @@ class Logic extends React.Component {
 				    	</Form>
 						</Col>
 
-						<Col xs={12} md={7} xl={4} className="ms-4 mb-4">
+						<Col xs={3} className="ms-4 mb-4">
 							<legend>Result</legend>
 				    	<div id="qrResult" ref={this.qrcodeDOM} />
 						</Col>

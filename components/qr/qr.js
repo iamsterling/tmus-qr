@@ -1,20 +1,20 @@
-import React from 'react';
+import React from 'react'
 
-// QR Input
-import {
-  Input,
-  VCard,
-  Uri,
-} from './input'
+// QR Input & Output
+import { Input, VCard } from './input'
+import { QRLogo } from '../nav/logo'
+import { QROutput } from './output'
 
-// QR Output
-import {
-  QROutput,
-} from './output'
+import { Button, Stack } from '@chakra-ui/react'
 
-export class QRCode extends React.Component {
+
+export class QuickResponse extends React.Component {
   constructor(props){
     super(props)
+    
+    this.state = {
+      QRData: ``,
+    }
   }
 
   render(){
@@ -24,10 +24,19 @@ export class QRCode extends React.Component {
   }
 }
 
-// Rename Components for easy access
-QRCode.Input = Input;
-QRCode.Input.VCard = VCard;
-QRCode.Input.Uri = Uri;
+export function Buttons(props) {
+  return(
+    <Stack direction="row" spacing={6}>
+      {props.children}
+    </Stack>
+  )
+}
 
-// QRCode Output
-QRCode.Output = QROutput;
+// Rename Components for easy access
+QuickResponse.Input           = Input
+QuickResponse.Input.VCard     = VCard
+//QuickResponse.Input.Url       = Url
+QuickResponse.Output          = QROutput
+
+QuickResponse.Buttons         = Buttons
+QuickResponse.Logo            = QRLogo
