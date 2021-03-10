@@ -1,19 +1,28 @@
+
+// 1. import React
 import React from 'react'
+// 2. Chakra
+import {
+  Button,
+  Flex,
+  Stack } from '@chakra-ui/react'
 
-// QR Input & Output
-import { Input, Contact} from './input'
+// 3. import QR Logic to reassign for reusable components
 import { QRLogo } from '../logo'
-import { QROutput } from './output'
+import { 
+  QRInput,
+  QRContact,
+  QRUrl } from './fragments/input'
+import { QROutput } from './fragments/output'
+import QRActions  from './fragments/actions'
 
-import { Button, Stack } from '@chakra-ui/react'
 
-
+// work on this later
 export class QuickResponse extends React.Component {
   constructor(props){
     super(props)
     
     this.state = {
-      QRData: ``,
     }
   }
 
@@ -24,19 +33,18 @@ export class QuickResponse extends React.Component {
   }
 }
 
-export function Buttons(props) {
-  return(
-    <Stack direction="row" spacing={6}>
-      {props.children}
-    </Stack>
-  )
-}
-
+// -----------------
 // Rename Components for easy access
-QuickResponse.Input           = Input
-QuickResponse.Input.Contact   = Contact
-//QuickResponse.Input.Url       = Url
-QuickResponse.Output          = QROutput
-
-QuickResponse.Buttons         = Buttons
 QuickResponse.Logo            = QRLogo
+// -----------------
+// Input
+QuickResponse.Input           = QRInput
+// Contact & Url
+QuickResponse.Input.Contact   = QRContact
+//QuickResponse.Input.Url     = Url
+// ----------------- 
+// Output
+QuickResponse.Output          = QROutput
+// -----------------
+// Actions
+QuickResponse.Actions         = QRActions

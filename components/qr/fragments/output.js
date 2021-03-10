@@ -1,28 +1,36 @@
+// 1. import React
 import React from 'react'
 import Image from 'next/image'
-import QRCode from './generate'
-import { QuickResponse } from './qr'
-
-
-// TO DO: Implement save function
-
+// 2. import Chakra
 import {
-	// Layout
-	Container, Row, Col,
-
-	// Function
-	Button,Form,
- } from 'react-bootstrap'
-
-
- // Each Input Variant interacts with this upon form submission
- export function submitQRData(props) {
-	alert({props});
- }
+	Box,
+	Skeleton,
+	SkeletonCircle,
+	SkeletonText
+} from "@chakra-ui/react"
+// 3. import QR Logic
+import QRCode from './generate'
+import { QuickResponse } from '../qr'
 
 
+// -----------------
+// 
+export function QROutput() {
+	return(
+		<Box
+			px="10">
+			<QuickResponse.Logo
+				color="#CCCCCC"/>
+		</Box>
+	)
+}
 
-export class QROutput extends React.Component {
+
+
+
+
+/*
+export class OldOutput extends React.Component {
 	constructor(props){
 		super(props);
 		// QRCode DOM
@@ -55,7 +63,7 @@ export class QROutput extends React.Component {
       		dotScaleTiming: 0.8, // Default for timing block , must be greater than 0, less than or equal to 1. default is 1
       		/*dotScaleTiming_H: undefined, // For horizontal timing block, must be greater than 0, less than or equal to 1. default is 1
       		dotScaleTiming_V: undefined, // For vertical timing block, must be greater than 0, less than or equal to 1. default is 1
-      		*/
+      		
 
           	dotScaleAO: 1, // For alignment outer block, must be greater than 0, less than or equal to 1. default is 1
       		dotScaleAI: 1, // For alignment inner block, must be greater than 0, less than or equal to 1. default is 1
@@ -91,4 +99,4 @@ export class QROutput extends React.Component {
 			</Container>
 		)
 	}
-};
+*/

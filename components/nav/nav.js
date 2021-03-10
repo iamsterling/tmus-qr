@@ -12,25 +12,25 @@ import {
 
 import { FiGithub } from "react-icons/fi";
 
-import Logo, { Github } from '../logo'
+import Logo, { QRLogo } from '../logo'
 
 
 // ------------------
 export default function Nav() {
 
   return (
-    <Nav.Container>
+    <Nav.Container
+      pos="sticky">
       <Nav.Logo
         href="/"
         py="6"
         px="6"
-        width="60"
-        height="60"
+        width="28"
+        height="34"
         color="white"
         dotColor="#E20074"/>
 
       <Spacer/>
-
       <Nav.Links
         py="6"
         px="5"/>

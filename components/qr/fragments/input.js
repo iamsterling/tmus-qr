@@ -1,6 +1,6 @@
+// 1. import React
+// 2. import Chakra
 import React, { Component, setState } from 'react'
-import {submitQRData} from './output' 
-
 import { 
 	Box,
 	Button, 
@@ -11,9 +11,38 @@ import {
 	FormErrorMessage,
 	FormHelperText,
 	Flex,
-	Grid, GridItem } from '@chakra-ui/react'
+	Grid, GridItem,
+	Input,
+	Stack } from '@chakra-ui/react'
 
-export class Contact extends React.Component {
+// 3. import all QR logic
+import { QuickResponse } from '../qr' 
+
+
+
+
+export function QRInput(props){
+
+	// input submission logic goes here
+	// use state hooks
+
+	return(
+    	<Stack
+      		spacing={props.spacing}>
+      		{props.children}
+    	</Stack>
+  	)
+}
+
+
+
+
+
+
+
+// all of this logic should go away
+// leave the return()
+export class QRContact extends React.Component {
 	constructor(props) {
 		super(props)
 
@@ -86,57 +115,25 @@ export class Contact extends React.Component {
 
 	render(){
 		return(
-			<Container>
-				<Grid
-					templateColumns="repeat(2)"
-					gap={2}>
-					<GridItem
-						colSpan={2}>
-						<Input
-							type="text"
-							name="firstName"
-							defaultValue=""
-							placeholder="First Name"
-							onChange={this.handleChange}/>
-					</GridItem>
-
-					<GridItem
-						colSpan={2}>
-						<Input
-							type="text"
-							name="lastName"
-							defaultValue=""
-							placeholder="Last Name"
-							onChange={this.handleChange}/>
-					</GridItem>
-				</Grid>
-			</Container>
+			<QuickResponse.Input
+				spacing="4">
+				<Input
+					placeholder="First Name"
+					size="lg" 
+					width="48%"/>
+				<Input
+					placeholder="Last Name"
+					size="lg" 
+					w={[48, 90, 560]}/>
+			</QuickResponse.Input>
 		)
 	}
 }
 
 
-
-//
-function Container(props) {
+// work on this once the Contact Card logic is done
+export function QRUrl() {
 	return(
-		<Flex>
-			{props.children}
-		</Flex>
-	)
-}
-
-// reusable input field
-export function Input(props) {
-	return(
-		<FormControl id={props.name}>
-			<FormLabel>{props.placeholder}</FormLabel>
-			<input
-				type={props.type}
-				name={props.name}
-				value={props.value}
-				placeholder={props.placeholder} 
-				onChange={props.handleChange}/>
-		</FormControl>
+		null
 	)
 }
