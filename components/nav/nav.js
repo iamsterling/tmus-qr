@@ -40,20 +40,20 @@ export default function Nav() {
 
 function Container({ children}) {
   return(
-    <Box
+    <Center
       p={3}>
         
       <Flex
         boxShadow="2xl"
         borderRadius={10}
-        w="100%"
+        w={["100%", "100%", "80%"]}
         h="80px"
         bg="#0F0F0F"
         color="white">
 
         {children}
       </Flex>
-    </Box>
+    </Center>
   )
 }
 

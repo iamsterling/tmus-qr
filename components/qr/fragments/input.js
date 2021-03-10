@@ -13,7 +13,9 @@ import {
 	Flex,
 	Grid, GridItem,
 	Input,
-	Stack } from '@chakra-ui/react'
+	Stack,
+	Spacer,
+} from '@chakra-ui/react'
 
 // 3. import all QR logic
 import { QuickResponse } from '../qr' 
@@ -117,14 +119,30 @@ export class QRContact extends React.Component {
 		return(
 			<QuickResponse.Input
 				spacing="4">
-				<Input
-					placeholder="First Name"
-					size="lg" 
-					width="48%"/>
-				<Input
-					placeholder="Last Name"
-					size="lg" 
-					w={[48, 90, 560]}/>
+				<Flex>
+					<Input
+						placeholder="First Name"
+						size="lg" 
+						width="50%"/>
+
+					<Input
+						placeholder="Last Name"
+						size="lg" 
+						w={["50%", "50%", "50%"]}/>
+				</Flex>
+
+				<Flex>
+					<Input
+						placeholder="Job Title"
+						size="lg" 
+						width="50%"/>
+						
+					<Input
+						placeholder="email"
+						size="lg" 
+						w={["50%", "50%", "50%"]}/>
+				</Flex>
+
 			</QuickResponse.Input>
 		)
 	}

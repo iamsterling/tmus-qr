@@ -1,8 +1,5 @@
 // Libraries
 import React from 'react'
-
-// Local Imports
-import {QuickResponse} from '../components/qr/qr'
 import {
   Box,
   Button,
@@ -10,20 +7,16 @@ import {
   Flex,
   Text } from '@chakra-ui/react'
 
+// Local Imports
+import { QuickResponse } from '../components/qr/qr'
+
+
 
 export default function ContactInput(){
 
   return (
-    <Container
-      minHeight="550"
-      py={8}>
-      
-      <QuickResponse.Input.Contact />
-
-      <QuickResponse.Output/>
-
-      <QuickResponse.Actions/>
-      
-    </Container>
+    <QuickResponse>
+      <QuickResponse.Input.Contact/>
+    </QuickResponse>
   )
 }

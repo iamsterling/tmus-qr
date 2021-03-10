@@ -3,7 +3,9 @@
 import React from 'react'
 // 2. Chakra
 import {
+  Box,
   Button,
+  Container,
   Flex,
   Stack } from '@chakra-ui/react'
 
@@ -18,19 +20,29 @@ import QRActions  from './fragments/actions'
 
 
 // work on this later
-export class QuickResponse extends React.Component {
-  constructor(props){
-    super(props)
-    
-    this.state = {
-    }
-  }
+export function QuickResponse(props) {
 
-  render(){
     return(
-      null
+      <Container
+        w={["100%", "100%", "80%"]}
+        minHeight="550"
+        
+        py={8}>
+        
+        <Box
+          w={["100%", "100%", "50%"]}>
+          
+          {props.children}
+        </Box>
+
+        <Box
+          w={["100%", "100%", "50%"]}>
+          <QuickResponse.Output/>
+        </Box>
+
+          <QuickResponse.Actions/>
+      </Container>
     )
-  }
 }
 
 // -----------------

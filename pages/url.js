@@ -1,14 +1,10 @@
 import Link from 'next/link'
 
+import {QuickResponse} from '../components/qr/qr'
+
 export default function Test() {
 
   return (
-    <>
-      <p>to do:</p>
-      <ul>
-        <li>load input</li>
-        <li>load output</li>
-      </ul>
-    </>
+    <QuickResponse/>
   )
 }
