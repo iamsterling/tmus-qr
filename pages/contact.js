@@ -15,8 +15,27 @@ import { QuickResponse } from '../components/qr/qr'
 export default function ContactInput(){
 
   return (
-    <QuickResponse>
-      <QuickResponse.Input.Contact/>
+    <QuickResponse
+      type="contact"
+      formValues="
+        firstName: ''"
+      contact>
+      
+      <Flex
+        direction={["column", "row", "row", "row"]}
+        >
+        <QuickResponse.Input
+          w="50%"
+          placeholder="First Name"/>
+        <QuickResponse.Input
+          w="50%"/>
+      </Flex>
+
+      <Flex>
+        <QuickResponse.Input/>
+        <QuickResponse.Input/>
+      </Flex>
+
     </QuickResponse>
   )
 }

@@ -2,22 +2,23 @@
 import React from 'react'
 import Link from 'next/link';
 import { Box, Flex } from "@chakra-ui/react"
-
+import { motion } from "framer-motion"
 
 export default function Logo(props) {
 
-  /*            <rect 
-              fill={props.dotColor}
-              x="0" y="125" 
-              width="10"
-              height="10"/>
+  // logic for tmo logo animation
 
-            <rect 
-              fill={props.dotColor}
-              x="160" y="125" 
-              width="10"
-              height="10"/>
-              */
+  const animate = () => {
+    // call logic to animate dots
+    let left = ("rotate:90, x:-30")
+    let right = ("rotate:90, x:30")
+
+  }
+
+  const reset = e => {
+
+  }
+
   return(
     <Box
       py={props.py}
@@ -26,28 +27,57 @@ export default function Logo(props) {
 
       <Link href={props.href}>
         <a>
-          <svg
-            width="28px"
-            height="34px"
-            viewBox="0 0 200 260">
+          <motion.svg
+            width="35px"
+            height="35px"
+            viewBox="0 0 200 260"
+            onMouseEnter={animate}
+            onClick={animate}
+            onMouseLeave={reset}>
 
             
             <path
-              d="M85.3877137,12.0680059 C42.8745061,12.8029059 17.5346942,40.5916501 13.7988097,91.4070004 L-1.70530257e-13,89.2131839 L2.63472538,1.42108547e-14 L208.404323,4.26325641e-14 L211,89.2131839 L197.218454,91.4070004 C193.48298,40.5916501 168.505289,12.8029059 125.630783,12.0680059 L125.630783,198.892716 C125.630783,232.890823 131.603101,238.387458 168.874808,238.749465 L168.874808,253 L42.1362896,253 L42.1362896,238.749465 C79.4071746,238.387458 85.3877137,232.890823 85.3877137,198.892716 L85.3877137,12.0680059 Z" 
+              d="
+              M85.3877137,
+              12.0680059 C42.8745061,
+              12.8029059 17.5346942,
+              40.5916501 13.7988097,
+              91.4070004 L-1.70530257e-13,
+              89.2131839 L2.63472538,
+              1.42108547e-14 L208.404323,
+              4.26325641e-14 L211,
+              89.2131839 L197.218454,
+              91.4070004 C193.48298,
+              40.5916501 168.505289,
+              12.8029059 125.630783,
+              12.0680059 L125.630783,
+              198.892716 C125.630783,
+              232.890823 131.603101,
+              238.387458 168.874808,
+              238.749465 L168.874808,
+              253 L42.1362896,
+              253 L42.1362896,
+              238.749465 C79.4071746,
+              238.387458 85.3877137,
+              232.890823 85.3877137,
+              198.892716 L85.3877137,
+              12.0680059 Z" 
               fill={props.color}/>
 
-            <rect 
-              fill={props.dotColor}
-              x="0" y="127" 
-              width="45"
-              height="45"/>
+              
+              <motion.rect 
+                fill={props.dotColor}
+                x="0" y="127" 
+                width="45"
+                height="45"
+                animate={(animate.left)}/>
 
-            <rect 
-              fill={props.dotColor}
-              x="162" y="127" 
-              width="45"
-              height="45"/>
-          </svg>
+              <motion.rect 
+                fill={props.dotColor}
+                x="162" y="127" 
+                width="45"
+                height="45"/>
+          </motion.svg>
         </a>
       </Link>
     </Box>

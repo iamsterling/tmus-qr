@@ -5,6 +5,8 @@ import {QuickResponse} from '../components/qr/qr'
 export default function Test() {
 
   return (
-    <QuickResponse/>
+    <QuickResponse>
+      <QuickResponse.Input/>
+    </QuickResponse>
   )
 }

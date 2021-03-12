@@ -21,132 +21,30 @@ import {
 import { QuickResponse } from '../qr' 
 
 
-
-
 export function QRInput(props){
-
-	// input submission logic goes here
-	// use state hooks
-
 	return(
-    	<Stack
-      		spacing={props.spacing}>
-      		{props.children}
-    	</Stack>
+		<input/>
   	)
 }
 
 
+export const Format = () => {}
 
-
-
-
-
-// all of this logic should go away
-// leave the return()
-export class QRContact extends React.Component {
-	constructor(props) {
-		super(props)
-
-		this.submitQRData = React.createRef()
-
-		this.state = {
-			fname: ``,
-			lname: "",
-			title: "",
-			company: "T-Mobile",
-			email: "",
-			phone: "",
-			address: {
-				street: "",
-				city: "",
-				state: "",
-				country: "United States",
-				zip: "",
-			},
-
-			QRData: 
-				`BEGIN:VCARD\n
-				VERSION:4.0\n
-				N:Holt;Sterling;;;\n
-				FN:Sterling Holt\n
-				TITLE:Mobile Expert\n
-				ORG:T-Mobile\n
-				EMAIL;type=INTERNET;type=pref:james.holt28@t-mobile.com\n
-				TEL:972-469-0082\n
-				ADR:;;880 S Preston Rd #40;
-				Prosper\,;TX\,;
-				75078\n
-				END:VCARD`,
-		}
-
-		this.handleChange = this.handleChange.bind(this)
-		this.handleSubmit = this.handleSubmit.bind(this)
-		this.updateQRData = this.updateQRData.bind(this)
-	}
-
-	// update the states holding input values as they are changed
-	handleChange = e => {
-		//
-		this.setState({ [e.target.name]: e.target.value })
-
-	}
-
-	updateQRData() {
-		// update qrdata state based on updated states
-		this.setState({ QRData: 
-			`BEGIN:VCARD\n
-			VERSION:4.0\n
-			FN:${this.state.fname} ${this.state.lname}\n
-			TITLE:${this.state.title}\n
-			ORG:T-Mobile\n
-			EMAIL:${this.state.email}\n
-			TEL:${this.state.phone}\n
-			ADR:;;${this.state.address.Street};
-			${this.state.addressCity}\,;${this.state.addressState}\,;
-			${this.state.addressZip}\nEND:VCARD`
-		})
-	}
-
-	// on submit, push updated values to QR Output component
-	handleSubmit = e => {
-		// prevent page reloading on submit
-		e.preventDefault()
-		this.updateQRCode()
-	}
-
-	render(){
-		return(
-			<QuickResponse.Input
-				spacing="4">
-				<Flex>
-					<Input
-						placeholder="First Name"
-						size="lg" 
-						width="50%"/>
-
-					<Input
-						placeholder="Last Name"
-						size="lg" 
-						w={["50%", "50%", "50%"]}/>
-				</Flex>
-
-				<Flex>
-					<Input
-						placeholder="Job Title"
-						size="lg" 
-						width="50%"/>
-						
-					<Input
-						placeholder="email"
-						size="lg" 
-						w={["50%", "50%", "50%"]}/>
-				</Flex>
-
-			</QuickResponse.Input>
-		)
-	}
+export function QRContactFormat(props) {`
+	BEGIN:VCARD\r\n
+	VERSION:4.0\r\n
+	FN:Sterling Holt\r\n
+	TITLE;:Mobile Expert\r\n
+	ORG:T-Mobile\r\n
+	EMAIL:james.holt28@t-mobile.com\r\n
+	TEL:972-469-0082\r\n
+	ADR;type=WORK;type=pref:;;;880 S. Preston Rd. #40\n
+	Prosper\n
+	TX\n
+	75078;;;\r\n
+	END:VCARD`
 }
+
 
 
 // work on this once the Contact Card logic is done

@@ -5,6 +5,7 @@ import {
   Box,
   Button,
   Center,
+  Container,
   Flex,
   Skeleton,
   Spacer,
@@ -18,42 +19,37 @@ import Logo, { QRLogo } from '../logo'
 // ------------------
 export default function Nav() {
 
+
+
   return (
-    <Nav.Container
+    <Container
+      w={["100%", "100%", "90%"]}
+      maxW="xlg"
+      px={4}
+      py={2}
       pos="sticky">
-      <Nav.Logo
-        href="/"
-        py="6"
-        px="6"
-        width="28"
-        height="34"
-        color="white"
-        dotColor="#E20074"/>
-
-      <Spacer/>
-      <Nav.Links
-        py="6"
-        px="5"/>
-    </Nav.Container>
-  )
-}
-
-function Container({ children}) {
-  return(
-    <Center
-      p={3}>
-        
+      
       <Flex
-        boxShadow="2xl"
         borderRadius={10}
-        w={["100%", "100%", "80%"]}
-        h="80px"
-        bg="#0F0F0F"
+        bg="black"
         color="white">
 
-        {children}
+        <Nav.Logo
+          href="/"
+          py="6"
+          px="6"
+          w="28"
+          h="34"
+          color="white"
+          dotColor="#E20074"/>
+
+        <Spacer/>
+
+        <Nav.Links
+          py="6"
+          px="5"/>
       </Flex>
-    </Center>
+    </Container>
   )
 }
 
@@ -111,7 +107,8 @@ function Links(props) {
   )
 }
 
-Nav.Container           = Container
+
+
 Nav.Logo                = Logo
 Nav.Item                = Item
 Nav.Links               = Links
