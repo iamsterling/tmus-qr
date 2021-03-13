@@ -86,9 +86,11 @@ export function QuickResponse(props) {
 
 
 
-        <QuickResponse.Output/>
+        <QuickResponse.Output
+          data={QRData}/>
 
-        <QuickResponse.Actions/>
+        <QuickResponse.Actions
+          action={handleSubmit}/>
 
       </Stack>
     </Flex>
