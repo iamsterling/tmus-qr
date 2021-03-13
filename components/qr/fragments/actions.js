@@ -26,32 +26,20 @@ export default function QRActions(props){
 
   return(
     <Flex>
-      <Box
-        pr="1">
-        <Button
-          type="submit"
-          form="input"
-          onClick={props.action}
+      <Button
+        type="submit"
+        form="input"
+        onClick={props.action}
 
-          leftIcon={<QuickResponse.Logo color="white"/>}
-          colorScheme="pink"
-          h="60px"
-          w={[200, 230, 500]}
-          variant="solid">
-          GENERATE
-        </Button>
-      </Box>
+        leftIcon={<QuickResponse.Logo color="white"/>}
+        colorScheme="pink"
+        h="60px"
+        w="200px"
+        borderRadius="30"
+        variant="solid">
 
-      <Box
-        pl="1">
-        <Button
-          h="60px"
-          w={[200, 230, 500]}
-          variant="solid"
-          onClick={download}>
-          DOWNLOAD
-        </Button>
-      </Box>
+        GENERATE
+      </Button>
     </Flex>
   )
 }

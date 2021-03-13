@@ -19,7 +19,7 @@ export default function Home() {
       </Text>
 
       <Text>
-        A little about the project here
+        <section>Unique value proposition</section>
       </Text>
     </>
   )

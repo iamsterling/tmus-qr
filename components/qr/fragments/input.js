@@ -1,36 +1,44 @@
 // 1. import React
-// 2. import Chakra
 import React, { Component, setState } from 'react'
-import { 
-	Box,
-	Button, 
-	ButtonGroup,
-	BeatLoader,
-	FormControl,
-	FormLabel,
-	FormErrorMessage,
-	FormHelperText,
+// 2. import Third Party Libraries
+///// Chakra UI
+import {
+	chakra,
 	Flex,
-	Grid, GridItem,
 	Input,
-	Stack,
-	Spacer,
 } from '@chakra-ui/react'
 
 // 3. import all QR logic
 import { QuickResponse } from '../qr' 
 
 
+
+// ------------------
+// Input
 export function QRInput(props){
 	return(
-		<input/>
+		<>
+			<chakra.form
+				w={["sm", "md", "lg", "xl"]}>
+				{props.children}
+			</chakra.form>
+		</>
   	)
 }
 
+export function QRField(props){
+	return(
+		<Input
+			h={["4em", "4em", "4.5em", "4.5em"]}
+			variant="flushed"
+			autoComplete="off"
+			placeholder={props.placeholder}/>
+	)
+}
 
-export const Format = () => {}
-
-export function QRContactFormat(props) {`
+// ------------------
+// Format
+export function Format(props) {`
 	BEGIN:VCARD\r\n
 	VERSION:4.0\r\n
 	FN:Sterling Holt\r\n
@@ -43,13 +51,4 @@ export function QRContactFormat(props) {`
 	TX\n
 	75078;;;\r\n
 	END:VCARD`
-}
-
-
-
-// work on this once the Contact Card logic is done
-export function QRUrl() {
-	return(
-		null
-	)
 }

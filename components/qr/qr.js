@@ -12,16 +12,12 @@ import {
   Stack, HStack, VStack,
   Wrap } from '@chakra-ui/react'
 
-import { Formik, Form, Field } from 'formik';
 import QRCode from './fragments/generate'
-
-
-
-
 // 3. import QR Logic to reassign for reusable components
 import { QRLogo } from '../logo'
 import { 
   Format,
+  QRField,
   QRInput,
   QRContactFormat,
   QRUrl } from './fragments/input'
@@ -30,48 +26,12 @@ import QRActions  from './fragments/actions'
 
 
 
-
-/*
-
-const App = () => {
-  const [username, setUsername] = useState('Default username');
-  return (
-    <>
-      <Sibling1 setUsername={setUsername} />
-      <Sibling2 username={username} />
-    </>
-  )
-}
-
-const Sibling2 = ({username}) => {
-  return <h1> Helo {username}</h1>;
-}
-
-const Sibling1 = ({setUsername}) => {
-  return <button onClick={setUsername}>Set username</button>;
-
-
-
-*/
-
-
-// index -> qr ->
-
-
-
-
-
-
-
-
-
 // -----------------
 // 
 export function QuickResponse(props) {
 
-
-  
-
+  // define variables
+  let formatContact = QuickResponse.Format
   // set QRData and setQRData
   // use context API to set QRColorMode and QRBrand
   const [QRData,  setQRData]  = React.useState("")
@@ -82,35 +42,29 @@ export function QuickResponse(props) {
 
 
 
-  
-
-
-  const format = () => {}
-
-
-
-
-
-
-
   /// TOP PRIORITY: PARSE INPUT!!
   const handleSubmit = e => {
-    // prevent reloading
+    // prevent default action: reloading
     e.preventDefault()
     
+    // instead, setQRData based on whether property
+    // `contact`is defined in parent component.
     if (props.contact) {
       // format input data
+      formatContact = () => {
+        
+      }
       // then set formatted data as QRData
       setQRData("Contact QR Data")
     } else {
+      // just setQRData
       setQRData("URL QR Data")
     }
 
     
 
-    // THEN WE CAN GENERATE THE QR CODE
-    // then generate the QR Code based on QRData
-    generate({QRColorMode},{QRBrand},{QRData})
+    // Finally, we can generate the QR Code based on QRData
+    generate({QRData})
 
   }
 
@@ -118,33 +72,25 @@ export function QuickResponse(props) {
 
 	return(
 		<Flex
-      w="100%"
-      maxW="xlg"
-      direction={["column", "row", "row", "row"]}>
+      px="6"
+      w="100%">
 
+      <Stack
+        inLine>
 
-      <Stack>
-        {/* Separate this into input.js when ready */}
-        <form
-          name="input">
+        <Flex>
           {props.children}
-        </form>
-
-
-        <QuickResponse.Output 
-          data={QRData}
-          color={QRColorMode}
-          brand={QRBrand} />
-
-
-
-        <QuickResponse.Actions
-          action={handleSubmit}
-          pos="absolute"
-          bottom="0"/>
+        </Flex>
         
-      </Stack>
 
+
+
+
+        <QuickResponse.Output/>
+
+        <QuickResponse.Actions/>
+
+      </Stack>
     </Flex>
 		
 	)
@@ -157,8 +103,10 @@ export function QuickResponse(props) {
 QuickResponse.Logo            = QRLogo
 // -----------------
 // Input
-QuickResponse.Input           = Input
+QuickResponse.Input           = QRInput
+QuickResponse.Input.Field     = QRField
 // -----------------
+
 // Output
 QuickResponse.Output          = QROutput
 // -----------------
@@ -166,4 +114,3 @@ QuickResponse.Output          = QROutput
 QuickResponse.Actions         = QRActions
 // Formatting
 QuickResponse.Format          = Format
-QuickResponse.Format.Contact  = QRContactFormat

@@ -22,22 +22,22 @@ export default function Nav() {
 
 
   return (
+    <Center>
     <Container
-      w={["100%", "100%", "90%"]}
+      w={["100%", "100%", "100%"]}
       maxW="xlg"
-      px={4}
-      py={2}
-      pos="sticky">
+      p={[3, 3, 0, 0]}>
       
       <Flex
-        borderRadius={10}
+        borderRadius={[10, 10, 0]}
+        boxShadow={["xl", "Xl", "md", "md"]}
         bg="black"
         color="white">
 
         <Nav.Logo
           href="/"
+          px={["6","6","10","10"]}
           py="6"
-          px="6"
           w="28"
           h="34"
           color="white"
@@ -50,6 +50,7 @@ export default function Nav() {
           px="5"/>
       </Flex>
     </Container>
+    </Center>
   )
 }
 

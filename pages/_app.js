@@ -3,7 +3,7 @@ import Layout from '../components/layout.js';
 // -----------------
 // 2. import `ChakraProvider` component
 // 3. import Chakra Theme
-import { ChakraProvider } from "@chakra-ui/react"
+import { ChakraProvider, CSSReset } from "@chakra-ui/react"
 import { theme } from '../components/style'
 
 // -----------------
@@ -11,6 +11,8 @@ import { theme } from '../components/style'
 export default function MyApp({ Component, pageProps }) {
   return (
     <ChakraProvider theme={theme}>
+      <CSSReset />
+
       <Layout>
         <Component {...pageProps} />
       </Layout>

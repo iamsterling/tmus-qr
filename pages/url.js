@@ -6,7 +6,9 @@ export default function Test() {
 
   return (
     <QuickResponse>
-      <QuickResponse.Input/>
+      <QuickResponse.Input>
+        <QuickResponse.Input.Field/>
+      </QuickResponse.Input>
     </QuickResponse>
   )
 }

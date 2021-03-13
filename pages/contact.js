@@ -16,25 +16,29 @@ export default function ContactInput(){
 
   return (
     <QuickResponse
-      type="contact"
-      formValues="
-        firstName: ''"
       contact>
-      
-      <Flex
-        direction={["column", "row", "row", "row"]}
-        >
-        <QuickResponse.Input
-          w="50%"
-          placeholder="First Name"/>
-        <QuickResponse.Input
-          w="50%"/>
-      </Flex>
+        <QuickResponse.Input>
 
-      <Flex>
-        <QuickResponse.Input/>
-        <QuickResponse.Input/>
-      </Flex>
+          <Flex>
+            <QuickResponse.Input.Field
+              placeholder="First Name"/>
+              
+
+            <QuickResponse.Input.Field
+              placeholder="Last Name"/>
+          </Flex>
+
+          <Flex>
+            <QuickResponse.Input.Field
+              placeholder="Job Title"/>
+
+            <QuickResponse.Input.Field
+              placeholder="Email Address"/>
+          </Flex>
+
+          <QuickResponse.Input.Field
+            placeholder="Phone Number"/>
+        </QuickResponse.Input>
 
     </QuickResponse>
   )

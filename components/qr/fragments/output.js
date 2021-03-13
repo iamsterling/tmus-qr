@@ -18,7 +18,7 @@ export function generate(props) {
 	
  	var options = {
 		// ====== Basic
-    	text:(props.data),
+    	text:(props.QRData),
     	width: 320,
     	height: 320,
     	colorDark : "#E20074",
@@ -38,9 +38,9 @@ export function generate(props) {
 	
 	console.log("generated from output.js")
 
-      // where should the QR Code be spit out to?
+    // where should the QR Code be spit out to?
 
-    	//this.qrcode=new QRCode(this.qrcodeDOM.current, options);
+    //this.qrcode=new QRCode(this.qrcodeDOM.current, options);
 }
 
 
@@ -59,9 +59,11 @@ export function QROutput(props) {
 			
 			<p>{props.data}</p>
 			
-			<QuickResponse.Logo
-				color="#CCCCCC"/>
-			
+			<Box
+				prop>
+				<QuickResponse.Logo
+					color="#CCCCCC"/>
+			</Box>
 		</Box>
 		
 	)

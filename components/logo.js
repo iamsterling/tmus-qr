@@ -74,7 +74,7 @@ export default function Logo(props) {
 
               <motion.rect 
                 fill={props.dotColor}
-                x="162" y="127" 
+                x="165" y="127" 
                 width="45"
                 height="45"/>
           </motion.svg>

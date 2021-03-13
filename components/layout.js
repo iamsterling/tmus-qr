@@ -1,8 +1,6 @@
 // libraries
 import Head from 'next/head'
-import { 
-  Container,
-  Row, Col, } from 'react-bootstrap'
+import { Container } from '@chakra-ui/react'
 
 
 
@@ -23,9 +21,8 @@ export default function Layout({children}) {
       </Head>
 
       <Nav/>
-
       {children}
-
+      
     </>
   )
 }
