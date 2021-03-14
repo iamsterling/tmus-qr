@@ -51,19 +51,20 @@ export function generate(props) {
 // -----------------
 // 
 export function QROutput(props) {
+	const ref = React.useRef()
 
 	return(
 		<Box
-			px="10">
-			{/* display QuickResponse.Logo until QR is generated */}
-			
+			my={4}
+			py={4}
+			px={4}
+			w="400px"
+			h="400px"
+			color="black"
+			bg="white"
+			borderRadius="10"
+			boxShadow="2xl">
 			<p>{props.data}</p>
-			
-			<Box
-				prop>
-				<QuickResponse.Logo
-					color="#CCCCCC"/>
-			</Box>
 		</Box>
 		
 	)

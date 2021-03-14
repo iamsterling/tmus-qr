@@ -13,7 +13,7 @@ import {
 
 import { FiGithub } from "react-icons/fi";
 
-import Logo, { QRLogo } from '../logo'
+import TmobileLogo, { MetroLogo, QRLogo } from '../logo'
 
 
 // ------------------
@@ -22,37 +22,34 @@ export default function Nav() {
 
 
   return (
-    <Center>
-    <Container
-      w={["100%", "100%", "100%"]}
-      maxW="xlg"
-      p={[3, 3, 0, 0]}>
-      
+    <>
       <Flex
-        borderRadius={[10, 10, 0]}
-        boxShadow={["xl", "Xl", "md", "md"]}
-        bg="black"
-        color="white">
+        mx={[4,4,2,0]}
+        my={[3,3,2,0]}
+        borderRadius={[15,15,10,0]}
+        pos="sticky"
+        bg="black">
 
         <Nav.Logo
-          href="/"
-          px={["6","6","10","10"]}
-          py="6"
-          w="28"
-          h="34"
+          px={6}
+          py={6}
+
           color="white"
-          dotColor="#E20074"/>
+          dotColor="#E20074"
+          href="/"/>
 
         <Spacer/>
 
         <Nav.Links
+          px="4"
           py="6"
-          px="5"/>
+          color="white"/>
       </Flex>
-    </Container>
-    </Center>
+    </>
   )
 }
+
+
 
 function Item(props) {
   return(
@@ -61,8 +58,8 @@ function Item(props) {
         <a>
           <Text
             fontSize="20px"
-            fontWeight="semibold">
-
+            fontWeight="semibold"
+            color="white">
             {props.children}
           </Text>
         </a>
@@ -110,7 +107,7 @@ function Links(props) {
 
 
 
-Nav.Logo                = Logo
+Nav.Logo                = TmobileLogo
 Nav.Item                = Item
 Nav.Links               = Links
 //Nav.Tabs

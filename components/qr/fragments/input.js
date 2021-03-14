@@ -10,7 +10,7 @@ import {
 
 // 3. import all QR logic
 import { QuickResponse } from '../qr' 
-
+import { theme } from '../../style'
 
 
 // ------------------
@@ -32,6 +32,7 @@ export function QRField(props){
 			h={["4em", "4em", "4.5em", "4.5em"]}
 			variant="flushed"
 			autoComplete="off"
+			colorScheme="magenta"
 			placeholder={props.placeholder}/>
 	)
 }

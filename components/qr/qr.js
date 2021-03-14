@@ -44,6 +44,8 @@ export function QuickResponse(props) {
 
   /// TOP PRIORITY: PARSE INPUT!!
   const handleSubmit = e => {
+
+    console.log("generated")
     // prevent default action: reloading
     e.preventDefault()
     
@@ -70,9 +72,8 @@ export function QuickResponse(props) {
 
 
 
-	return(
-		<Flex
-      px="6"
+/*		<Flex
+      p={3}
       w="100%">
 
       <Stack
@@ -94,7 +95,38 @@ export function QuickResponse(props) {
 
       </Stack>
     </Flex>
-		
+    */
+
+
+
+	return(
+    <>
+      <Flex
+        px={5}>
+
+          <Stack
+            direction={["column", "column", "row", "row"]}>
+            <Flex>
+              {props.children}
+            </Flex>
+
+            <Flex>
+              <Container
+                centerContent>
+                <QuickResponse.Output
+                  data={QRData}/>
+              </Container>
+            </Flex>
+
+            <Flex
+              py={4}>
+              <QuickResponse.Actions
+                action={handleSubmit}/>
+            </Flex>
+          </Stack>
+          
+      </Flex>
+    </>
 	)
 }
 

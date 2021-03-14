@@ -3,7 +3,7 @@ import Layout from '../components/layout.js';
 // -----------------
 // 2. import `ChakraProvider` component
 // 3. import Chakra Theme
-import { ChakraProvider, CSSReset } from "@chakra-ui/react"
+import { Box, ChakraProvider, CSSReset } from "@chakra-ui/react"
 import { theme } from '../components/style'
 
 // -----------------

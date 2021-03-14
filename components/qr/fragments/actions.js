@@ -1,9 +1,10 @@
 // 1. import React
 // 2. import Chakra
 import React from 'react'
+import ReactDOM from 'react-dom'
 import { 
     Box,
-    Button,
+    chakra,
     Container,
     Flex,
     Stack,
@@ -13,9 +14,34 @@ import { QuickResponse } from '../qr'
 
 
 
+export function QRButton(props){
+  return(
+    <>
+      <chakra.button
+        w="200px"
+        h="60px"
+        
+        color="white"
+        borderWidth="3"
+        bg={props.color}
+        fontWeight="semibold"
+        _hover={{ bg: (props.colorHover) }}
+        borderRadius="30"
+  
+        onClick={props.action}
+        type="submit">
+
+        {props.children}
+
+      </chakra.button>
+    </>
+  )
+}
+
 
 
 export default function QRActions(props){
+
 
   const download = () => {
     // expand on this later.
@@ -25,21 +51,22 @@ export default function QRActions(props){
 
 
   return(
-    <Flex>
-      <Button
-        type="submit"
-        form="input"
-        onClick={props.action}
+    <>
+      <Flex>
+        <QRButton
+          color="#E20074"
+          colorHover="#820052"
+          action={props.action}>
+          GENERATE
+        </QRButton>
 
-        leftIcon={<QuickResponse.Logo color="white"/>}
-        colorScheme="pink"
-        h="60px"
-        w="200px"
-        borderRadius="30"
-        variant="solid">
-
-        GENERATE
-      </Button>
-    </Flex>
+        <QRButton
+          color="black"
+          action={props.action}
+          disabled>
+          DOWNLOAD
+        </QRButton>
+      </Flex>
+    </>
   )
 }

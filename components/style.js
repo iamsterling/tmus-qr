@@ -2,35 +2,35 @@
 import { extendTheme } from "@chakra-ui/react"
 import { Global } from "@emotion/react"
 
-
-//const Fonts = () => (
-//  <Global
-//    styles={`
-//      @font-face {
-//        font-family: 'Open Sans';
-//        src: url("public/OpenSans.woff2") format('woff2');
-//        }
-//      `}
-//  />
-//)
-
-
-
 // 2. Extend the theme to include custom colors, fonts, etc
-const colors = {
-  brand: {
-    900: "#E20074",
-    800: "#153e75",
-    700: "#2a69ac",
+export const theme = extendTheme({
+  colors: {
+    transparent: "transparent",
+    black: "#0F0F0F",
+    white: "#fff",
+    magenta: {
+      // swatch provided from Smart-Swatch
+      // https://smart-swatch.netlify.app/#E20074
+      0: "#E20074",
+      50: "#ffe1fb",
+      100: "#ffb1e6",
+      200: "#ff7ece",
+      300: "#ff4cb4",
+      400: "#ff1a97",
+      500: "#e60076",
+      600: "#b40068",
+      700: "#820052",
+      800: "#500037",
+      900: "#200018",
+    },
+    
+    gray: {
+      50: "#f7fafc",
+      // ...
+      900: "#171923",
+    },
+    // ...
   },
-}
+})
 
-const fonts = {
-  heading: "Open Sans 600",
-  body: "Open Sans",
-}
-
-export const theme = extendTheme({ colors, fonts })
 // 3. Pass the `theme` prop to the `ChakraProvider` in _app.js
-
-

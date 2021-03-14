@@ -31,13 +31,31 @@ export default function ContactInput(){
           <Flex>
             <QuickResponse.Input.Field
               placeholder="Job Title"/>
+          </Flex>
+
+          <Flex>
+            <QuickResponse.Input.Field
+              placeholder="Phone Number"/>
 
             <QuickResponse.Input.Field
               placeholder="Email Address"/>
           </Flex>
 
-          <QuickResponse.Input.Field
-            placeholder="Phone Number"/>
+          <Flex>
+            <QuickResponse.Input.Field
+              placeholder="Street"/>
+            
+            <QuickResponse.Input.Field
+              placeholder="City"/>
+          </Flex>
+
+          <Flex>
+            <QuickResponse.Input.Field
+              placeholder="State"/>
+              
+            <QuickResponse.Input.Field
+              placeholder="Zip"/>
+          </Flex>
         </QuickResponse.Input>
 
     </QuickResponse>
