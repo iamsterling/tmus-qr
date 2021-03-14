@@ -58,8 +58,8 @@ export function QROutput(props) {
 			my={4}
 			py={4}
 			px={4}
-			w="400px"
-			h="400px"
+			w={["300px", "400px"]}
+			h={["300px", "400px"]}
 			color="black"
 			bg="white"
 			borderRadius="10"

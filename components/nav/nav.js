@@ -24,9 +24,9 @@ export default function Nav() {
   return (
     <>
       <Flex
-        mx={[4,4,2,0]}
-        my={[3,3,2,0]}
-        borderRadius={[15,15,10,0]}
+        mx={[4,4,0,0]}
+        my={[3,3,0,0]}
+        borderRadius={[15,15,0,0]}
         pos="sticky"
         bg="black">
 
