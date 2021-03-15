@@ -43,7 +43,7 @@ export function QuickResponse(props) {
 
 
   /// TOP PRIORITY: PARSE INPUT!!
-  const handleSubmit = e => {
+  const submitGenerate = e => {
 
     console.log("generated")
     // prevent default action: reloading
@@ -53,51 +53,20 @@ export function QuickResponse(props) {
     // `contact`is defined in parent component.
     if (props.contact) {
       // format input data
-      formatContact = () => {
-        
-      }
+
       // then set formatted data as QRData
       setQRData("Contact QR Data")
     } else {
       // just setQRData
       setQRData("URL QR Data")
-    }
-
-    
+    }    
 
     // Finally, we can generate the QR Code based on QRData
-    generate({QRData})
+    generate()
 
   }
 
-
-
-/*		<Flex
-      p={3}
-      w="100%">
-
-      <Stack
-        inLine>
-
-        <Flex>
-          {props.children}
-        </Flex>
-        
-
-
-
-
-        <QuickResponse.Output
-          data={QRData}/>
-
-        <QuickResponse.Actions
-          action={handleSubmit}/>
-
-      </Stack>
-    </Flex>
-    */
-
-
+  const submitDownload = e => {}
 
 	return(
     <>
@@ -105,9 +74,10 @@ export function QuickResponse(props) {
       <Stack
         direction={["column", "column", "column", "row"]}
         spacing={"4px"}
-        px={8}>
+        px={[3]}>
 
-        <Flex>
+        <Flex
+          px={4}>
           <QuickResponse.Input>
             {props.children}
           </QuickResponse.Input>
@@ -125,7 +95,8 @@ export function QuickResponse(props) {
           <Flex
             py={4}>
             <QuickResponse.Actions
-              action={handleSubmit}/>
+              firstAction={submitGenerate}
+              secondAction={submitDownload}/>
           </Flex>
         </Container>
 

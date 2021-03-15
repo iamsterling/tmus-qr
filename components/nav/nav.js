@@ -27,8 +27,10 @@ export default function Nav() {
         mx={[4,4,0,0]}
         my={[3,3,0,0]}
         borderRadius={[15,15,0,0]}
+        top="0"
         pos="sticky"
-        bg="black">
+        bg="black"
+        zIndex="2">
 
         <Nav.Logo
           px={6}

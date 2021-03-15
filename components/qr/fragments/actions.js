@@ -30,8 +30,7 @@ export function QRButton(props){
         _hover={{ bg: (props.colorHover) }}
         borderRadius="30"
         outline="none"
-        onClick={props.action}
-        type="submit">
+        onClick={props.action}>
           
           {props.icon}
 
@@ -56,7 +55,9 @@ export default function QRActions(props){
   return(
     <>
       <Flex
-        mx={2}>
+        mx={2}
+        bottom="0"
+        pos="sticky">
         <QRButton
           w="12em"
           h="4em"

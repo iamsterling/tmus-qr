@@ -17,7 +17,6 @@ export default function ContactInput(){
   return (
     <QuickResponse
       contact>
-        <QuickResponse.Input>
 
           <Flex>
             <QuickResponse.Input.Field
@@ -56,7 +55,6 @@ export default function ContactInput(){
             <QuickResponse.Input.Field
               placeholder="Zip"/>
           </Flex>
-        </QuickResponse.Input>
 
     </QuickResponse>
   )
