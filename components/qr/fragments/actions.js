@@ -40,8 +40,8 @@ export function QRButton(props){
           
           <Container
             centerContent>
+
             <Stack
-              mx={6}
               direction="row">
 
               {props.children}
@@ -81,7 +81,7 @@ export default function QRActions(props){
             color="#E20074"/>
               
           <Text
-            px={3}
+            px={[1,1,2]}
             py={1}>
             GENERATE
           </Text>
@@ -104,7 +104,7 @@ export default function QRActions(props){
             cursor=""/>
               
           <Text
-            px={3}
+            px={[1,1,2]}
             py={1}>
             DOWNLOAD
           </Text>
