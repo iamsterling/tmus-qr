@@ -1,14 +1,18 @@
 import Link from 'next/link'
 
+import {Flex} from '@chakra-ui/react'
+
 import {QuickResponse} from '../components/qr/qr'
+
 
 export default function Test() {
 
   return (
     <QuickResponse>
-      <QuickResponse.Input>
-        <QuickResponse.Input.Field/>
-      </QuickResponse.Input>
+      <Flex>
+        <QuickResponse.Input.Field
+          w="100%"/>
+      </Flex>
     </QuickResponse>
   )
 }

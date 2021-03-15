@@ -21,9 +21,12 @@ export default function Layout({children}) {
       </Head>
 
       <Nav />
-
-       {children}
       
+      <Container
+        w="auto"
+        centerContent>
+        {children}
+      </Container>
     </>
   )
 }

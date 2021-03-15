@@ -9,10 +9,11 @@ import {
   Flex,
   Skeleton,
   Spacer,
+  Stack,
   Text } from "@chakra-ui/react"
 
-import { FiGithub } from "react-icons/fi";
-
+import { FaGithubAlt } from "react-icons/fa";
+import { HiOutlineMoon } from 'react-icons/hi'
 import TmobileLogo, { MetroLogo, QRLogo } from '../logo'
 
 
@@ -24,28 +25,33 @@ export default function Nav() {
   return (
     <>
       <Flex
-        mx={[4,4,0,0]}
-        my={[3,3,0,0]}
-        borderRadius={[15,15,0,0]}
+        px={[4,4,0,0]}
+        py={[3,3,0,0]}
         top="0"
         pos="sticky"
-        bg="black"
         zIndex="2">
 
-        <Nav.Logo
-          px={6}
-          py={6}
+        <Stack
+          direction="row"
+          borderRadius={[15,15,0,0]}
+          w="100%"
+          bg="black">
 
-          color="white"
-          dotColor="#E20074"
-          href="/"/>
+          <Nav.Logo
+            px={6}
+            py={6}
 
-        <Spacer/>
+            color="white"
+            dotColor="#E20074"
+            href="/"/>
 
-        <Nav.Links
-          px="4"
-          py="6"
-          color="white"/>
+          <Spacer/>
+
+          <Nav.Links
+            px="4"
+            py="6"
+            color="white"/>
+        </Stack>
       </Flex>
     </>
   )
@@ -96,11 +102,12 @@ function Links(props) {
       </Box>
 
       <Box
-        py={1.5}
+        py={1}
         px={3}>
         <a href="https://github.com/jsterlingholt/tmus-qr">
-          <FiGithub
-            color="white"/>
+          <FaGithubAlt
+            color="white"
+            fontSize="1.3em"/>
         </a>
       </Box>
     </Flex>

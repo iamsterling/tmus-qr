@@ -77,7 +77,9 @@ export function QuickResponse(props) {
         px={[3]}>
 
         <Flex
-          px={4}>
+          px={4}
+          py={[0,0,4]}>
+
           <QuickResponse.Input>
             {props.children}
           </QuickResponse.Input>
@@ -91,12 +93,15 @@ export function QuickResponse(props) {
             <QuickResponse.Output
               data={QRData}/>
           </Flex>
-            
+          
+          <p>{QRData}</p>
+
+          
           <Flex
             py={4}>
             <QuickResponse.Actions
-              firstAction={submitGenerate}
-              secondAction={submitDownload}/>
+              leftAction={submitGenerate}
+              rightAction={submitDownload}/>
           </Flex>
         </Container>
 
