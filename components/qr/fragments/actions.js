@@ -12,27 +12,30 @@ import {
 // 3. import all qr logic
 import { QuickResponse } from '../qr'
 
-
-
+import { ImDownload,ImQrcode } from 'react-icons/im'
 export function QRButton(props){
   return(
     <>
       <chakra.button
-        w={props.w}
+        w={["10em", "13em",]}
         h={props.h}
         
         color="white"
+        bg={props.color}
+
         borderColor="black"
         borderWidth="3"
-        bg={props.color}
-        fontWeight="semibold"
+        
+        fontWeight="bold"
         _hover={{ bg: (props.colorHover) }}
         borderRadius="30"
-  
+        outline="none"
         onClick={props.action}
         type="submit">
+          
+          {props.icon}
 
-        {props.children}
+          {props.children}
 
       </chakra.button>
     </>
@@ -42,7 +45,6 @@ export function QRButton(props){
 
 
 export default function QRActions(props){
-
 
   const download = () => {
     // expand on this later.
@@ -60,10 +62,14 @@ export default function QRActions(props){
           h="4em"
           color="#E20074"
           colorHover="#820052"
+          icon={ImQrcode}
           action={props.action}>
+          
           GENERATE
         </QRButton>
       </Flex>
+
+
       <Flex
         mx={2}>
         <QRButton

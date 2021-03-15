@@ -4,6 +4,7 @@ import Image from 'next/image'
 // 2. import Third Party Libraries
 import {
 	Box,
+	Container,
 	Skeleton,
 	SkeletonCircle,
 	SkeletonText
@@ -55,18 +56,19 @@ export function QROutput(props) {
 
 	return(
 		<Box ref={QRBox}
-			my={4}
-			py={4}
-			px={4}
-			w={["300px", "400px"]}
-			h={["300px", "400px"]}
+			mt={10} mb={5}
+			py={4} px={4}
+			w={["330px", "430px"]}
+			h={["330px", "430px"]}
 			color="black"
 			bg="white"
-			borderRadius="10"
+			borderRadius="30"
 			boxShadow="2xl">
-			<p>{props.data}</p>
+				<Container>
+					<p>{props.data}</p>
+				</Container>
+				
 		</Box>
-		
 	)
 }
 
