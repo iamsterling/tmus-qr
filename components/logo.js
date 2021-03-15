@@ -1,17 +1,19 @@
 
-import React from 'react'
+import React, { useState } from 'react'
 import Link from 'next/link';
 import { Box, Flex } from "@chakra-ui/react"
 import { motion } from "framer-motion"
 
 export default function TmobileLogo(props) {
 
-  // logic for tmo logo animation
+  let dotLeft = useState("x:0")
+  let dotRight = useState("x:0")
 
-  const animate = () => {
+
+
+  function animate() {
     // call logic to animate dots
-    let left = ("rotate:90, x:-30")
-    let right = ("rotate:90, x:30")
+
 
   }
 
@@ -32,7 +34,6 @@ export default function TmobileLogo(props) {
             height="35px"
             viewBox="0 0 200 260"
             onMouseEnter={animate}
-            onClick={animate}
             onMouseLeave={reset}>
 
             
@@ -70,19 +71,26 @@ export default function TmobileLogo(props) {
                 x="0" y="127" 
                 width="45"
                 height="45"
-                animate={(animate.left)}/>
+                animate={"x: 100"}/>
 
               <motion.rect 
                 fill={props.dotColor}
                 x="165" y="127" 
                 width="45"
-                height="45"/>
+                height="45"
+                animate={TmobileLogo.dotRight}/>
+
           </motion.svg>
         </a>
       </Link>
     </Box>
   );
 }
+
+
+
+
+
 
 
 

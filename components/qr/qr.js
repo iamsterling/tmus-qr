@@ -73,6 +73,7 @@ export function QuickResponse(props) {
       
       <Stack
         direction={["column", "column", "column", "row"]}
+        w="100%"
         spacing={"4px"}
         px={[3]}>
 

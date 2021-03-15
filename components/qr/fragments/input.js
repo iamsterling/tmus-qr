@@ -20,7 +20,7 @@ export function QRInput(props){
 	return(
 		<>
 			<chakra.form
-				w={["sm", "md", "lg", "xl"]}>
+				w="100%">
 				{props.children}
 			</chakra.form>
 		</>

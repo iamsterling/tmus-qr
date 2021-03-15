@@ -25,8 +25,8 @@ export default function Nav() {
   return (
     <>
       <Flex
-        px={[4,4,0,0]}
-        py={[3,3,0,0]}
+        px={[2,2,0,0]}
+        py={[2,2,0,0]}
         top="0"
         pos="sticky"
         zIndex="2">

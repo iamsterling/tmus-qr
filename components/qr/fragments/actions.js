@@ -81,7 +81,7 @@ export default function QRActions(props){
             color="#E20074"/>
               
           <Text
-            px={[1,1,2]}
+            px={[0,1,2]}
             py={1}>
             GENERATE
           </Text>
@@ -104,7 +104,7 @@ export default function QRActions(props){
             cursor=""/>
               
           <Text
-            px={[1,1,2]}
+            px={[0,1,2]}
             py={1}>
             DOWNLOAD
           </Text>
