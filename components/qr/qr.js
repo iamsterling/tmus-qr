@@ -104,27 +104,32 @@ export function QuickResponse(props) {
       <Flex
         px={5}>
 
+          <Container 
+            centerContent>
+
           <Stack
-            direction={["column", "column", "row", "row"]}>
+            direction={["column", "column", "column", "row"]}>
             <Flex>
               {props.children}
             </Flex>
 
-            <Flex>
-              <Container
-                centerContent>
+            <Container
+              centerContent>
+              <Flex>
                 <QuickResponse.Output
                   data={QRData}/>
-              </Container>
-            </Flex>
+              </Flex>
+            
+            
 
-            <Flex
-              py={4}>
-              <QuickResponse.Actions
-                action={handleSubmit}/>
-            </Flex>
+              <Flex
+                py={4}>
+                <QuickResponse.Actions
+                  action={handleSubmit}/>
+              </Flex>
+            </Container>
           </Stack>
-          
+          </Container>
       </Flex>
     </>
 	)

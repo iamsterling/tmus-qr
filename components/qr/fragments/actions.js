@@ -18,10 +18,11 @@ export function QRButton(props){
   return(
     <>
       <chakra.button
-        w="200px"
-        h="60px"
+        w={props.w}
+        h={props.h}
         
         color="white"
+        borderColor="black"
         borderWidth="3"
         bg={props.color}
         fontWeight="semibold"
@@ -52,15 +53,22 @@ export default function QRActions(props){
 
   return(
     <>
-      <Flex>
+      <Flex
+        mx={2}>
         <QRButton
+          w="12em"
+          h="4em"
           color="#E20074"
           colorHover="#820052"
           action={props.action}>
           GENERATE
         </QRButton>
-
+      </Flex>
+      <Flex
+        mx={2}>
         <QRButton
+          w="12em"
+          h="4em"
           color="black"
           action={props.action}
           disabled>

@@ -51,10 +51,10 @@ export function generate(props) {
 // -----------------
 // 
 export function QROutput(props) {
-	const ref = React.useRef()
+	const QRBox = React.useRef()
 
 	return(
-		<Box
+		<Box ref={QRBox}
 			my={4}
 			py={4}
 			px={4}
