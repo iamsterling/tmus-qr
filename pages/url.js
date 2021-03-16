@@ -11,7 +11,8 @@ export default function Test() {
     <QuickResponse>
       <Flex>
         <QuickResponse.Input.Field
-          w="100%"/>
+          w="100%"
+          placeholder="Url"/>
       </Flex>
     </QuickResponse>
   )

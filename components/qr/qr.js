@@ -9,7 +9,7 @@ import {
   Container,
   Flex,
   Input,
-  Stack, HStack, VStack,
+  Stack, StackDivider, HStack, VStack,
   Wrap } from '@chakra-ui/react'
 
 import QRCode from './fragments/generate'
@@ -17,9 +17,11 @@ import QRCode from './fragments/generate'
 import { QRLogo } from '../logo'
 import { 
   Format,
-  QRField,
-  QRInput,
   QRContactFormat,
+  QRField,
+  QRForm,
+  QRInput,
+  QRInputContact,
   QRUrl } from './fragments/input'
 import { generate, QROutput } from './fragments/output'
 import QRActions  from './fragments/actions'
@@ -30,8 +32,6 @@ import QRActions  from './fragments/actions'
 // 
 export function QuickResponse(props) {
 
-  // define variables
-  let formatContact = QuickResponse.Format
   // set QRData and setQRData
   // use context API to set QRColorMode and QRBrand
   const [QRData,  setQRData]  = React.useState("")
@@ -39,73 +39,88 @@ export function QuickResponse(props) {
   const [QRBrand, setQRBrand] = React.useState("")
 
 
+  // create reference element to print the result to
+  const QRResult = React.useRef()
 
 
 
   /// TOP PRIORITY: PARSE INPUT!!
-  const submitGenerate = e => {
+  const handleGenerate = e => {
 
     console.log("generated")
     // prevent default action: reloading
     e.preventDefault()
-    
+    alert("yo")
+
     // instead, setQRData based on whether property
     // `contact`is defined in parent component.
     if (props.contact) {
-      // format input data
+      // format input data as QRData
+      setQRData(`
+      	BEGIN:VCARD\r\n
+        VERSION:4.0\r\n
+        FN:${props.fname} ${props.lname}\r\n
+        TITLE;:${props.title}\r\n
+        ORG:T-Mobile\r\n
+        EMAIL:${props.email}\r\n
+        TEL:${props.tel}\r\n
+        ADR;type=WORK;type=pref:;;;880 S. Preston Rd. #40\n
+        Prosper\n
+        TX\n
+        75078;;;\r\n
+        END:VCARD
+      `)
 
-      // then set formatted data as QRData
-      setQRData("Contact QR Data")
     } else {
-      // just setQRData
+      // else, just setQRData
       setQRData("URL QR Data")
-    }    
+    }
 
-    // Finally, we can generate the QR Code based on QRData
-    generate()
+    // Now we can generate the QR Code based on QRData
+    //generate()
+
+    // finally, remove disabled tag from download button.
 
   }
 
-  const submitDownload = e => {}
+
+
+
+
+  const handleDownload =e => {
+    alert("download")
+
+    // qr.save
+  }
 
 	return(
     <>
-      
       <Stack
-        direction={["column", "column", "column", "row"]}
-        w="100%"
-        spacing={"4px"}
-        px={[3]}>
+        direction={["column","column", "row"]}
+        maxW="100%"
+        py={[0,0,8]} px={0} >
 
-        <Flex
-          px={4}
-          py={[0,0,4]}>
 
-          <QuickResponse.Input>
-            {props.children}
-          </QuickResponse.Input>
-        </Flex>
+        <Box
+          w={["100%","100%", "600px"]}>
+          {props.children}
+        </Box>
+
+
 
 
         <Container
+          pt={[10,10,0]} pb={[5,5,0]} px={0}
+          w="100%"
+          maxW="430px"
           centerContent>
 
-          <Flex>
-            <QuickResponse.Output
-              data={QRData}/>
-          </Flex>
-          
-          <p>{QRData}</p>
+          <QuickResponse.Output/>
+          <QuickResponse.Actions
+            actionLeft={handleGenerate}
+            actionRight={handleDownload}/>
 
-          
-          <Flex
-            py={4}>
-            <QuickResponse.Actions
-              leftAction={submitGenerate}
-              rightAction={submitDownload}/>
-          </Flex>
         </Container>
-
       </Stack>
     </>
 	)
@@ -113,19 +128,45 @@ export function QuickResponse(props) {
 
 
 
+
+
+
+/*
+
+
+
+
+        <Container
+          w="100%"
+          >
+
+          
+        </Container>
+
+
+
+*/
+
+
+
+
+
+
+
 // -----------------
 // Rename Components for easy access
-QuickResponse.Logo            = QRLogo
+QuickResponse.Logo                = QRLogo
 // -----------------
 // Input
-QuickResponse.Input           = QRInput
-QuickResponse.Input.Field     = QRField
+QuickResponse.Input               = QRInput
+QuickResponse.Input.Form          = QRForm
+QuickResponse.Input.Field         = QRField
+QuickResponse.Input.Contact       = QRInputContact
 // -----------------
-
 // Output
-QuickResponse.Output          = QROutput
+QuickResponse.Output              = QROutput
 // -----------------
 // Actions
-QuickResponse.Actions         = QRActions
+QuickResponse.Actions             = QRActions
 // Formatting
-QuickResponse.Format          = Format
+//QuickResponse.Format          = Format

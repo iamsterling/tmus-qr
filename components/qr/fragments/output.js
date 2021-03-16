@@ -9,10 +9,10 @@ import {
 	SkeletonCircle,
 	SkeletonText
 } from '@chakra-ui/react'
+import {ImQrcode} from 'react-icons/im'
 import QRCode from './generate'
 // 3. import QR Logic
 import { QuickResponse } from '../qr'
-
 
 
 export function generate(props) {
@@ -52,27 +52,29 @@ export function generate(props) {
 // -----------------
 // 
 export function QROutput(props) {
-	const QRBox = React.useRef()
 
 	return(
-		<Box ref={QRBox}
-			mt={10} mb={5}
-			py={4} px={4}
+		<Box
+			mt={props.mt} mb={props.mb}
+			py={props.py} px={props.px}
 			w={["330px", "430px"]}
 			h={["330px", "430px"]}
 			color="black"
 			bg="white"
 			borderRadius="30"
 			boxShadow="2xl">
-				<Container>
-					<p>{props.data}</p>
-				</Container>
-				
+			{props.data}	
 		</Box>
 	)
 }
 
+/*
 
+<ImQrcode
+	fontSize="500"
+	color="rgba(0,0,0,0.05)"/>
+
+*/
 
 
 

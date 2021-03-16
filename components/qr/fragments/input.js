@@ -14,19 +14,31 @@ import { QuickResponse } from '../qr'
 import { theme } from '../../style'
 
 
+
+
+
+
+
+
+
 // ------------------
 // Input
 export function QRInput(props){
+  return(null)
+}
+
+// FORM
+export function QRForm(props){
 	return(
 		<>
 			<chakra.form
-				w="100%">
+        name="props.name"
+        >
 				{props.children}
 			</chakra.form>
 		</>
   	)
 }
-
 
 
 
@@ -38,6 +50,7 @@ export function QRField(props){
 			mx={1}
 
 			outline="none"
+			borderRadius="0"
 			borderBottom="0.1em solid rgba(0,0,0,0.05)"
 
 			_hover={{
@@ -55,19 +68,64 @@ export function QRField(props){
 
 
 
-// ------------------
-// Format
-export function Format(props) {`
-	BEGIN:VCARD\r\n
-	VERSION:4.0\r\n
-	FN:Sterling Holt\r\n
-	TITLE;:Mobile Expert\r\n
-	ORG:T-Mobile\r\n
-	EMAIL:james.holt28@t-mobile.com\r\n
-	TEL:972-469-0082\r\n
-	ADR;type=WORK;type=pref:;;;880 S. Preston Rd. #40\n
-	Prosper\n
-	TX\n
-	75078;;;\r\n
-	END:VCARD`
+
+/////////////
+
+export function QRInputContact(props) {
+	
+	return(
+		<>
+          <Flex>
+            <QuickResponse.Input.Field
+              w="50%"
+              name={props.fname}
+			  value={props.fname}
+              placeholder="First Name"/>
+              
+
+            <QuickResponse.Input.Field
+              w="50%"
+              name="lname"
+              placeholder="Last Name"/>
+          </Flex>
+
+          <Flex>
+            <QuickResponse.Input.Field
+              w="48%"
+              name="title"
+              placeholder="Job Title"/>
+          </Flex>
+
+          <Flex>
+            <QuickResponse.Input.Field
+              w="50%"
+              name="phone"
+              placeholder="Phone Number"/>
+
+            <QuickResponse.Input.Field
+              w="50%"
+              placeholder="Email Address"/>
+          </Flex>
+
+          <Flex>
+            <QuickResponse.Input.Field
+              w="50%"
+              placeholder="Street"/>
+            
+            <QuickResponse.Input.Field
+              w="50%"
+              placeholder="City"/>
+          </Flex>
+
+          <Flex>
+            <QuickResponse.Input.Field
+              w="50%"
+              placeholder="State"/>
+              
+            <QuickResponse.Input.Field
+              w="50%"
+              placeholder="Zip"/>
+          </Flex>
+		</>
+	)
 }

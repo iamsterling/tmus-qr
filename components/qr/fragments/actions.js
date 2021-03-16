@@ -5,6 +5,7 @@ import ReactDOM from 'react-dom'
 import { 
     Box,
     chakra,
+    Center,
     Container,
     Flex,
     Stack,
@@ -20,8 +21,10 @@ export function QRButton(props){
     <>
       <chakra.button
         w={["10em", "13em",]}
+        
         h={props.h}
         
+        bg="white"
         color={props.color}
         border=".3em solid"
         borderColor={props.color}
@@ -38,7 +41,7 @@ export function QRButton(props){
         
         userSelect="none">
           
-          <Container
+          <Center
             centerContent>
 
             <Stack
@@ -46,7 +49,7 @@ export function QRButton(props){
 
               {props.children}
             </Stack>
-          </Container>
+          </Center>
       </chakra.button>
     </>
   )
@@ -56,25 +59,24 @@ export function QRButton(props){
 
 export default function QRActions(props){
 
-  const download = () => {
-    // expand on this later.
-    // ideally, provide .svg capabilities.
-    console.log("download")
-  }
-
 
   return(
-    <>
-      <Flex
-        mx={2}
-        bottom="0"
-        pos="sticky">
+    <Stack
+      direction="row"
+      px={0}
+      pt={5}
+      pb={3}
+      bottom="0"
+      pos="sticky">
+
+      <Flex>
+
         <QRButton
           w="12em"
           h="4em"
           color="#E20074"
           
-          leftAction={props.action}>
+          action={props.actionLeft}>
           
           <ImQrcode
             fontSize="2em"
@@ -95,7 +97,7 @@ export default function QRActions(props){
           w="12em"
           h="4em"
           color="rgba(0,0,0,0.2)"
-          rightAction={props.action}
+          action={props.actionRight}
           disabled>
 
           <GoCloudDownload
@@ -110,6 +112,6 @@ export default function QRActions(props){
           </Text>
         </QRButton>
       </Flex>
-    </>
+    </Stack>
   )
 }

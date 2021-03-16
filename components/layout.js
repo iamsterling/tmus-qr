@@ -24,6 +24,7 @@ export default function Layout({children}) {
       
       <Container
         w="auto"
+        maxW="100%"
         centerContent>
         {children}
       </Container>
