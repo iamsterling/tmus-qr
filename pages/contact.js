@@ -17,6 +17,7 @@ export default function Contact(){
   return (
     <QuickResponse
       contact>
+        
       <QuickResponse.Input.Form>
         <QuickResponse.Input.Contact/>
       </QuickResponse.Input.Form>

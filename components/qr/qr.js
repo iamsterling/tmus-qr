@@ -1,4 +1,3 @@
-
 // 1. import React
 import React from 'react'
 // 2. Third Party Libraries
@@ -109,7 +108,7 @@ export function QuickResponse(props) {
 
 
         <Container
-          pt={[10,10,0]} pb={[5,5,0]} px={0}
+          pt={[10,10,0]} pb={[0]} px={0}
           w="100%"
           maxW="430px"
           centerContent>
@@ -117,6 +116,7 @@ export function QuickResponse(props) {
           <QuickResponse.Output
             data={QRData}
             py={3} px={3}/>
+
           <QuickResponse.Actions
             actionLeft={handleGenerate}
             actionRight={handleDownload}/>
@@ -126,31 +126,6 @@ export function QuickResponse(props) {
     </>
 	)
 }
-
-
-
-
-
-
-/*
-
-
-
-
-        <Container
-          w="100%"
-          >
-
-          
-        </Container>
-
-
-
-*/
-
-
-
-
 
 
 

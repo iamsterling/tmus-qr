@@ -66,9 +66,8 @@ export default function QRActions(props){
       direction="row"
       maxW="430px"
       px={0}
-      pt={5}
-      pb={3}
-      bottom="0"
+      pt={[10,10,5]}
+      bottom={5}
       pos="sticky">
 
       <Flex>

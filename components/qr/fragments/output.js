@@ -61,59 +61,10 @@ export function QROutput(props) {
 			color="black"
 			bg="white"
 			borderRadius="30"
-			boxShadow="2xl">
+			boxShadow="lg"
+			zIndex={2}>
 
-
-			{props.data}	
+			{props.data}
 		</Box>
 	)
 }
-
-/*
-
-<ImQrcode
-	fontSize="500"
-	color="rgba(0,0,0,0.05)"/>
-
-*/
-
-
-
-/*
-export class OldOutput extends React.Component {
-	constructor(props){
-		super(props);
-		// QRCode DOM
-    	this.qrcodeDOM = React.createRef();
-    	this.qrcode=null;
-
-		this.state = {
-			QRData: "poop"
-		}
-	}
-
-	//QRCode generator
-	
-
-  	// generate QR code on mount
-	componentDidMount = (qrcodeDOM) => {
-		this.generate()
-	}
-
-
-
-
-
-	render(){
-		return(
-			<Container>
-				<Row>
-					<Col>
-						<legend>Result</legend>
-						<div id="qrResult" ref={this.qrcodeDOM} />
-					</Col>
-				</Row>
-			</Container>
-		)
-	}
-*/
