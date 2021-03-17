@@ -55,7 +55,6 @@ export function QROutput(props) {
 
 	return(
 		<Box
-			mt={props.mt} mb={props.mb}
 			py={props.py} px={props.px}
 			w={["330px", "430px"]}
 			h={["330px", "430px"]}
@@ -63,6 +62,8 @@ export function QROutput(props) {
 			bg="white"
 			borderRadius="30"
 			boxShadow="2xl">
+
+
 			{props.data}	
 		</Box>
 	)

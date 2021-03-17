@@ -50,7 +50,6 @@ export function QuickResponse(props) {
     console.log("generated")
     // prevent default action: reloading
     e.preventDefault()
-    alert("yo")
 
     // instead, setQRData based on whether property
     // `contact`is defined in parent component.
@@ -115,7 +114,9 @@ export function QuickResponse(props) {
           maxW="430px"
           centerContent>
 
-          <QuickResponse.Output/>
+          <QuickResponse.Output
+            data={QRData}
+            py={3} px={3}/>
           <QuickResponse.Actions
             actionLeft={handleGenerate}
             actionRight={handleDownload}/>

@@ -27,7 +27,7 @@ export default function Home() {
 
         <Text>
           <section>
-          Unique value proposition
+          version 2.0
           </section>
         </Text>
       </Container>

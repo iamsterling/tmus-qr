@@ -11,6 +11,7 @@ import {
     Stack,
     Text,
 } from '@chakra-ui/react'
+import { motion } from "framer-motion"
 // 3. import all qr logic
 import { QuickResponse } from '../qr'
 
@@ -19,38 +20,38 @@ import { GoCloudDownload } from 'react-icons/go'
 export function QRButton(props){
   return(
     <>
-      <chakra.button
-        w={["10em", "13em",]}
-        
-        h={props.h}
-        
-        bg="white"
-        color={props.color}
-        border=".3em solid"
-        borderColor={props.color}
-        borderRadius="30"
-        fontWeight="bold"
-
-
-
-        _hover={{ boxShadow: "2xl" }}
-        _active={{ boxShadow:"lg"}}
-        outline="0"
-        onClick={props.action}
-        
-        
-        userSelect="none">
+        <chakra.button
+          w={["10em", "13em",]}
+          h={props.h}
           
-          <Center
-            centerContent>
+          bg="white"
+          color={props.color}
+          border=".2em solid"
+          borderColor={props.color}
+          borderRadius="50"
+          fontWeight="bold"
 
-            <Stack
-              direction="row">
 
-              {props.children}
-            </Stack>
-          </Center>
-      </chakra.button>
+
+          _hover={{ boxShadow: "lg" }}
+          _active={{ boxShadow:"md" }}
+          _disabled={{ borderColor:"rgba(0,0,0,1)" }}
+          outline="0"
+          onClick={props.action}
+          
+          
+          userSelect="none">
+            
+            <Center
+              centerContent>
+
+              <Stack
+                direction="row">
+
+                {props.children}
+              </Stack>
+            </Center>
+        </chakra.button>
     </>
   )
 }
@@ -63,6 +64,7 @@ export default function QRActions(props){
   return(
     <Stack
       direction="row"
+      maxW="430px"
       px={0}
       pt={5}
       pb={3}
@@ -72,7 +74,7 @@ export default function QRActions(props){
       <Flex>
 
         <QRButton
-          w="12em"
+          w="13em"
           h="4em"
           color="#E20074"
           
@@ -91,10 +93,9 @@ export default function QRActions(props){
       </Flex>
 
 
-      <Flex
-        mx={2}>
+      <Flex>
         <QRButton
-          w="12em"
+          w="13em"
           h="4em"
           color="rgba(0,0,0,0.2)"
           action={props.actionRight}
