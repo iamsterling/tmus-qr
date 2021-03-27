@@ -51,7 +51,6 @@ export function QRInputField(props) {
 	return(
 		<chakra.input
 			h={["4em", "4em", "4.5em", "4.5em"]}
-      w="50%"
 			mr={props.mr} ml={props.ml}
 
 			outline="none"
@@ -72,102 +71,6 @@ export function QRInputField(props) {
 
       {...props}/>
 	)}
-// ------------------------------------------------------ //
-// Contact Input
-// ------------------------------------------------------ //
-export function QRPartialContact(props){
-  const { register, handleSubmit } = useForm()
-  const onSubmit = data => console.log(data)
-
-  // let fieldContent()
-  // w=""
-  // value=""
-  // name=""
-  // placeholder=""
-  // onChange=""
-  // ref="register"
-
-
-  return(
-    <>
-      <QRInputForm>
-
-        <Stack
-          direction="row"
-          p={0}>
-
-          <QRInputField
-            type="text"
-            name="firstName"
-            value={props.fname}
-            placeholder="First Name"
-            onChange={props.onChange}/>
-
-          <QRInputField
-            name="lastName"
-            placeholder="Last Name"
-            value={props.lname}
-            onChange={props.onChange}/>
-        </Stack>
-
-        <Stack
-          direction="row"
-          p={0}>
-          <QRInputField
-            value=""
-            placeholder="Job Title"
-            onChange={props.onChange}/>
-
-          <QRInputField
-            value=""
-            placeholder="Twitter Handle"
-            onChange={null}/>
-        </Stack>
-
-        <Stack
-          direction="row">
-          <QRInputField
-              value=""
-              placeholder="Phone Number"
-              onChange={null}/>
-
-          <QRInputField
-            value=""
-            placeholder="Email Address"
-            onChange={null}/>
-        </Stack>
-
-        <Stack
-          direction="row">
-          <QRInputField
-              value=""
-              placeholder="Street"
-              onChange={null}/>
-
-          <QRInputField
-            value=""
-            placeholder="City"
-            onChange={null}/>
-        </Stack>
-
-        <Stack
-          direction="row">
-          <QRInputField
-              value=""
-              placeholder="State"
-              onChange={null}/>
-
-          <QRInputField
-            value=""
-            placeholder="Zip"
-            onChange={null}/>
-        </Stack>
-      </QRInputForm>
-    </>
-
-  )
-}
-
 // ------------------------------------------------------ //
 // URL Input
 // ------------------------------------------------------ //

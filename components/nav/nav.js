@@ -25,15 +25,15 @@ export default function Nav() {
   return (
     <>
       <Flex
-        px={[2,2,0,0]}
-        py={[2,2,0,0]}
+        px={[0,0,0,0]}
+        py={[0,0,0,0]}
         top="0"
         pos="sticky"
         zIndex="3">
 
         <Stack
           direction="row"
-          borderRadius={[15,15,0,0]}
+          borderRadius={[0,0,0]}
           w="100%"
           bg="black">
 

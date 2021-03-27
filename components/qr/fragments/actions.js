@@ -19,7 +19,7 @@ export function QRButton(props){
   return(
     <>
         <chakra.button
-          w={["10em", "13em",]}
+          w={["10em", "12em",]}
           h={props.h}
           form="input"
           bg="white"
