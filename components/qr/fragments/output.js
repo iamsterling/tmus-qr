@@ -4,6 +4,7 @@ import Image from 'next/image'
 // 2. import Third Party Libraries
 import {
 	Box,
+	Center,
 	Container,
 	Skeleton,
 	SkeletonCircle,
@@ -44,27 +45,30 @@ export function generate(props) {
     //this.qrcode=new QRCode(this.qrcodeDOM.current, options);
 }
 
-
-
-
-
-
 // -----------------
 // 
 export function QROutput(props) {
+
+	//generate(options)
 
 	return(
 		<Box
 			py={props.py} px={props.px}
 			w={["330px", "430px"]}
 			h={["330px", "430px"]}
-			color="black"
-			bg="white"
+			
+			bg="rgba(255,255,255,0.95)"
+			sx={( "color:purple" )}
 			borderRadius="30"
 			boxShadow="lg"
 			zIndex={2}>
-
-			{props.data}
+			
+			<Center
+				py={3} px={3}
+				ref={props.ref}>
+				
+				{props.children}
+			</Center>
 		</Box>
 	)
 }

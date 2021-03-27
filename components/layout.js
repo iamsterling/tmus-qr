@@ -1,6 +1,6 @@
 // libraries
 import Head from 'next/head'
-import { Container } from '@chakra-ui/react'
+import { Center, Container } from '@chakra-ui/react'
 
 
 
@@ -22,12 +22,12 @@ export default function Layout({children}) {
 
       <Nav />
       
-      <Container
+      <Center
         w="auto"
         maxW="100%"
-        centerContent>
+        maxH="100%">
         {children}
-      </Container>
+      </Center>
     </>
   )
 }

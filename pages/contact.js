@@ -8,20 +8,14 @@ import {
   Text } from '@chakra-ui/react'
 
 // Local Imports
-import { QuickResponse } from '../components/qr/qr'
+import {QuickResponse} from '../components/qr/qr'
 
 
 
-export default function Contact(){
+export default function Contact(props){
 
   return (
     <QuickResponse
-      contact>
-        
-      <QuickResponse.Input.Form>
-        <QuickResponse.Input.Contact/>
-      </QuickResponse.Input.Form>
-
-    </QuickResponse>
+      variant="contact"/>
   )
 }

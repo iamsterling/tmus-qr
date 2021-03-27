@@ -1,131 +1,195 @@
+// ------------------------------------------------------ //
 // 1. import React
+// ------------------------------------------------------ //
 import React, { Component, setState } from 'react'
+import { useForm } from 'react-hook-form';
+// ------------------------------------------------------ //
 // 2. import Third Party Libraries
-///// Chakra UI
+// ------------------------------------------------------ //
 import {
 	chakra,
+  Center,
 	Flex,
 	Input,
+  Stack,
 } from '@chakra-ui/react'
 import {HiOutlineMoon} from 'react-icons/hi'
-
+// ------------------------------------------------------ //
 // 3. import all QR logic
+// ------------------------------------------------------ //
 import { QuickResponse } from '../qr' 
-import { theme } from '../../style'
+
+// import theme??
+//import { theme } from '../../theme'
 
 
+// ------------------------------------------------------ //
+// Input Fragments
+// ------------------------------------------------------ //
+// Form
+// ------------------------------------------------------ //
+export function QRInputForm(props){
 
+  const { register, handleSubmit } = useForm()
+  const onSubmit = data => console.log(data)
 
-
-
-
-
-
-// ------------------
-// Input
-export function QRInput(props){
-  return(null)
-}
-
-// FORM
-export function QRForm(props){
 	return(
-		<>
+		<Center>
 			<chakra.form
-        name="props.name"
-        >
+        name="input"
+        onSubmit={(handleSubmit(onSubmit))}
+        w="100%">
+
 				{props.children}
 			</chakra.form>
-		</>
-  	)
-}
-
-
-
-export function QRField(props){
+		</Center>
+  )}
+// ------------------------------------------------------ //
+// Field
+// ------------------------------------------------------ //
+export function QRInputField(props) {
 	return(
 		<chakra.input
 			h={["4em", "4em", "4.5em", "4.5em"]}
-			w={props.w}
-			mx={1}
+      w="50%"
+			mr={props.mr} ml={props.ml}
 
 			outline="none"
+      userSelect="none"
 			borderRadius="0"
 			borderBottom="0.1em solid rgba(0,0,0,0.05)"
+      borderColor="rgba(0,0,0,0.05)"
+      
+      // states:
+			_focus={{
+        transition:{duration: 0.5},
+        borderBottom: "0.1em solid",
+        borderColor: "primary.0",
+        bg: "rgba(0,0,0,0.01)",
+        color:"black",
+        caretColor:"primary.0",
+      }}
 
-			_hover={{
-				borderBottom: "0.1em solid #E20074"
-			}}
+      {...props}/>
+	)}
+// ------------------------------------------------------ //
+// Contact Input
+// ------------------------------------------------------ //
+export function QRPartialContact(props){
+  const { register, handleSubmit } = useForm()
+  const onSubmit = data => console.log(data)
 
-			_active={{
-				borderBottom: "0.1em solid #E20074",
-			}}
+  // let fieldContent()
+  // w=""
+  // value=""
+  // name=""
+  // placeholder=""
+  // onChange=""
+  // ref="register"
 
-			placeholder={props.placeholder}/>
-	)
+
+  return(
+    <>
+      <QRInputForm>
+
+        <Stack
+          direction="row"
+          p={0}>
+
+          <QRInputField
+            type="text"
+            name="firstName"
+            value={props.fname}
+            placeholder="First Name"
+            onChange={props.onChange}/>
+
+          <QRInputField
+            name="lastName"
+            placeholder="Last Name"
+            value={props.lname}
+            onChange={props.onChange}/>
+        </Stack>
+
+        <Stack
+          direction="row"
+          p={0}>
+          <QRInputField
+            value=""
+            placeholder="Job Title"
+            onChange={props.onChange}/>
+
+          <QRInputField
+            value=""
+            placeholder="Twitter Handle"
+            onChange={null}/>
+        </Stack>
+
+        <Stack
+          direction="row">
+          <QRInputField
+              value=""
+              placeholder="Phone Number"
+              onChange={null}/>
+
+          <QRInputField
+            value=""
+            placeholder="Email Address"
+            onChange={null}/>
+        </Stack>
+
+        <Stack
+          direction="row">
+          <QRInputField
+              value=""
+              placeholder="Street"
+              onChange={null}/>
+
+          <QRInputField
+            value=""
+            placeholder="City"
+            onChange={null}/>
+        </Stack>
+
+        <Stack
+          direction="row">
+          <QRInputField
+              value=""
+              placeholder="State"
+              onChange={null}/>
+
+          <QRInputField
+            value=""
+            placeholder="Zip"
+            onChange={null}/>
+        </Stack>
+      </QRInputForm>
+    </>
+
+  )
 }
 
+// ------------------------------------------------------ //
+// URL Input
+// ------------------------------------------------------ //
+export function QRPartialURL(props) {
+  // ---------------------------------------------------- //
+  //
+  // ---------------------------------------------------- //
 
-
-
-
-/////////////
-
-export function QRInputContact(props) {
-	
-	return(
-		<>
-          <Flex>
-            <QuickResponse.Input.Field
-              w="50%"
-              name={props.fname}
-			  value={props.fname}
-              placeholder="First Name"/>
-              
-
-            <QuickResponse.Input.Field
-              w="50%"
-              name="lname"
-              placeholder="Last Name"/>
-          </Flex>
-
-          <Flex>
-            <QuickResponse.Input.Field
-              w="48%"
-              name="title"
-              placeholder="Job Title"/>
-          </Flex>
-
-          <Flex>
-            <QuickResponse.Input.Field
-              w="50%"
-              name="phone"
-              placeholder="Phone Number"/>
-
-            <QuickResponse.Input.Field
-              w="50%"
-              placeholder="Email Address"/>
-          </Flex>
-
-          <Flex>
-            <QuickResponse.Input.Field
-              w="50%"
-              placeholder="Street"/>
+  //  let [urlData, seturlData] = React.useState("poop2")
+  // ---------------------------------------------------- //
+  //props.setQRData ("testURL")
+  
+  return(
+    <>
+      <QRInputForm>
+        <Flex>
+          <QRInputField
+            w="100%"
             
-            <QuickResponse.Input.Field
-              w="50%"
-              placeholder="City"/>
-          </Flex>
-
-          <Flex>
-            <QuickResponse.Input.Field
-              w="50%"
-              placeholder="State"/>
-              
-            <QuickResponse.Input.Field
-              w="50%"
-              placeholder="Zip"/>
-          </Flex>
-		</>
-	)
+            placeholder="Url"/>
+        </Flex>
+      </QRInputForm>
+    </>
+  )
 }

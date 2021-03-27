@@ -2,11 +2,9 @@
 // 2. import Chakra
 import React from 'react'
 import ReactDOM from 'react-dom'
-import { 
-    Box,
+import {
     chakra,
     Center,
-    Container,
     Flex,
     Stack,
     Text,
@@ -23,7 +21,7 @@ export function QRButton(props){
         <chakra.button
           w={["10em", "13em",]}
           h={props.h}
-          
+          form="input"
           bg="white"
           color={props.color}
           border=".2em solid"
@@ -31,15 +29,12 @@ export function QRButton(props){
           borderRadius="50"
           fontWeight="bold"
 
-
-
           _hover={{ boxShadow: "lg" }}
           _active={{ boxShadow:"md" }}
           _disabled={{ borderColor:"rgba(0,0,0,1)" }}
           outline="0"
           onClick={props.action}
-          
-          
+          type="submit"
           userSelect="none">
             
             <Center
@@ -75,13 +70,12 @@ export default function QRActions(props){
         <QRButton
           w="13em"
           h="4em"
-          color="#E20074"
-          
+          color="primary.0"
           action={props.actionLeft}>
           
           <ImQrcode
             fontSize="2em"
-            color="#E20074"/>
+            color="primary.0"/>
               
           <Text
             px={[0,1,2]}

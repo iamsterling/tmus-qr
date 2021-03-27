@@ -29,7 +29,7 @@ export default function Nav() {
         py={[2,2,0,0]}
         top="0"
         pos="sticky"
-        zIndex="2">
+        zIndex="3">
 
         <Stack
           direction="row"
@@ -99,16 +99,6 @@ function Links(props) {
           href="/url">
           Url
         </Nav.Item>
-      </Box>
-
-      <Box
-        py={1}
-        px={3}>
-        <a href="https://github.com/jsterlingholt/tmus-qr">
-          <FaGithubAlt
-            color="white"
-            fontSize="1.3em"/>
-        </a>
       </Box>
     </Flex>
   )
