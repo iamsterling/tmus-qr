@@ -62,13 +62,8 @@ export function QROutput(props) {
 			borderRadius="30"
 			boxShadow="lg"
 			zIndex={2}>
-			
-			<Center
-				py={3} px={3}
-				ref={props.ref}>
 				
 				{props.children}
-			</Center>
 		</Box>
 	)
 }

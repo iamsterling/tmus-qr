@@ -30,26 +30,6 @@ import {
 } from './fragments/input'
 import { generate, QROutput } from './fragments/output'
 import QRActions  from './fragments/actions'
-// ------------------------------------------------------ //
-// Rename fragments and partials for easy access
-// ------------------------------------------------------ //
-//QuickResponse.Logo                    = QRLogo
-// ------------------------------------------------------ //
-// fragments
-// ------------------------------------------------------ //
-//QuickResponse.fragment                = QuickResponse
-//QuickResponse.fragment.Form           = QRForm
-//QuickResponse.fragment.Field          = QRField
-// ------------------------------------------------------ //
-// partials
-// ------------------------------------------------------ //
-//QuickResponse.partial                 = QuickResponse
-//QuickResponse.partial.Contact         = QRInputContact
-//QuickResponse.partial.Url             = QRInputURL
-//QuickResponse.Output                  = QROutput
-//QuickResponse.Actions                 = QRActions
-
-// ------------------------------------------------------ //
 
 export class QuickResponse extends React.Component {
 	constructor(props){
@@ -74,7 +54,8 @@ export class QuickResponse extends React.Component {
 			addressCity: "",
 			addressState: "",
 			addressZip: "",
-
+      url: "",
+      
 			QRData:`
         BEGIN:VCARD\n
         VERSION:4.0\n
@@ -106,8 +87,8 @@ export class QuickResponse extends React.Component {
       var options = {
       		// ====== Basic
       		text:(this.state.QRData),
-      		width: 300,
-      		height: 300,
+      		width: 400,
+      		height: 400,
       		colorDark : "#E20074",
       		colorLight : "#ffffff",
       		correctLevel : QRCode.CorrectLevel.L, // H, M, Q, H
@@ -139,8 +120,8 @@ export class QuickResponse extends React.Component {
       };
 
 
-      {handleChange}
-      alert("yo")
+      {this.handleChange}
+
       this.qrcode=new QRCode(this.qrcodeDOM.current, options);
   }
 
@@ -154,34 +135,40 @@ export class QuickResponse extends React.Component {
 
 
 
+  changeContact = e => {
+    // update QRData state
+		this.setState({ QRData: `
+      BEGIN:VCARD\n
+      VERSION:4.0\n
+      N:poop;${this.state.fname};;;\n
+      FN:${this.state.fname} ${this.state.lname}\n
+      TITLE:${this.state.title}\n
+      ORG:T-Mobile\n
+      EMAIL;type=INTERNET;type=pref:${this.state.email}\n
+      TEL:${this.state.tel}\n
+      ADR:${this.state.addressStreet};${this.state.addressCity}\,;${this.state.addressState}\,;${this.state.addressZip}\n
+      END:VCARD`
+    })
+  }
+
+  changeURL = e => {
+    this.setState({ QRData: `${this.state.url}`})
+  }
+
 
 	handleChange = (event) => {
     // update state
 		const {name, value} = event.target
     this.setState({ [name]: value })
 
-    // update QRData state
-		this.setState({ QRData: `
-      BEGIN:VCARD\n
-      VERSION:4.0\n
-      N:${this.state.lname};${this.state.fname};;;\n
-      FN:${this.state.fname} ${this.state.lname}\n
-      TITLE:${this.state.title}\n
-      ORG:T-Mobile\n
-      EMAIL;type=INTERNET;type=pref:${this.state.email}\n
-      TEL:${this.state.phone}\n
-      ADR:;;${this.state.addressStreet};
-      ${this.state.addressCity}\,;
-      ${this.state.addressState}\,;
-      ${this.state.addressZip}\n
-      END:VCARD`
-    })
+    // if page variant is set to contact, use changeContact function
+    // else, use changeURL function
+    {this.state.variant === "contact" ? (
+      (this.changeContact)
+    ):(
+      (this.changeURL)
+    ) }
 	}
-
-
-
-
-
 
 
 
@@ -199,21 +186,80 @@ export class QuickResponse extends React.Component {
             
             {this.state.variant === "contact" ? (
               <>
+                <QRInputForm>
 
-              <QRPartialContact
-                fname={this.state.fname}
-                lname={this.state.lname}
-                title={this.state.title}
-                social={this.state.social}
-                tel={this.state.tel}
-                email={this.state.email}
-                street={this.state.street}
-                city={this.state.city}
-                state={this.state.state}
-                zip={this.state.zip}
+                  <Stack
+                    direction="row"
+                    p={0}>
 
-                onChange={this.handleChange}/>           
-                </>   
+                    <QRInputField
+                      type="text"
+                      name="firstName"
+                      value={this.state.fname}
+                      placeholder="First Name"
+                      onChange={this.handleChange}/>
+
+                    <QRInputField
+                      name="lastName"
+                      placeholder="Last Name"
+                      value={this.state.lname}
+                      onChange={this.handleChange}/>
+                  </Stack>
+
+                  <Stack
+                    direction="row"
+                    p={0}>
+                    <QRInputField
+                      value=""
+                      placeholder="Job Title"
+                      onChange={this.handleChange}/>
+
+                    <QRInputField
+                      value=""
+                      placeholder="Twitter Handle"
+                      onChange={null}/>
+                  </Stack>
+
+                  <Stack
+                    direction="row">
+                    <QRInputField
+                        value=""
+                        placeholder="Phone Number"
+                        onChange={null}/>
+
+                    <QRInputField
+                      value=""
+                      placeholder="Email Address"
+                      onChange={null}/>
+                  </Stack>
+
+                  <Stack
+                    direction="row">
+                    <QRInputField
+                        value=""
+                        placeholder="Street"
+                        onChange={null}/>
+
+                    <QRInputField
+                      value=""
+                      placeholder="City"
+                      onChange={null}/>
+                  </Stack>
+
+                  <Stack
+                    direction="row">
+                    <QRInputField
+                        value=""
+                        placeholder="State"
+                        onChange={null}/>
+
+                    <QRInputField
+                      value=""
+                      placeholder="Zip"
+                      onChange={null}/>
+                  </Stack>
+                </QRInputForm>
+              </>  
             ): (
               <QRPartialURL
                 setQRData=""
@@ -221,24 +267,30 @@ export class QuickResponse extends React.Component {
             )} 
           </Box>
 
+          <p>{this.state.QRData}</p>
           
           <Container
             pt={[10,10,0]} pb={[0]} px={0}
-            w="100%"
+            w="430px"
             maxW="430px"
             centerContent>
             
             <QROutput
               data={this.state.QRData}
-              py={3} px={3}
-              ref={this.qrcodeDOM}>
+              py={3} px={3}>
 
-              <p>{this.state.QRData}</p>
+              
+              <Box
+                py={3} px={3}
+                ref={this.qrcodeDOM}>
+              </Box>
+
             </QROutput>
 
             
             <QRActions
-              actionLeft={generate}/>
+              actionLeft={this.generate.bind(this)}
+              actionRight={null}/>
           </Container>
           
         </Stack>
