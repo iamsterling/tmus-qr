@@ -105,11 +105,7 @@ class Logic extends React.Component {
 		const {name, value} = event.target
     this.setState({ [name]: value })
 		this.setState({ qrData: `
-		BEGIN:VCARD\n
-		VERSION:4.0\n
-		N:${this.state.lname};${this.state.fname};;;\n
-		FN:${this.state.fname} ${this.state.lname}\n
-		TITLE:${this.state.title}\nORG:T-Mobile\nEMAIL;type=INTERNET;type=pref:${this.state.email}\nTEL:${this.state.phone}\nADR:;;${this.state.addressStreet};${this.state.addressCity}\,;${this.state.addressState}\,;${this.state.addressZip}\nEND:VCARD`})
+		BEGIN:VCARD\nVERSION:4.0\nN:${this.state.lname};${this.state.fname};;;\nFN:${this.state.fname} ${this.state.lname}\nTITLE:${this.state.title}\nORG:T-Mobile\nEMAIL;type=INTERNET;type=pref:${this.state.email}\nTEL:${this.state.phone}\nADR:;;${this.state.addressStreet};${this.state.addressCity}\,;${this.state.addressState}\,;${this.state.addressZip}\nEND:VCARD`})
 	}
 
 
