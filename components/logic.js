@@ -52,8 +52,8 @@ class Logic extends React.Component {
       var options = {
       		// ====== Basic
       		text:(this.state.qrData),
-      		width: 300,
-      		height: 300,
+      		width: 500,
+      		height: 500,
       		colorDark : "#E20074",
       		colorLight : "#ffffff",
       		correctLevel : QRCode.CorrectLevel.L, // H, M, Q, H
@@ -70,8 +70,8 @@ class Logic extends React.Component {
       		dotScaleAI: 1, // For alignment inner block, must be greater than 0, less than or equal to 1. default is 1
 
 					logo:"tmologo-sm.svg", // Relative address, relative to `easy.qrcode.min.js`
-			    logoWidth:100, // width. default is automatic width
-			    logoHeight:100, // height. default is automatic height
+			    logoWidth:150, // width. default is automatic width
+			    logoHeight:150, // height. default is automatic height
 			    logoBackgroundColor:'#E20074', // Logo backgroud color, Invalid when `logBgTransparent` is true; default is '#ffffff'
 			    logoBackgroundTransparent:true, // Whether use transparent image, default is false
 
