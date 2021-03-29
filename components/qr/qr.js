@@ -85,8 +85,8 @@ export class QuickResponse extends React.Component {
       var options = {
       		// ====== Basic
       		text:(this.state.QRData),
-      		width: 300,
-      		height: 300,
+      		width: 320,
+      		height: 320,
       		colorDark : "#E20074",
       		colorLight : "#ffffff",
       		correctLevel : QRCode.CorrectLevel.L, // H, M, Q, H
@@ -118,13 +118,15 @@ export class QuickResponse extends React.Component {
       };
 
 
-      {this.handleChange}
-
       this.qrcode=new QRCode(this.qrcodeDOM.current, options);
   }
 
+
+
+
+
 	download() {
-    qrcode.saveImage({
+    this.qrcode.saveImage({
       path: 'q.png' // file path
     }).then(data=>{
        console.log("`q-premium1.png` has been Created!");
@@ -136,11 +138,17 @@ export class QuickResponse extends React.Component {
 		//this.generate()
 	}
 
+  adjustState = e => {
+    const {name, value} = e.target
+    this.setState({ [name]: value }), () => {
+      console.log("yo")
+    }
+  }
+
 
 	contactChange = e => {
     // update state
-    const {name, value} = e.target
-    this.setState({ [name]: value })
+    this.adjustState(e)
   
     // if page variant is set to contact, use changeContact function
     // else, use changeURL function
@@ -151,11 +159,8 @@ export class QuickResponse extends React.Component {
 
     this.generate()
   }
-
-
   urlChange = e => {
-    const {name, value} = e.target
-    this.setState({ [name]: value })
+    this.adjustState(e)
 
     this.setState( {QRData: `${this.state.url}`})
   }
@@ -298,24 +303,15 @@ export class QuickResponse extends React.Component {
             maxW="430px"
             centerContent>
 
-            {this.state.QRData}
-
-            <QROutput
-              data={this.state.QRData}
-              py={3} px={3}>
-
-              
-              <Center
-                py={3} px={3}
-                ref={this.qrcodeDOM}>
-              </Center>
-
+            <QROutput>
+              <Box
+                ref={this.qrcodeDOM}/>
             </QROutput>
 
             
             <QRActions
               actionLeft={this.generate.bind(this)}
-              actionRight={null}/>
+              actionRight={this.download.bind(this)}/>
             
           </Container>
           

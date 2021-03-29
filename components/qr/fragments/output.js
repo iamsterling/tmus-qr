@@ -23,14 +23,18 @@ export function QROutput(props) {
 
 	return(
 		<Box
-			py={props.py} mx={4}
-			w={["350px"]} h={["350px"]}
-			bg="rgba(255,255,255,0.95)"
+			px={9} py={6}
+			w={["370px"]} h={["370px"]}
+			bg="rgba(255,255,255,1)"
 			borderRadius="30"
 			boxShadow="lg">
 			
-
-			{props.children}
+			<Center
+				pt={8}
+				w="300px"
+				h="300px">
+				{props.children}
+			</Center>
 		</Box>
 	)
 }
