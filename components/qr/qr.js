@@ -56,6 +56,7 @@ export class QuickResponse extends React.Component {
 			lname: "",
 			title: "",
 			company: "T-Mobile",
+      social: "",
 			email: "",
 			tel: "",
 			addressStreet: "",
@@ -64,12 +65,12 @@ export class QuickResponse extends React.Component {
 			addressZip: "",
       url: "",
       
-			QRData:`BEGIN:VCARD\nVERSION:4.0\nN:Holt;Sterling;;;\nFN:Sterling Holt\nTITLE:Mobile Expert\nORG:T-Mobile\nEMAIL;type=INTERNET;type=pref:james.holt28@t-mobile.com\nTEL:972-469-0082\nADR:;;880 S Preston Rd #40;Prosper\,;TX\,;75078\nEND:VCARD`,
+			QRData:`BEGIN:VCARD\nVERSION:4.0\nPRODID:-//qr.sterlingholt.tech\nN:Holt;Sterling;;;\nFN:Sterling Holt\nTITLE:Mobile Expert\nORG:T-Mobile\nURL:https://twitter.com/jsterlingholt\nEMAIL:james.holt28@t-mobile.com\nTEL:972-469-0082\nADR:880 S Preston Rd #40;Prosper\,;TX\,;75078\nEND:VCARD`,
 		}
 
 
-		this.contactChange = this.contactChange.bind(this)
-    this.urlChange = this.urlChange.bind(this)
+		this.contactChange  = this.contactChange.bind(this)
+    this.urlChange      = this.urlChange.bind(this)
     //this.generate = this.generate.bind(this)
 	}
   // ---------------------------------------------------- //
@@ -122,7 +123,12 @@ export class QuickResponse extends React.Component {
       this.qrcode=new QRCode(this.qrcodeDOM.current, options);
   }
 
-	download(){
+	download() {
+    qrcode.saveImage({
+      path: 'q.png' // file path
+    }).then(data=>{
+       console.log("`q-premium1.png` has been Created!");
+    });
 
 	}
 
@@ -133,15 +139,17 @@ export class QuickResponse extends React.Component {
 
 	contactChange = e => {
     // update state
-		let value = e.target.value
-
-  this.setState({ [event.target.name]: value })
+    const {name, value} = e.target
+    this.setState({ [name]: value })
   
     // if page variant is set to contact, use changeContact function
     // else, use changeURL function
     this.setState({QRData: 
-    `BEGIN:VCARD\nVERSION:4.0\nN:${this.state.lname};${this.state.fname};;;\nFN:${this.state.fname} ${this.state.lname}\nTITLE:${this.state.title}\nORG:T-Mobile\nEMAIL;type=INTERNET;type=pref:${this.state.email}\nTEL:${this.state.tel}\nADR:${this.state.addressStreet};${this.state.addressCity}\,;${this.state.addressState}\,;${this.state.addressZip}\nEND:VCARD`
+    `BEGIN:VCARD\nVERSION:4.0\nPRODID:-//qr.sterlingholt.tech\nN:${this.state.lname};${this.state.fname};;;\nFN:${this.state.fname} ${this.state.lname}\nTITLE:${this.state.title}\nORG:T-Mobile\nURL:https://twitter.com/${this.state.social}\nEMAIL;type=INTERNET;type=pref:${this.state.email}\nTEL:${this.state.tel}\nADR:${this.state.addressStreet};${this.state.addressCity}\,;${this.state.addressState}\,;${this.state.addressZip}\nEND:VCARD`
+    
     })
+
+    this.generate()
   }
 
 
@@ -151,6 +159,16 @@ export class QuickResponse extends React.Component {
 
     this.setState( {QRData: `${this.state.url}`})
   }
+
+
+
+
+
+
+
+
+
+
 
 	render(){
 	  return(
@@ -178,8 +196,7 @@ export class QuickResponse extends React.Component {
                     <QRInputField
                       w="50%"
                       type="text"
-                      name="firstName"
-                      defaultValue="Tony"
+                      name="fname"
                       value={this.state.fname}
                       placeholder="First Name"
                       onChange={this.contactChange}/>
@@ -187,7 +204,7 @@ export class QuickResponse extends React.Component {
                     <QRInputField
                       w="50%"
                       type="text"
-                      name="lastName"
+                      name="lname"
                       placeholder="Last Name"
                       value={this.state.lname}
                       onChange={this.contactChange}/>
@@ -197,13 +214,15 @@ export class QuickResponse extends React.Component {
                     direction="row">
                     <QRInputField
                       w="50%"
-                      value=""
+                      name="title"
+                      value={this.state.title}
                       placeholder="Job Title"
                       onChange={this.contactChange}/>
 
                     <QRInputField
                       w="50%"
-                      value=""
+                      name="social"
+                      value={this.state.social}
                       placeholder="Twitter Handle"
                       onChange={this.contactChange}/>
                   </Stack>
@@ -213,45 +232,51 @@ export class QuickResponse extends React.Component {
 
                     <QRInputField
                       w="50%"
-                      value=""
+                      name="tel"
+                      value={this.state.tel}
                       placeholder="Phone Number"
                       onChange={this.contactChange}/>
 
                     <QRInputField
                       w="50%"
-                      value=""
+                      name="email"
+                      value={this.state.email}
                       placeholder="Email Address"
-                      onChange={null}/>
+                      onChange={this.contactChange}/>
                   </Stack>
 
                   <Stack
                     direction="row">
                     <QRInputField
                       w="50%" 
-                      value=""
+                      name="addressStreet"
+                      value={this.state.addressStreet}
                       placeholder="Street"
-                      onChange={null}/>
+                      onChange={this.contactChange}/>
 
                     <QRInputField
                       w="50%"
-                      value=""
+                      name="addressCity"
+                      value={this.state.addressCity}
                       placeholder="City"
-                      onChange={null}/>
+                      onChange={this.contactChange}/>
                   </Stack>
 
                   <Stack
                     direction="row">
                     <QRInputField
                       w="50%"
-                      value=""
+                      name="addressState"
+                      value={this.state.addressState}
                       placeholder="State"
-                      onChange={null}/>
+                      onChange={this.contactChange}/>
 
                     <QRInputField
                       w="50%"
-                      value=""
+                      name="addressZip"
+                      value={this.state.addressZip}
                       placeholder="Zip"
-                      onChange={null}/>
+                      onChange={this.contactChange}/>
                   </Stack>
                 </QRInputForm>
                 
