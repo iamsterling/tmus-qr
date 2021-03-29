@@ -29,6 +29,7 @@ export function QROutput(props) {
 			borderRadius="30"
 			boxShadow="lg">
 			
+			
 			<Center
 				pt={8}
 				w="300px"
