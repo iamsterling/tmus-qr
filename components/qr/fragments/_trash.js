@@ -16,8 +16,8 @@ class Logic extends React.Component {
 	constructor(props){
 		super(props);
 		// QRCode DOM
-    this.qrcodeDOM = React.createRef();
-    this.qrcode=null;
+        this.qrcodeDOM = React.createRef();
+        this.qrcode=null;
 
 		// input
 		this.qrinput = React.createRef();
@@ -103,7 +103,7 @@ class Logic extends React.Component {
 
 	handleChange(event){
 		const {name, value} = event.target
-    this.setState({ [name]: value })
+        this.setState({ [name]: value })
 		this.setState({ qrData: `
 		BEGIN:VCARD\nVERSION:4.0\nN:${this.state.lname};${this.state.fname};;;\nFN:${this.state.fname} ${this.state.lname}\nTITLE:${this.state.title}\nORG:T-Mobile\nEMAIL;type=INTERNET;type=pref:${this.state.email}\nTEL:${this.state.phone}\nADR:;;${this.state.addressStreet};${this.state.addressCity}\,;${this.state.addressState}\,;${this.state.addressZip}\nEND:VCARD`})
 	}

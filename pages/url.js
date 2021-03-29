@@ -1,23 +1,13 @@
 import Link from 'next/link'
 
-{/* Local Imports */}
-import Logic from '../components/logic2'
+import {Flex} from '@chakra-ui/react'
 
-import Container from 'react-bootstrap/Container';
+import {QuickResponse} from '../components/qr/qr'
+
 
 export default function Test() {
 
   return (
-    <Logic
-      fname= ""
-      lname= ""
-      title= ""
-      company= ""
-      email= ""
-      phone= ""
-      addressStreet=""
-      addressCity=""
-      addressState=""
-      addressZip="" />
+    <QuickResponse/>
   )
 }

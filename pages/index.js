@@ -1,23 +1,36 @@
 import Link from 'next/link'
 
-{/* Local Imports */}
-import Logic from '../components/logic'
+// Local Imports
+import { 
+  Box,
+  Container,
+  Flex,
+  Text } from '@chakra-ui/react'
 
-import Container from 'react-bootstrap/Container';
+
 
 export default function Home() {
 
   return (
-    <Logic
-      fname= ""
-      lname= ""
-      title= ""
-      company= ""
-      email= ""
-      phone= ""
-      addressStreet=""
-      addressCity=""
-      addressState=""
-      addressZip="" />
+    <>
+      <Container
+        px={4}
+        centerContent>
+
+        <Text
+          bg="black"
+          bgClip="text"
+          fontSize="6xl"
+          fontWeight="bold">
+            QR Code Generator
+        </Text>
+
+        <Text>
+          <section>
+          version 2.0
+          </section>
+        </Text>
+      </Container>
+    </>
   )
 }

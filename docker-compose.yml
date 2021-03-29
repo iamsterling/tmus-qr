@@ -1,8 +1,8 @@
 version: '3'
 
 services:
-  tmus-qr:
-    container_name: tmus-qr
+  qr:
+    container_name: qr
     build:
       context: .
       dockerfile: .dockerfile
