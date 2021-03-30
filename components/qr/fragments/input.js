@@ -54,7 +54,6 @@ export function QRInputField(props) {
 			mr={props.mr} ml={props.ml}
 
 			outline="none"
-      userSelect="none"
 			borderRadius="0"
 			borderBottom="0.1em solid rgba(0,0,0,0.05)"
       borderColor="rgba(0,0,0,0.05)"
