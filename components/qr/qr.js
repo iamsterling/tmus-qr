@@ -18,7 +18,7 @@ import {
 // 3. QR Fragment Logic
 // ------------------------------------------------------ //
 import { QRLogo } from '../logo'
-import QRCode from './fragments/generate'
+import { AwesomeQRCode } from "@awesomeqr/react"
 import { 
   // fragments
   QRInputField,
@@ -34,7 +34,60 @@ import QRActions  from './fragments/actions'
 
 
 
-
+const QR = (props) => {
+  return(
+    <AwesomeQRCode
+      options={{
+        text: (props.data),
+        size: 1400,
+        //margin?: number,
+        correctLevel: 3,
+        maskPattern: 6,
+        //version: 1,
+        components: {
+          data: {
+            scale: 0.7,
+          },
+          timing: {
+            scale: 0.7,
+            protectors: false,
+          },
+          alignment: {
+            scale: 0.85,
+            protectors: false,
+          },
+          cornerAlignment: {
+            scale: 1,
+            protectors: true,
+          },
+        },
+        colorDark: "#E20074",
+        //colorLight?: string,
+        //autoColor?: boolean,
+        //backgroundImage: string | Buffer,
+        //backgroundDimming?: string,
+        //gifBackground?: ArrayBuffer,
+        //whiteMargin?: boolean,
+        /*logoImage: {
+          data:image/png;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz4KPHN2ZyB3aWR0aD0iMTAwMHB4IiBoZWlnaHQ9IjEwMDBweCIgdmlld0JveD0iMCAwIDEwMDAgMTAwMCIgdmVyc2lvbj0iMS4xIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIj4KICAgIDx0aXRsZT5BcnRib2FyZDwvdGl0bGU+CiAgICA8ZyBpZD0iQXJ0Ym9hcmQiIHN0cm9rZT0ibm9uZSIgc3Ryb2tlLXdpZHRoPSIxIiBmaWxsPSJub25lIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiPgogICAgICAgIDxwYXRoIGQ9Ik03NDUuNzk5ODk5LDE5MyBMNzUyLDQwOS41MDk0NjYgTDcxOS4wODEwNDYsNDE0LjgzMzU5IEM3MTAuMTU4Mzk4LDI5MS41MTA5NjEgNjUwLjQ5NjA0NiwyMjQuMDcxMDg0IDU0OC4wODQ5MDMsMjIyLjI4NzU3MiBMNTQ4LjA4NDkwMyw2NzUuNjg4MjUxIEM1NDguMDg0OTAzLDc1OC4xOTc0OTEgNTYyLjM1MDUzNSw3NzEuNTM3MTUgNjUxLjM3ODY4OCw3NzIuNDE1Njk5IEw2NTEuMzc4Njg4LDgwNyBMMzQ4LjY0NzgyLDgwNyBMMzQ4LjY0NzgyLDc3Mi40MTU2OTkgQzQzNy42NzQwMSw3NzEuNTM3MTUgNDUxLjk1OTI3OCw3NTguMTk3NDkxIDQ1MS45NTkyNzgsNjc1LjY4ODI1MSBMNDUxLjk1OTI3OCwyMjIuMjg3NTcyIEMzNTAuNDExMTQzLDIyNC4wNzEwODQgMjg5Ljg4MzgxOSwyOTEuNTEwOTYxIDI4MC45NjAxOSw0MTQuODMzNTkgTDI0OCw0MDkuNTA5NDY2IEwyNTQuMjkzMzcyLDE5MyBMNzQ1Ljc5OTg5OSwxOTMgWiBNNzUyLDQ5MyBMNzUyLDYxNyBMNjI4LDYxNyBMNjI4LDQ5MyBMNzUyLDQ5MyBaIE0zNzQsNDkzIEwzNzQsNjE3IEwyNTAsNjE3IEwyNTAsNDkzIEwzNzQsNDkzIFoiIGlkPSJDb21iaW5lZC1TaGFwZSIgZmlsbD0iI0UyMDA3NCIgZmlsbC1ydWxlPSJub256ZXJvIj48L3BhdGg+CiAgICA8L2c+Cjwvc3ZnPg==},*/
+          //logoScale: number,
+        //logoMargin?: number,
+        //logoCornerRadius?: number,
+        //dotScale: 0, // DEPRECATED!!
+        // ...
+      }}
+      onStateChange={(state) => {
+        switch (state) {
+          case "working":
+            // ...
+            break;
+          case "idle":
+            // ...
+            break;
+        }
+      }}/>
+  )
+}
 
 
 
@@ -65,7 +118,7 @@ export class QuickResponse extends React.Component {
 			addressZip: "",
       url: "",
       
-			QRData:`BEGIN:VCARD\nVERSION:4.0\nPRODID:-//qr.sterlingholt.tech\nN:Holt;Sterling;;;\nFN:Sterling Holt\nTITLE:Mobile Expert\nORG:T-Mobile\nURL:https://twitter.com/jsterlingholt\nEMAIL:james.holt28@t-mobile.com\nTEL:972-469-0082\nADR:880 S Preston Rd #40;Prosper\,;TX\,;75078\nEND:VCARD`,
+			QRData:`https://qr.sterlingholt.tech`,
 		}
 
 
@@ -76,62 +129,14 @@ export class QuickResponse extends React.Component {
   // ---------------------------------------------------- //
   // Generate QR Code
   // ---------------------------------------------------- //
-  generate(color){
-      if(this.qrcode){
-          this.qrcode.clear()
-      }
-
-      // if context.brand = tmo {this_variable}
-      var options = {
-      		// ====== Basic
-      		text:(this.state.QRData),
-      		width: 320,
-      		height: 320,
-      		colorDark : "#E20074",
-      		colorLight : "#ffffff",
-      		correctLevel : QRCode.CorrectLevel.L, // H, M, Q, H
-
-      		// ====== dotScale
-      		dotScale: 0.7, // For body block, must be greater than 0, less than or equal to 1. default is 1
-
-      		dotScaleTiming: 0.7, // Dafault for timing block , must be greater than 0, less than or equal to 1. default is 1
-      		/*dotScaleTiming_H: undefined, // For horizontal timing block, must be greater than 0, less than or equal to 1. default is 1
-      		dotScaleTiming_V: undefined, // For vertical timing block, must be greater than 0, less than or equal to 1. default is 1
-      		*/
-
-          dotScaleAO: 1, // For alignment outer block, must be greater than 0, less than or equal to 1. default is 1
-      		dotScaleAI: 1, // For alignment inner block, must be greater than 0, less than or equal to 1. default is 1
-
-					logo:"tmologo-sm.svg", // Relative address, relative to `easy.qrcode.min.js`
-			    logoWidth:80, // width. default is automatic width
-			    logoHeight:80, // height. default is automatic height
-			    logoBackgroundColor:'#E20074', // Logo backgroud color, Invalid when `logBgTransparent` is true; default is '#ffffff'
-			    logoBackgroundTransparent:true, // Whether use transparent image, default is false
-
-					// ====== Backgroud Image
-
-      		backgroundImage: 'tmologo.svg', // Background Image
-      		backgroundImageAlpha: 0, // Background image transparency, value between 0 and 1. default is 1.
-      		autoColor: true, // Automatic color adjustment(for data block)
-              autoColorDark: "rgba(226, 0, 116, 1)", // Automatic color: dark CSS color
-              autoColorLight: "rgba(255, 255, 255, 0.1)", // Automatic color: light CSS color
-      };
-
-
-      this.qrcode=new QRCode(this.qrcodeDOM.current, options);
-  }
+  generate(color){  }
 
 
 
 
 
 	download() {
-    this.qrcode.saveImage({
-      path: 'q.png' // file path
-    }).then(data=>{
-       console.log("`q-premium1.png` has been Created!");
-    });
-
+    fs.writeFileSync('QRResult.png', canvas.toBuffer())
 	}
 
 	componentDidMount(qrcodeDOM) {
@@ -153,7 +158,7 @@ export class QuickResponse extends React.Component {
     // if page variant is set to contact, use changeContact function
     // else, use changeURL function
     this.setState({QRData: 
-    `BEGIN:VCARD\nVERSION:4.0\nPRODID:-//qr.sterlingholt.tech\nN:${this.state.lname};${this.state.fname};;;\nFN:${this.state.fname} ${this.state.lname}\nTITLE:${this.state.title}\nORG:T-Mobile\nURL:https://twitter.com/${this.state.social}\nEMAIL;type=INTERNET;type=pref:${this.state.email}\nTEL:${this.state.tel}\nADR:${this.state.addressStreet};${this.state.addressCity}\,;${this.state.addressState}\,;${this.state.addressZip}\nEND:VCARD`
+    `BEGIN:VCARD\nVERSION:4.0\nPRODID:-//qr.sterlingholt.tech\nN:${this.state.lname};${this.state.fname};;;\nFN:${this.state.fname} ${this.state.lname}\nTITLE:${this.state.title}\nORG:T-Mobile\nURL:https://twitter.com/${this.state.social}\nEMAIL;type=INTERNET;type=pref:${this.state.email}\nTEL:${this.state.tel}\nADR:${this.state.addressStreet}\,;${this.state.addressCity}\,;${this.state.addressState}\,;${this.state.addressZip}\nEND:VCARD`
     
     })
 
@@ -287,13 +292,15 @@ export class QuickResponse extends React.Component {
                 
               </>  
             ): (
-              <Box>
+              <QRInputForm>
                 <QRInputField
                   w="100%"
-                  value=""
+                  name="url"
+                  defaultValue=""
+                  value={this.state.url}
                   placeholder="Url"
                   onChange={this.urlChange}/>
-              </Box>
+              </QRInputForm>
             )} 
           </Box>
 
@@ -304,8 +311,8 @@ export class QuickResponse extends React.Component {
             centerContent>
 
             <QROutput>
-              <Box
-                ref={this.qrcodeDOM}/>
+              <QR
+                data={this.state.QRData}/>
             </QROutput>
 
             

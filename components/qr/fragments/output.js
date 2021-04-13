@@ -23,7 +23,7 @@ export function QROutput(props) {
 
 	return(
 		<Box
-			px={9} py={6}
+			px={3} py={3}
 			w={["370px"]} h={["370px"]}
 			bg="rgba(255,255,255,1)"
 			borderRadius="30"
@@ -31,9 +31,8 @@ export function QROutput(props) {
 			
 			
 			<Center
-				pt={8}
-				w="300px"
-				h="300px">
+				w="350px"
+				h="350px">
 				{props.children}
 			</Center>
 		</Box>

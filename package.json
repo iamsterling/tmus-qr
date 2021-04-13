@@ -8,6 +8,7 @@
     "start": "next start"
   },
   "dependencies": {
+    "@awesomeqr/react": "*",
     "@mapbox/node-pre-gyp": "^1.0.0",
     "file-saver": "^2.0.5",
     "n": "^7.0.1",
