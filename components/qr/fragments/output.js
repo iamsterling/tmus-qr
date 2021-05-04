@@ -25,9 +25,10 @@ export function QROutput(props) {
 		<Box
 			px={3} py={3}
 			w={["370px"]} h={["370px"]}
-			bg="rgba(255,255,255,1)"
-			borderRadius="30"
-			boxShadow="lg">
+			//bg="rgba(255,255,255,1)"
+			//borderRadius="30"
+			//boxShadow="lg"
+			>
 			
 			
 			<Center

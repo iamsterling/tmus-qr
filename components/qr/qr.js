@@ -159,7 +159,7 @@ export class QuickResponse extends React.Component {
     // if page variant is set to contact, use changeContact function
     // else, use changeURL function
     this.setState({QRData: 
-    `BEGIN:VCARD\nVERSION:4.0\nPRODID:-//qr.sterlingholt.tech\nN:${this.state.lname};${this.state.fname};;;\nFN:${this.state.fname} ${this.state.lname}\nTITLE:${this.state.title}\nORG:T-Mobile\nURL:https://twitter.com/${this.state.social}\nEMAIL;type=INTERNET;type=pref:${this.state.email}\nTEL:${this.state.tel}\nADR:${this.state.addressStreet}\,;${this.state.addressCity}\,;${this.state.addressState}\,;${this.state.addressZip}\nEND:VCARD`
+    `BEGIN:VCARD\nVERSION:4.0\nPRODID:-//qr.sterlingholt.tech\nN:${this.state.lname};${this.state.fname};;;\nFN:${this.state.fname} ${this.state.lname}\nTITLE:${this.state.title}\nORG:T-Mobile\nURL:https://twitter.com/${this.state.social}\nEMAIL;type=INTERNET;type=pref:${this.state.email}\nTEL:${this.state.tel}\nADR:${this.state.addressStreet}\,;${this.state.addressCity},;${this.state.addressState},;${this.state.addressZip}\nEND:VCARD`
     
     })
 
