@@ -1,0 +1,14 @@
+version: '3'
+
+services:
+  qr:
+    container_name: qr
+    build:
+      context: .
+      dockerfile: .dockerfile
+    ports:
+      # container : host
+      - "3000:3000"
+    volumes:
+      - .:/usr/src/
+      - /usr/src/.next
