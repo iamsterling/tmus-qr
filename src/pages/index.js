@@ -12,7 +12,6 @@ export default function App() {
     <Navbar/>
     <Flex justifyContent="center">
       <Flex
-        //bg='green'
         flexDirection={['column', 'column', 'row']}
         justifyContent='center' //alignItems='center'
         mx={4}

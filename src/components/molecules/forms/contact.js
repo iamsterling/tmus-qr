@@ -2,8 +2,8 @@ import React from 'react'
 import { Box, Flex } from '@chakra-ui/react'
 
 
-import { Form, Input } from '../../../atoms/form'
-import { Context } from '../../../../utils/context/data'
+import { Form, Input } from '../../atoms/form'
+import { Context } from '../../../utils/context/data'
 
 
 import { FaPhoneAlt, FaMapMarker } from 'react-icons/fa'

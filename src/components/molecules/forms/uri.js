@@ -15,34 +15,24 @@ export const Uri = () => {
     }, [DATA.activeTab])
 
 
-
-
     React.useEffect(() => {
-        DATA.setData(setUri)
-    }, [uri])
+        if (DATA.data === undefined) {
+            DATA.setData('filler')
+        }
 
-    
-    const change = (event) => { 
-        event.preventDefault
-        setUri(event)
-    }
-
+        console.log(DATA.data)
+    }, [DATA.data])
 
     return (
-        <Box>
-
-            <Box >
-                <Flex as="form" flexWrap="wrap" justifyContent="space-between"
-                    mb={8}>
-
-                    <Input
-                        icon={<BiLink/>}
-                        onChange={ event => change(event.target.value) }
-                        placeholder={'URL or Deep Link'}
-                        w={'100%'}
-                    />
-                </Flex>
-            </Box>
-        </Box>
+        <Flex as="form" flexWrap="wrap" justifyContent="space-between"
+            mb={8}>
+            <Input
+                single
+                icon={<BiLink/>}
+                onChange={ event => DATA.setData(event.target.value)}
+                placeholder={'URL or Deep Link'}
+                w={'100%'}
+            />
+        </Flex>
     )
 }

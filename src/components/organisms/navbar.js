@@ -10,6 +10,7 @@ export const Navbar = (props) => {
         alignItems='center'
         overflow="none"
         m={2}
+        mr={4}
         >
         <Box mr={4} >
             <Logo/>{/* LOGO TOGGLES BETWEEN BRANDS */}

@@ -23,7 +23,8 @@ export function Input (props) {
 
             flexDirection='row'
             justifyContent='flex-start'
-            w={'50%'}
+            w={props.single ? '100%' : '49%'}
+            h={'55px'}
             
             >
                 <Flex bg={DATA.primary} w={12} outline={`1px solid ${DATA.primary}`}
@@ -34,9 +35,11 @@ export function Input (props) {
 
                 <Box as="input"
                     bg="rgba(0,0,0,0.05)"
-                    w={'75%'}
+                    w={'100%'}
                     p={4}
                     h="100%"
+                    borderRadius={0}
+                    outline='1px solid rgba(0,0,0,0.05)'
                     _focus={{ 
                         outline: `1px solid ${DATA.primary}`,
                         boxShadow: 'xl'

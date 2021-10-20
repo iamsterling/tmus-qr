@@ -42,11 +42,8 @@ export const QR = (props) => {
         border={`1px solid rgba(0,0,0,0.15)`}
         borderRadius={10}
         flexDirection='column'
-        w={[80,80,80,'400px']}
-        minH={[80,80,80,'400px']}
         p={6}
-        mb={4}
-        mx={[0,0,4]}>
+        >
 
 
         <Box as="img" src={src} maxH={[250,300,300,500]} />
