@@ -50,26 +50,6 @@ export const QR = (props) => {
 
         <Box as="img" src={src} maxH={[250,300,300,500]} />
 
-        <Box as='button' 
-            onClick={() => null}
-            bg={DATA.primary}
-            color='white'
-            border={0}
-            borderRadius={6}
-            fontSize={16}
-            fontWeight='bold'
-            mt={4}
-            px={4} py={2}
-            
-            _focus={{ 
-                outline: `1px solid black`,
-                boxShadow: '2xl',
-                //backgroundColor: 'green',
-                //borderBottom: `1px solid ${DATA.primary}` 
-            }}
-            >
-            Download
-        </Box>
     </Flex>
         
 }
