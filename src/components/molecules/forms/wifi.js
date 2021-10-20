@@ -4,6 +4,8 @@ import { Context } from '../../../utils/context/data'
 
 import { Input } from '../../atoms/form'
 
+import { MdSignalWifi3Bar, MdPassword } from 'react-icons/md'
+
 export const Wifi = () => {
     let DATA = React.useContext(Context)
 
@@ -15,10 +17,12 @@ export const Wifi = () => {
         {
             name: 'network',
             data: network, setData: setNetwork,
+            icon: <MdSignalWifi3Bar/>,
         },
         {
             name: 'password',
             data: password, setData: setPassword,
+            icon: <MdPassword/>,
         }
     ]
 
@@ -38,18 +42,35 @@ export const Wifi = () => {
 
     
 
-    return <Box>
-        {data.map(item => {
-            let {name, data, setData} = item
+    return (
+        <Box>
 
-            const handleChange = (e) => { setData(e)}
-            return(
-                <Input
-                    onChange={e => handleChange(e.target.value)}
-                    placeholder={name}
-                />
-            )
-        })}
-        
-    </Box>
+            <Box >
+                <Flex as="form" flexWrap="wrap" justifyContent="space-between"
+                    mb={8}>
+                    {data.map(item => {
+                        let { name, icon, data, setData, type } = item
+
+                        
+
+                        const change = (event) => { 
+                            event.preventDefault
+                            setData(event)
+                        }
+
+                        return(
+                            <Input
+                                key={name}
+                                icon={icon}
+                                onChange={ event => change(event.target.value) }
+                                onSubmit={ event => change(event.target.value) }
+                                placeholder={name}
+                            />
+
+                        )
+                    })}
+                </Flex>
+            </Box>
+        </Box>
+    )
 }

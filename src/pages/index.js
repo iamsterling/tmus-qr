@@ -2,7 +2,7 @@ import React from 'react'
 import { Box, Flex, ChakraProvider } from '@chakra-ui/react'
 
 import { Context } from '../utils/context/data'
-import { Contact, Wifi } from '../components/molecules/forms'
+import { Contact, Wifi, Uri } from '../components/molecules/forms'
 import { QR } from '../components/molecules/qr'
 import { Navbar } from '../components/organisms/navbar'
 
@@ -39,5 +39,5 @@ export default function App() {
     } if (DATA.activeTab === 'wifi') {
       return <Wifi/>
     } 
-    return <div>Default page</div>
+    return <Uri/>
   }
