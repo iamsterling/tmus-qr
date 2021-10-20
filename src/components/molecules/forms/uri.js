@@ -39,6 +39,7 @@ export const Uri = () => {
                         icon={<BiLink/>}
                         onChange={ event => change(event.target.value) }
                         placeholder={'URL or Deep Link'}
+                        w={'100%'}
                     />
                 </Flex>
             </Box>

@@ -2,6 +2,7 @@ import React from 'react'
 import { Box, Flex } from '@chakra-ui/react'
 import { Context } from '../../utils/context/data'
 
+import { FaGithubAlt } from 'react-icons/fa'
 
 export const Links = (props) => {
   let DATA = React.useContext(Context)
@@ -17,9 +18,9 @@ export const Links = (props) => {
         >
          <Tabs DATA={DATA}/>
 
-        <div>
-            {'</>'}
-        </div>
+        <Box as='a' href="https://github.com/jsterlingholt/tmus-qr" fontSize='24'>
+          <FaGithubAlt/>
+        </Box>
     </Flex>
 }
 
