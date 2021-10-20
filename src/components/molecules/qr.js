@@ -16,6 +16,7 @@ export const QR = (props) => {
             margin: 0,
             color: { dark: DATA.primary, light: '#fff' },
             errorCorrectionLevel: 'H',
+            scale: 20,
         }
         new QRCode.toDataURL(DATA.data !== undefined ? DATA.data : 'nothing', options)
             .then(setSrc)
