@@ -42,6 +42,8 @@ export const QR = (props) => {
         border={`1px solid rgba(0,0,0,0.15)`}
         borderRadius={10}
         flexDirection='column'
+        minW={300}
+        ml={[0,0,8]}
         p={6}
         >
 
